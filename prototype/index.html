@@ -166,6 +166,16 @@
   --elev-raised: 0 2px 8px rgba(11, 42, 60, 0.06);
   --elev-sticky: 0 -1px 0 var(--border);
 
+  /* ─── Subtle gradients (buttons + card surfaces only) ─────────── */
+  --grad-sheen-light:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0) 62%);
+  --grad-sheen-dark:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0) 58%);
+  --grad-white:
+    linear-gradient(180deg, #ffffff 0%, #f4f7f8 100%);
+  --grad-card:
+    linear-gradient(155deg, #ffffff 0%, #ffffff 40%, rgba(11, 42, 60, 0.055) 100%);
+
   /* ─── Focus ───────────────────────────────────────────────────── */
   --focus-ring: 0 0 0 2px var(--link);
 
@@ -419,16 +429,28 @@ svg { flex: none; }
 }
 .btn:hover { text-decoration: none; }
 .btn svg { width: 18px; height: 18px; }
-.btn-call { background: var(--accent); color: var(--accent-on); }
-.btn-call:hover { background: var(--accent-hover); color: var(--accent-on); }
-.btn-call:active { background: var(--accent-active); }
-.btn-book { background: var(--brand-primary); color: var(--brand-primary-on); }
-.btn-book:hover { background: var(--brand-primary-hover); color: var(--brand-primary-on); }
-.btn-book:active { background: var(--brand-primary-active); }
+.btn-call {
+  background-color: var(--accent);
+  background-image: var(--grad-sheen-light);
+  color: var(--accent-on);
+}
+.btn-call:hover { background-color: var(--accent-hover); color: var(--accent-on); }
+.btn-call:active { background-color: var(--accent-active); }
+.btn-book {
+  background-color: var(--brand-primary);
+  background-image: var(--grad-sheen-dark);
+  color: var(--brand-primary-on);
+}
+.btn-book:hover { background-color: var(--brand-primary-hover); color: var(--brand-primary-on); }
+.btn-book:active { background-color: var(--brand-primary-active); }
 .btn-outline { background: transparent; color: var(--fg); border-color: var(--border-strong); }
 .btn-outline:hover { border-color: var(--fg); }
-.btn-inverted { background: var(--on-dark); color: var(--link); }
-.btn-inverted:hover { background: var(--surface-alt); color: var(--link-hover); }
+.btn-inverted {
+  background-color: var(--on-dark);
+  background-image: var(--grad-white);
+  color: var(--link);
+}
+.btn-inverted:hover { background-color: var(--surface-alt); color: var(--link-hover); }
 .header-call { height: 44px; padding: 0 18px; font-size: var(--text-sm); }
 
 /* ── Hero ───────────────────────────────────────────────────────── */
@@ -562,7 +584,8 @@ svg { flex: none; }
   min-width: 0;
   min-height: 300px;
   padding: var(--space-6);
-  background: var(--surface-dark-raised);
+  background-color: var(--surface-dark-raised);
+  background-image: var(--grad-sheen-dark);
   border: 1px solid var(--border-dark);
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -730,7 +753,8 @@ svg { flex: none; }
   flex-direction: column;
   gap: 4px;
   padding: var(--card-pad);
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: var(--grad-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   color: var(--fg);
@@ -785,7 +809,8 @@ svg { flex: none; }
 
 /* ── Pricing ────────────────────────────────────────────────────── */
 .price-shell {
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: var(--grad-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: clamp(20px, 3vw, 40px);
@@ -851,7 +876,8 @@ svg { flex: none; }
 .case-card {
   display: flex;
   flex-direction: column;
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: var(--grad-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -917,7 +943,8 @@ svg { flex: none; }
   gap: var(--space-3);
   width: 100%;
   padding: var(--card-pad);
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: var(--grad-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
 }
@@ -941,7 +968,8 @@ svg { flex: none; }
   justify-content: center;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-pill);
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: var(--grad-card);
   color: var(--brand-primary);
   cursor: pointer;
   transition:
@@ -950,7 +978,8 @@ svg { flex: none; }
     color var(--motion-fast) var(--ease-standard);
 }
 .review-nav:hover {
-  background: var(--brand-primary);
+  background-color: var(--brand-primary);
+  background-image: none;
   border-color: var(--brand-primary);
   color: var(--brand-primary-on);
 }
@@ -992,7 +1021,9 @@ svg { flex: none; }
   justify-content: space-between;
   gap: var(--space-8);
   padding: clamp(28px, 4.5vw, 64px);
-  background: var(--teal-band);
+  background-color: var(--teal-band);
+  background-image:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 45%, rgba(11, 42, 60, 0.16) 100%);
   border-radius: var(--radius-xl);
   color: var(--on-dark);
 }
@@ -1022,7 +1053,8 @@ svg { flex: none; }
   flex-direction: column;
   gap: var(--space-3);
   padding: var(--card-pad);
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: var(--grad-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
 }
@@ -1051,10 +1083,15 @@ svg { flex: none; }
 .faq-item {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: var(--grad-card);
   overflow: hidden;
 }
-.faq-item[open] { background: var(--surface-sunken); }
+.faq-item[open] {
+  background-color: var(--surface-sunken);
+  background-image:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+}
 .faq-item summary {
   display: flex;
   align-items: center;
@@ -1099,7 +1136,8 @@ svg { flex: none; }
   flex-direction: column;
   gap: var(--space-5);
   padding: clamp(24px, 3.4vw, 40px);
-  background: var(--surface-dark);
+  background-color: var(--surface-dark);
+  background-image: var(--grad-sheen-dark);
   border-radius: var(--radius-xl);
   color: var(--on-dark);
 }
@@ -1132,7 +1170,8 @@ svg { flex: none; }
   display: grid;
   gap: var(--space-4);
   padding: clamp(24px, 3.4vw, 36px);
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: var(--grad-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   align-content: start;
