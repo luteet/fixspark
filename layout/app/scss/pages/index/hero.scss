@@ -10,9 +10,9 @@
 	border-radius: var(--radius-xl);
 	color: var(--on-dark);
 
-	// .hero__bg
+	// .hero__background
 
-	&__bg {
+	&__background {
 		position: absolute;
 		inset: 0;
 		z-index: 0;
@@ -362,7 +362,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.hero__bg {
+	.hero__background {
 		display: none;
 	}
 }
