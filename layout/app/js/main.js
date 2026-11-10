@@ -91,12 +91,32 @@ if (window.Swiper && reviewsSwiper) {
 }
 
 
+// Hero title word slider (vertical, Swiper from libs.min.js)
+
+const heroWordSlider = document.querySelector(".hero__title-slider");
+
+if (window.Swiper && heroWordSlider) {
+	new Swiper(heroWordSlider, {
+		direction: "vertical",
+		loop: true,
+		speed: reduceMotion ? 0 : 500,
+		autoplay: reduceMotion ? false : {
+			delay: 2000,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: true
+		},
+		allowTouchMove: false,
+		a11y: { enabled: false }
+	});
+}
+
+
 // Booking form (preview only)
 
 const form = document.getElementById("booking-form");
-const status = document.getElementById("form-status");
+const statusElement = document.getElementById("form-status");
 
-if (form && status) {
+if (form && statusElement) {
 	form.addEventListener("submit", function (event) {
 		event.preventDefault();
 
@@ -105,9 +125,9 @@ if (form && status) {
 			return;
 		}
 
-		status.hidden = false;
-		status.textContent = "This preview form is not connected yet. Call (619) 555-0142 and we will book you in directly.";
-		status.focus();
+		statusElement.hidden = false;
+		statusElement.textContent = "This preview form is not connected yet. Call (619) 555-0142 and we will book you in directly.";
+		statusElement.focus();
 	});
 }
 

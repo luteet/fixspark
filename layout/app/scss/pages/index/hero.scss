@@ -73,8 +73,31 @@
 		font-weight: var(--weight-bold);
 		line-height: 1.05;
 		letter-spacing: -0.025em;
+		text-wrap: pretty;
 
 		color: var(--on-dark);
+	}
+
+	// .hero__title-slider — вертикальный слайдер названий техники (Swiper).
+	// Слот занимает одну строку заголовка: 1.35em = line-height 1.05 + запас
+	// под выносные элементы и запятую, отрицательные margin-block возвращают
+	// слоту обычный ритм строк. Без JS виден первый слайд (фолбэк).
+
+	&__title-slider {
+		display: block;
+		height: 1.35em;
+		margin-block: -0.15em;
+	}
+
+	// .hero__title-word — один вариант в слайдере; строка не переносится,
+	// по вертикали слово центрирует слайд
+
+	&__title-word {
+		display: flex;
+		align-items: center;
+
+		white-space: nowrap;
+		color: var(--accent);
 	}
 
 	// .hero__lead
