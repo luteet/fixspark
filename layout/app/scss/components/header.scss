@@ -230,10 +230,10 @@
 			position: fixed;
 			left: var(--page-gutter);
 			right: var(--page-gutter);
-			top: calc(var(--page-gutter) + var(--header-h));
+			top: calc(var(--page-gutter) * 2 + var(--header-h));
 
-			width: auto;
-			height: calc(100dvh - var(--header-h) - var(--page-gutter) * 2);
+			width: calc(100% - var(--page-gutter) * 2);
+			//height: calc(100dvh - var(--header-h) - var(--page-gutter) * 2);
 
 			background: var(--bg);
 			border: 1px solid var(--border);
