@@ -235,15 +235,22 @@
 				</div>
 
 				<div class="kit-demo">
-					<p class="kit-caption">Rating · .rating-pill / .stars</p>
+					<p class="kit-caption">Google rating · .google-rating / .stars</p>
 					<div class="kit-demo__row">
-						<span class="rating-pill">
-							<span class="stars" aria-hidden="true">★★★★★</span>
-							<span class="rating-pill__text">4.9 · 187 Google reviews</span>
-						</span>
+						<div class="google-rating">
+							<img class="google-rating__logo" src="img/google-logo.webp" width="24" height="25" alt="Google" loading="lazy">
+							<span class="google-rating__body">
+								<span class="google-rating__top">
+									<span class="google-rating__score">4.9</span>
+									<span class="stars google-rating__stars" aria-hidden="true">★★★★★</span>
+									<span class="visually-hidden">out of 5</span>
+								</span>
+								<span class="google-rating__meta">187 Google reviews</span>
+							</span>
+						</div>
 						<span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
 					</div>
-					<p class="kit-note">The pill is the only amber tint on the page besides the stars. Text inside it is navy, never white.</p>
+					<p class="kit-note">The badge carries the Google mark, so the source of the rating is obvious at a glance. The amber tint is the only decorative amber on the page besides the stars; text inside stays navy, never white (inside a dark theme <code>--brand-primary</code> flips to white, so use <code>--accent-on</code>).</p>
 				</div>
 			</div>
 		</div>
@@ -636,15 +643,22 @@
 				</div>
 
 				<div class="kit-demo">
-					<p class="kit-caption">Badges and trust rows · .chip / .rating-pill / .trust__item</p>
+					<p class="kit-caption">Badges and trust rows · .chip / .google-rating / .trust__item</p>
 					<div class="kit-demo__row">
 						<span class="chip">BEAR licensed</span>
 						<span class="chip">Insured</span>
 						<span class="chip">90-day warranty</span>
-						<span class="rating-pill">
-							<span class="stars" aria-hidden="true">★★★★★</span>
-							<span class="rating-pill__text">4.9 · 187 Google reviews</span>
-						</span>
+						<div class="google-rating">
+							<img class="google-rating__logo" src="img/google-logo.webp" width="24" height="25" alt="Google" loading="lazy">
+							<span class="google-rating__body">
+								<span class="google-rating__top">
+									<span class="google-rating__score">4.9</span>
+									<span class="stars google-rating__stars" aria-hidden="true">★★★★★</span>
+									<span class="visually-hidden">out of 5</span>
+								</span>
+								<span class="google-rating__meta">187 Google reviews</span>
+							</span>
+						</div>
 					</div>
 					<div class="kit-demo__row">
 						<span class="trust__item">
