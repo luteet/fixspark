@@ -283,14 +283,16 @@
 				width: 100%;
 				padding: 14px var(--space-2);
 
-				border-bottom: 1px solid var(--border-soft);
-
 				color: var(--fg);
 				font-size: var(--text-base);
 
 				// .header__nav-list a:hover
 
 				&:hover { color: var(--link); }
+			}
+
+			li:not(:last-child) a {
+				border-bottom: 1px solid var(--border-soft);
 			}
 		}
 
