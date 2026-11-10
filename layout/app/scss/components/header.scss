@@ -28,6 +28,11 @@
 		color: var(--fg);
 	}
 
+	&--scrolled .brand__mark,
+	&--menu-open .brand__mark {
+		background-color: var(--surface-dark);
+	}
+
 	// .header__inner
 
 	&__inner {

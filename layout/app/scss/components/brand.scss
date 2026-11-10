@@ -21,7 +21,10 @@
 		overflow: hidden;
 
 		border-radius: var(--radius-pill);
-		background: var(--surface);
+		background-color: var(--surface);
+		mask: url(../img/logo-min.png) center / 100%;
+
+		transition: background-color .15s;
 	}
 
 	// .brand__image
