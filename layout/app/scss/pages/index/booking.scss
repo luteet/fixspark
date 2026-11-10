@@ -25,6 +25,8 @@
 		color: var(--on-dark);
 
 		.eyebrow {
+			align-self: self-start;
+			
 			color: var(--on-dark-muted);
 
 			// .booking__panel .eyebrow::before

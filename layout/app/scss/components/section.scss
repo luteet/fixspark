@@ -13,6 +13,72 @@
 	}
 }
 
+.section .container {
+	position: relative;
+	z-index: 2;
+}
+
+.section-background {
+	position: absolute;
+	inset: 0;
+
+	border-radius: var(--radius-xl);
+
+	overflow: hidden;
+
+	pointer-events: none;
+
+	z-index: 1;
+
+	opacity: .05;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0; top: 0;
+
+		transform: translate(-50%, -50%);
+
+		height: 200%; aspect-ratio: 1;
+
+		background-color: #fff;
+		mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+
+		mix-blend-mode: overlay;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0; top: 0;
+
+		transform: translate(-50%, -50%);
+
+		height: 200%; aspect-ratio: 1;
+
+		background: url(../img/noise.png) center / 1024px repeat;
+		mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+
+		mix-blend-mode: overlay;
+	}
+
+	&.mode-2 {
+		opacity: .075;
+
+		&::after {
+			background-color: var(--icon);
+		}
+	}
+
+	&.mode-3 {
+		//filter: invert(100%);
+
+		&::after {
+			background-color: var(--surface-alt);
+		}
+	}
+}
+
 .section-head {
 	display: flex;
 	flex-wrap: wrap;

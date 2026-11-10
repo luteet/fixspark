@@ -10,6 +10,12 @@
 	border-radius: var(--radius-xl);
 	color: var(--on-dark);
 
+	// .hero__decor
+
+	&__decor {
+		z-index: 2;
+	}
+
 	// .hero__background
 
 	&__background {

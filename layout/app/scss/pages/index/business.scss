@@ -2,6 +2,8 @@
 	// .business__band
 
 	&__band {
+		position: relative;
+
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
@@ -17,9 +19,19 @@
 
 		color: var(--on-dark);
 
+		overflow: hidden;
+
 		.button {
 			flex: none;
 		}
+	}
+
+	// .business__band-background 
+
+	&__band-background {
+		width: 100%; aspect-ratio: 1;
+
+		
 	}
 
 	// .business__title
