@@ -5,6 +5,8 @@
 	border: 1px solid var(--border);
 	border-radius: var(--radius-lg);
 
+	// .trust__inner
+
 	&__inner {
 		display: grid;
 		grid-template-columns: 4fr 1fr;
@@ -13,6 +15,8 @@
 		gap: 12px 32px;
 	}
 
+	// .trust__benefits
+
 	&__benefits {
 		display: flex;
 		flex-wrap: wrap;
@@ -20,6 +24,8 @@
 
 		gap: 12px 32px;
 	}
+
+	// .trust__item
 
 	&__item {
 		display: inline-flex;
@@ -37,6 +43,8 @@
 		}
 	}
 
+	// .trust__note
+
 	&__note {
 		justify-self: end;
 
@@ -50,10 +58,14 @@
 
 @media (max-width: 720px) {
 	.trust {
+		// .trust__inner
+
 		&__inner {
 			grid-template-columns: 1fr;
 			gap: 12px;
 		}
+
+		// .trust__note
 
 		&__note {
 			justify-self: start;

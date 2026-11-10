@@ -10,6 +10,8 @@
 	border-radius: var(--radius-xl);
 	color: var(--on-dark);
 
+	// .hero__bg
+
 	&__bg {
 		position: absolute;
 		inset: 0;
@@ -21,6 +23,8 @@
 		object-fit: cover;
 		pointer-events: none;
 	}
+
+	// .hero__scrim
 
 	&__scrim {
 		position: absolute;
@@ -34,6 +38,8 @@
 			linear-gradient(180deg, rgba(11, 42, 60, 0.5) 0%, rgba(11, 42, 60, 0.32) 42%, rgba(11, 42, 60, 0.88) 100%);
 	}
 
+	// .hero__inner
+
 	&__inner {
 		position: relative;
 		z-index: 2;
@@ -44,6 +50,8 @@
 
 		gap: clamp(32px, 5vw, 64px);
 	}
+
+	// .hero__eyebrow
 
 	&__eyebrow {
 		display: inline-flex;
@@ -57,6 +65,8 @@
 
 		color: var(--on-dark-muted);
 
+		// .hero__eyebrow::before
+
 		&::before {
 			content: "";
 
@@ -66,6 +76,8 @@
 			background: var(--on-dark-muted);
 		}
 	}
+
+	// .hero__title
 
 	&__title {
 		margin-top: var(--space-5);
@@ -79,6 +91,8 @@
 		color: var(--on-dark);
 	}
 
+	// .hero__lead
+
 	&__lead {
 		margin-top: var(--space-5);
 		max-width: 48ch;
@@ -89,6 +103,8 @@
 		color: var(--on-dark-muted);
 	}
 
+	// .hero__actions
+
 	&__actions {
 		margin-top: var(--space-8);
 
@@ -97,6 +113,8 @@
 		align-items: center;
 		gap: var(--space-3);
 	}
+
+	// .hero__link
 
 	&__link {
 		padding: 12px 6px;
@@ -109,8 +127,12 @@
 		text-underline-offset: 4px;
 		text-decoration-color: var(--on-dark-muted);
 
+		// .hero__link:hover
+
 		&:hover { text-decoration-color: var(--on-dark); }
 	}
+
+	// .hero__trust
 
 	&__trust {
 		margin-top: var(--space-8);
@@ -120,6 +142,8 @@
 		align-items: center;
 		gap: var(--space-2);
 	}
+
+	// .hero__media
 
 	&__media {
 		position: relative;
@@ -142,6 +166,8 @@
 
 		overflow: hidden;
 
+		// .hero__media::before
+
 		&::before {
 			content: "";
 
@@ -154,6 +180,8 @@
 			pointer-events: none;
 		}
 	}
+
+	// .hero__media-top
 
 	&__media-top {
 		display: flex;
@@ -168,6 +196,8 @@
 		color: var(--on-dark-muted);
 	}
 
+	// .hero__quote
+
 	&__quote {
 		max-width: 30ch;
 
@@ -180,6 +210,8 @@
 		color: var(--on-dark);
 	}
 
+	// .hero__media-bottom
+
 	&__media-bottom {
 		display: flex;
 		flex-wrap: wrap;
@@ -191,6 +223,8 @@
 
 		border-top: 1px solid var(--border-dark);
 	}
+
+	// .hero__metrics
 
 	&__metrics {
 		display: flex;
@@ -209,6 +243,8 @@
 			color: var(--on-dark);
 		}
 	}
+
+	// .hero__tag
 
 	&__tag {
 		padding: 4px 10px;
@@ -242,6 +278,8 @@
 
 	color: var(--brand-primary);
 
+	// .rating-pill__text
+
 	&__text {
 		font-weight: var(--weight-bold);
 		color: var(--accent);
@@ -274,13 +312,19 @@
 
 @media (max-width: 900px) {
 	.hero {
+		// .hero__inner
+
 		&__inner {
 			grid-template-columns: minmax(0, 1fr);
 		}
 
+		// .hero__title
+
 		&__title {
 			max-width: 18ch;
 		}
+
+		// .hero__media
 
 		&__media {
 			width: 100%;
@@ -297,13 +341,19 @@
 		padding-top: calc(var(--header-h) + var(--space-10));
 		padding-bottom: var(--section-y-phone);
 
+		// .hero__actions .button
+
 		&__actions .button {
 			width: 100%;
 		}
 
+		// .hero__link
+
 		&__link {
 			padding-inline: 0;
 		}
+
+		// .hero__metrics
 
 		&__metrics {
 			gap: var(--space-3);

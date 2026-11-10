@@ -6,6 +6,8 @@
 	border: 1px solid var(--border);
 	border-radius: var(--radius-xl);
 
+	// .section--alt
+
 	&--alt {
 		background: var(--surface-alt);
 	}
@@ -20,9 +22,13 @@
 	gap: var(--space-6) var(--space-10);
 	margin-bottom: var(--space-10);
 
+	// .section-head__text
+
 	&__text {
 		max-width: 62ch;
 	}
+
+	// .section-head__title
 
 	&__title {
 		margin-top: var(--space-3);
@@ -43,6 +49,8 @@
 	text-transform: uppercase;
 
 	color: var(--muted);
+
+	// .eyebrow::before
 
 	&::before {
 		content: "";

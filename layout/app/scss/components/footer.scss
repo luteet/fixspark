@@ -12,11 +12,15 @@
 		color: var(--on-dark);
 	}
 
+	// .footer__grid
+
 	&__grid {
 		display: grid;
 		grid-template-columns: 1.5fr 1fr 1fr 1.1fr;
 		gap: var(--space-8);
 	}
+
+	// .footer__about
 
 	&__about {
 		margin-top: var(--space-4);
@@ -25,6 +29,8 @@
 		font-size: var(--text-sm);
 		line-height: 1.65;
 	}
+
+	// .footer__title
 
 	&__title {
 		margin-bottom: var(--space-4);
@@ -37,14 +43,20 @@
 		color: var(--on-dark-muted);
 	}
 
+	// .footer__list
+
 	&__list {
 		display: grid;
 		gap: 10px;
 	}
 
+	// .footer__link
+
 	&__link {
 		font-size: var(--text-sm);
 		color: var(--on-dark-muted);
+
+		// .footer__link:hover
 
 		&:hover {
 			color: var(--on-dark);
@@ -52,6 +64,8 @@
 			text-underline-offset: 3px;
 		}
 	}
+
+	// .footer__phone
 
 	&__phone {
 		display: inline-block;
@@ -64,6 +78,8 @@
 		color: var(--on-dark);
 	}
 
+	// .footer__contact
+
 	&__contact {
 		display: grid;
 		gap: 10px;
@@ -71,9 +87,13 @@
 		font-size: var(--text-sm);
 	}
 
+	// .footer__muted
+
 	&__muted {
 		color: var(--on-dark-muted);
 	}
+
+	// .footer__bottom
 
 	&__bottom {
 		margin-top: var(--space-12);

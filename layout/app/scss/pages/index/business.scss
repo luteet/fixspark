@@ -1,4 +1,6 @@
 .business {
+	// .business__band
+
 	&__band {
 		display: flex;
 		flex-wrap: wrap;
@@ -20,6 +22,8 @@
 		}
 	}
 
+	// .business__title
+
 	&__title {
 		max-width: 20ch;
 
@@ -27,6 +31,8 @@
 
 		color: var(--on-dark);
 	}
+
+	// .business__text
 
 	&__text {
 		margin-top: var(--space-3);

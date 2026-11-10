@@ -1,4 +1,6 @@
 .pricing {
+	// .pricing__shell
+
 	&__shell {
 		padding: clamp(20px, 3vw, 40px);
 
@@ -8,11 +10,15 @@
 		border-radius: var(--radius-xl);
 	}
 
+	// .pricing__board
+
 	&__board {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 0 var(--space-12);
 	}
+
+	// .pricing__diagnostic
 
 	&__diagnostic {
 		grid-column: 1 / -1;
@@ -39,10 +45,14 @@
 		}
 	}
 
+	// .pricing__name
+
 	&__name {
 		font-size: var(--text-base);
 		color: var(--fg-2);
 	}
+
+	// .pricing__row
 
 	&__row {
 		display: flex;
@@ -57,6 +67,8 @@
 		border-bottom: 1px solid var(--border);
 	}
 
+	// .pricing__range
+
 	&__range {
 		font-family: var(--font-display);
 		font-size: var(--price-size);
@@ -67,6 +79,8 @@
 
 		color: var(--fg);
 	}
+
+	// .pricing__note
 
 	&__note {
 		margin-top: var(--space-6);
@@ -79,9 +93,13 @@
 
 @media (max-width: 720px) {
 	.pricing {
+		// .pricing__board
+
 		&__board {
 			grid-template-columns: 1fr;
 		}
+
+		// .pricing__shell
 
 		&__shell {
 			padding: 20px;

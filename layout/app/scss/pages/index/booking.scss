@@ -1,4 +1,6 @@
 .booking {
+	// .booking__grid
+
 	&__grid {
 		display: grid;
 		grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -6,6 +8,8 @@
 
 		gap: var(--space-6);
 	}
+
+	// .booking__panel
 
 	&__panel {
 		display: flex;
@@ -23,11 +27,15 @@
 		.eyebrow {
 			color: var(--on-dark-muted);
 
+			// .booking__panel .eyebrow::before
+
 			&::before {
 				background: var(--on-dark-muted);
 			}
 		}
 	}
+
+	// .booking__title
 
 	&__title {
 		max-width: 18ch;
@@ -36,6 +44,8 @@
 
 		color: var(--on-dark);
 	}
+
+	// .booking__text
 
 	&__text {
 		max-width: 44ch;
@@ -46,9 +56,13 @@
 		color: var(--on-dark-muted);
 	}
 
+	// .booking__call
+
 	&__call {
 		align-self: flex-start;
 	}
+
+	// .booking__credentials
 
 	&__credentials {
 		display: grid;
@@ -79,9 +93,13 @@
 
 @media (max-width: 900px) {
 	.booking {
+		// .booking__grid
+
 		&__grid {
 			grid-template-columns: minmax(0, 1fr);
 		}
+
+		// .booking__credentials
 
 		&__credentials {
 			margin-top: var(--space-2);

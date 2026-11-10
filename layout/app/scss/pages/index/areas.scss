@@ -1,4 +1,6 @@
 .areas {
+	// .areas__grid
+
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -18,11 +20,15 @@
 	border: 1px solid var(--border);
 	border-radius: var(--radius-lg);
 
+	// .area-card__title
+
 	&__title {
 		font-size: var(--text-lg);
 		font-weight: var(--weight-semibold);
 		letter-spacing: 0;
 	}
+
+	// .area-card__list
 
 	&__list {
 		display: grid;
@@ -31,6 +37,8 @@
 		font-size: var(--text-sm);
 		color: var(--fg-2);
 	}
+
+	// .area-card__note
 
 	&__note {
 		margin-top: auto;

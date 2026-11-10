@@ -1,4 +1,6 @@
 .services {
+	// .services__grid
+
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -24,11 +26,15 @@
 		transform var(--motion-base) var(--ease-standard),
 		border-color var(--motion-base) var(--ease-standard);
 
+	// .service-card:hover
+
 	&:hover {
 		border-color: var(--border-strong);
 		box-shadow: var(--elev-raised);
 		transform: translateY(-2px);
 	}
+
+	// .service-card__icon
 
 	&__icon {
 		display: grid;
@@ -49,12 +55,16 @@
 		}
 	}
 
+	// .service-card__title
+
 	&__title {
 		font-size: var(--text-lg);
 		font-weight: var(--weight-semibold);
 		letter-spacing: 0;
 		line-height: 1.25;
 	}
+
+	// .service-card__price
 
 	&__price {
 		font-size: var(--text-sm);
@@ -69,6 +79,8 @@
 			color: var(--fg);
 		}
 	}
+
+	// .service-card__link
 
 	&__link {
 		display: inline-flex;

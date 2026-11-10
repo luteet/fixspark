@@ -1,8 +1,12 @@
 input, textarea {
+	// input::placeholder, textarea::placeholder
+
 	&::placeholder {
 		opacity: 1;
 		transition: opacity .2s ease;
 	}
+
+	// input:focus::placeholder, textarea:focus::placeholder
 
 	&:focus::placeholder {
 		opacity: 0;
@@ -21,10 +25,14 @@ input, textarea {
 	border: 1px solid var(--border);
 	border-radius: var(--radius-xl);
 
+	// .form-card__field
+
 	&__field {
 		display: grid;
 		gap: var(--space-2);
 	}
+
+	// .form-card__label
 
 	&__label {
 		font-family: var(--font-display);
@@ -32,6 +40,8 @@ input, textarea {
 		font-weight: var(--weight-semibold);
 		color: var(--fg);
 	}
+
+	// .form-card__input, .form-card__select
 
 	&__input,
 	&__select {
@@ -47,7 +57,11 @@ input, textarea {
 		border: 1px solid var(--border-strong);
 		border-radius: var(--radius-sm);
 
+		// .form-card__input::placeholder, .form-card__select::placeholder
+
 		&::placeholder { color: var(--muted); }
+
+		// .form-card__input:focus, .form-card__select:focus
 
 		&:focus {
 			outline: none;
@@ -57,10 +71,14 @@ input, textarea {
 		}
 	}
 
+	// .form-card__button
+
 	&__button {
 		width: 100%;
 		margin-top: var(--space-1);
 	}
+
+	// .form-card__note
 
 	&__note {
 		font-size: var(--text-xs);
@@ -68,6 +86,8 @@ input, textarea {
 		text-align: center;
 		color: var(--muted);
 	}
+
+	// .form-card__status
 
 	&__status {
 		padding: var(--space-3) var(--space-4);
