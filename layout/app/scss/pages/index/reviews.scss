@@ -1,0 +1,155 @@
+.reviews {
+	&__summary {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+
+		margin-left: auto;
+	}
+
+	&__score {
+		font-family: var(--font-display);
+		font-size: 40px;
+		font-weight: var(--weight-bold);
+		line-height: 1;
+		letter-spacing: -0.03em;
+		font-variant-numeric: tabular-nums;
+	}
+
+	&__meta {
+		margin-top: 4px;
+
+		font-size: var(--text-xs);
+		color: var(--muted);
+	}
+
+	&__swiper {
+		overflow: hidden;
+
+		--swiper-pagination-color: var(--brand-primary);
+		--swiper-pagination-bullet-inactive-color: var(--border-strong);
+
+		.swiper-slide {
+			height: auto;
+			display: flex;
+		}
+	}
+
+	&__controls {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-4);
+
+		margin-top: var(--space-6);
+	}
+
+	&__nav {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 42px;
+		height: 42px;
+		padding: 0;
+
+		background-color: var(--surface);
+		background-image: var(--grad-card);
+		border: 1px solid var(--border-strong);
+		border-radius: var(--radius-pill);
+
+		color: var(--brand-primary);
+
+		cursor: pointer;
+
+		transition: background var(--motion-fast) var(--ease-standard),
+			border-color var(--motion-fast) var(--ease-standard),
+			color var(--motion-fast) var(--ease-standard);
+
+		&:hover {
+			background-color: var(--brand-primary);
+			background-image: none;
+			border-color: var(--brand-primary);
+
+			color: var(--brand-primary-on);
+		}
+
+		&:focus-visible {
+			outline: none;
+			box-shadow: var(--focus-ring);
+		}
+
+		&.swiper-button-disabled {
+			opacity: 0.4;
+			cursor: default;
+		}
+	}
+
+	&__pagination {
+		position: static;
+		top: auto;
+		bottom: auto;
+		left: auto;
+
+		width: auto;
+
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+
+		.swiper-pagination-bullet {
+			width: 8px;
+			height: 8px;
+			margin: 0 !important;
+
+			background: var(--border-strong);
+			opacity: 1;
+
+			transition: background var(--motion-fast) var(--ease-standard),
+				transform var(--motion-fast) var(--ease-standard);
+		}
+
+		.swiper-pagination-bullet-active {
+			background: var(--brand-primary);
+			transform: scale(1.3);
+		}
+	}
+}
+
+.review-card {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-3);
+
+	width: 100%;
+	padding: var(--card-pad);
+
+	background-color: var(--surface);
+	background-image: var(--grad-card);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-lg);
+
+	&__text {
+		font-size: 15px;
+		line-height: 1.65;
+		color: var(--fg-2);
+	}
+
+	&__meta {
+		margin-top: auto;
+
+		font-size: var(--text-xs);
+		color: var(--muted);
+
+		strong {
+			font-weight: var(--weight-semibold);
+			color: var(--fg);
+		}
+	}
+}
+
+@media (max-width: 720px) {
+	.reviews__summary {
+		margin-left: 0;
+	}
+}

@@ -1,0 +1,326 @@
+/* ─────────────────────────────────────────────────────────────────────────
+ * Fix Spark — local appliance repair, San Diego County.
+ *
+ * The system reads like a well-run trade business that quotes before it
+ * arrives: Harbor Navy carries authority and every filled brand surface,
+ * white and Mist carry the working content, Pacific Teal carries icons and
+ * links on light, and Spark Amber is a *reserved signal* that means "call".
+ *
+ * Every value is resolved through `var(--*)` — no raw hex outside this block.
+ *
+ *   #Bind 1 — --accent is Spark Amber, but it is NOT a general CTA color.
+ *             It exists for the phone only (Call button), plus rating
+ *             stars as the single decorative exception. Filled primary
+ *             actions use --brand-* (navy), links use --link (teal).
+ *   #Bind 2 — --bg and --surface are both Canvas White. Section separation
+ *             comes from the alternating Mist band (--surface-alt).
+ *   #Bind 3 — Elevation is deliberately poor: three levels, one soft lift.
+ *   #Bind 4 — --focus-ring is 2px Pacific Teal with no glow.
+ * ─────────────────────────────────────────────────────────────────── */
+
+:root {
+	/* ─── Surface ─────────────────────────────────────────────────── */
+	--bg: #ffffff;
+	--surface: #ffffff;
+	--surface-alt: #f4f7f8;        /* Mist — alternating section bands */
+	--surface-sunken: #e7f2f1;     /* icon tiles, open accordion rows */
+
+	/* ─── Dark surface (hero, closing form, footer) ───────────────── */
+	--surface-dark: #0b2a3c;       /* Harbor Navy */
+	--surface-dark-raised: #12394e;/* cards and inputs inside navy bands */
+	--surface-dark-deep: #08202e;  /* footer, trust strip, pressed navy */
+	--on-dark: #ffffff;
+	--on-dark-muted: #9db8c9;      /* Steel — dark surfaces only, 7:1 */
+	--border-dark: #1d4a5f;
+
+	/* ─── Foreground ramp ─────────────────────────────────────────── */
+	--fg: #0b2a3c;                 /* headings + body on light, 13:1 */
+	--fg-2: #2e4a5c;               /* long paragraphs, review quotes */
+	--muted: #63798a;              /* metadata, captions, placeholders */
+	--meta: #8496a1;               /* disabled labels only */
+	--border: #dce5ea;             /* 1px hairline: cards, table rules */
+	--border-soft: #e9eff2;        /* inner dividers */
+	--border-strong: #c3d2da;      /* inputs, 3:1 boundary */
+
+	/* ─── Signal accent (phone only) ──────────────────────────────── */
+	--accent: #f2a93b;             /* Spark Amber */
+	--accent-on: #0b2a3c;          /* navy label — never white */
+	--accent-hover: #e79a25;
+	--accent-active: #d99226;
+	--accent-tint: #fcebd0;        /* rating pill background */
+
+	/* ─── Primary action (filled Book button, focus, emphasis) ────── */
+	--brand-primary: #0b2a3c;
+	--brand-primary-hover: #12394e;
+	--brand-primary-active: #08202e;
+	--brand-primary-on: #ffffff;
+	--brand-primary-tint: #e9f0f4;
+
+	/* ─── Secondary accent (icons and links on light) ─────────────── */
+	--icon: #0f7c7a;
+	--link: #0f7c7a;
+	--link-hover: #0b6361;
+	--teal-band: #0f7c7a;          /* one filled band per page, B2B offer */
+
+	/* ─── Semantic (validation and status only) ───────────────────── */
+	--success: #1f8a5b;
+	--warn: #a66317;
+	--danger: #c0392b;
+
+	/* ─── Typography — families ───────────────────────────────────── */
+	--font-display:
+		"Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI",
+		"Helvetica Neue", Arial, sans-serif;
+	--font-body:
+		"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+	--font-mono:
+		ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+	/* ─── Typography — scale (px) ─────────────────────────────────── */
+	--text-2xs: 12px;              /* uppercase eyebrow, trust strip */
+	--text-xs: 13px;               /* captions, case metadata */
+	--text-sm: 14px;               /* footer, fine print */
+	--text-base: 16px;             /* body, inputs, nav, buttons */
+	--text-md: 18px;               /* lead paragraphs, card titles */
+	--text-lg: 20px;               /* service name in a card */
+	--text-xl: 26px;               /* H3, closing CTA */
+	--text-2xl: 32px;              /* section heading */
+	--text-3xl: 40px;              /* inner-page H1 */
+	--text-4xl: 56px;              /* homepage H1 */
+
+	/* ─── Typography — leading, tracking, weights ─────────────────── */
+	--leading-body: 1.6;
+	--leading-tight: 1.1;
+	--tracking-display: -0.02em;   /* apply at sizes ≥ 32px */
+	--weight-body: 400;
+	--weight-medium: 500;
+	--weight-semibold: 600;
+	--weight-bold: 700;
+
+	/* ─── Spacing — 4px base grid ─────────────────────────────────── */
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-5: 20px;
+	--space-6: 24px;
+	--space-8: 32px;
+	--space-10: 40px;
+	--space-12: 48px;
+	--space-14: 56px;
+	--space-16: 64px;
+	--space-20: 80px;
+	--space-24: 96px;
+
+	/* ─── Section rhythm ──────────────────────────────────────────── */
+	--section-y-desktop: 80px;
+	--section-y-tablet: 56px;
+	--section-y-phone: 48px;
+
+	/* ─── Radius ──────────────────────────────────────────────────── */
+	--radius-xs: 4px;
+	--radius-sm: 8px;              /* inputs */
+	--radius-md: 10px;             /* every button, FAQ row, chip */
+	--radius-lg: 14px;             /* cards: service, case, review, area */
+	--radius-xl: 20px;             /* hero media frame, form card */
+	--radius-pill: 9999px;
+
+	/* ─── Elevation ───────────────────────────────────────────────── */
+	--elev-flat: none;
+	--elev-ring: 0 0 0 1px var(--border);
+	--elev-raised: 0 2px 8px rgba(11, 42, 60, 0.06);
+	--elev-sticky: 0 -1px 0 var(--border);
+
+	/* ─── Subtle gradients (buttons + card surfaces only) ─────────── */
+	--grad-sheen-light:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0) 62%);
+	--grad-sheen-dark:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0) 58%);
+	--grad-white:
+		linear-gradient(180deg, #ffffff 0%, #f4f7f8 100%);
+	--grad-card:
+		linear-gradient(155deg, #ffffff 0%, #ffffff 40%, rgba(11, 42, 60, 0.055) 100%);
+
+	/* ─── Focus ───────────────────────────────────────────────────── */
+	--focus-ring: 0 0 0 2px var(--link);
+
+	/* ─── Motion ──────────────────────────────────────────────────── */
+	--motion-fast: 120ms;
+	--motion-base: 200ms;
+	--ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+	/* ─── Layout ──────────────────────────────────────────────────── */
+	--container-max: 1200px;
+	--container-gutter-desktop: 24px;
+	--container-gutter-tablet: 20px;
+	--container-gutter-phone: 16px;
+	--measure: 68ch;
+	--title-font: var(--font-display);
+
+	/* ─── Component metrics (brand extensions) ────────────────────── */
+	--header-h: 72px;
+	--control-h: 48px;             /* all buttons and inputs */
+	--stickybar-h: 64px;           /* mobile Call + Book bar */
+	--card-pad: 24px;
+	--price-size: 24px;            /* diagnostic fee and repair ranges */
+}
+
+/* Dark bands: set data-theme="dark-surface" on the section that sits on
+ * Harbor Navy so components inside resolve to the on-dark ramp. */
+[data-theme="dark-surface"] {
+	--bg: var(--surface-dark);
+	--surface: var(--surface-dark-raised);
+	--fg: var(--on-dark);
+	--fg-2: var(--on-dark);
+	--muted: var(--on-dark-muted);
+	--border: var(--border-dark);
+	--border-soft: var(--border-dark);
+	--border-strong: var(--on-dark-muted);
+	--brand-primary: #ffffff;
+	--brand-primary-on: #0b2a3c;
+	--brand-primary-hover: #e9f0f4;
+	--brand-primary-active: #d3e1e9;
+	--elev-raised: none;
+}
+
+html {
+	min-width: 320px;
+	min-height: 100vh;
+	min-height: 100svh;
+
+	font-size: 16px;
+
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+
+	--container-padding: var(--container-gutter-desktop);
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+
+	min-width: 320px;
+	min-height: 100vh;
+	min-height: 100svh;
+
+	margin: 0;
+
+	background: var(--bg);
+	color: var(--fg);
+
+	font-family: var(--font-body);
+	font-size: var(--text-base);
+	font-weight: var(--weight-body);
+	line-height: var(--leading-body);
+
+	-webkit-font-smoothing: antialiased;
+
+	&.is-mobile-nav-active {
+		overflow: hidden;
+	}
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+
+	font-family: var(--font-display);
+	font-weight: var(--weight-bold);
+	line-height: var(--leading-tight);
+	letter-spacing: var(--tracking-display);
+
+	color: var(--fg);
+}
+
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+a {
+	color: var(--link);
+	text-decoration: none;
+}
+
+button, input, select { font: inherit; }
+svg { flex: none; }
+[hidden] { display: none !important; }
+
+:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+	outline: 2px solid var(--link);
+	outline-offset: 3px;
+}
+
+[data-theme="dark-surface"] :focus-visible,
+.header :focus-visible,
+.footer :focus-visible { outline-color: var(--on-dark); }
+
+.header--scrolled :focus-visible { outline-color: var(--link); }
+
+.skip-link {
+	position: absolute;
+	left: 16px;
+	top: -100px;
+	z-index: 100;
+
+	padding: 10px 14px;
+
+	background: var(--surface);
+	color: var(--fg);
+	border: 1px solid var(--border-strong);
+	border-radius: var(--radius-sm);
+
+	font-weight: var(--weight-semibold);
+
+	&:focus { top: 12px; }
+}
+
+.container {
+	width: 100%;
+	max-width: var(--container-max);
+	margin-inline: auto;
+	padding-inline: var(--container-padding);
+}
+
+section {
+	position: relative;
+	z-index: 2;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+
+	flex: 1 1 auto;
+}
+
+.main {
+	position: relative;
+
+	flex: 1 0 auto;
+}
+
+@media (max-width: 1024px) {
+	html { --container-padding: var(--container-gutter-tablet); }
+}
+
+@media (max-width: 560px) {
+	html { --container-padding: var(--container-gutter-phone); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

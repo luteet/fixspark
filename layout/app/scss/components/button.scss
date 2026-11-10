@@ -1,0 +1,82 @@
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+
+	height: var(--control-h);
+	padding: 0 22px;
+
+	border: 1px solid transparent;
+	border-radius: var(--radius-md);
+
+	font-family: var(--font-display);
+	font-size: var(--text-base);
+	font-weight: var(--weight-semibold);
+	line-height: 1;
+	white-space: nowrap;
+
+	color: inherit;
+	text-decoration: none;
+
+	cursor: pointer;
+
+	transition: background-color var(--motion-fast) var(--ease-standard),
+		border-color var(--motion-fast) var(--ease-standard),
+		color var(--motion-fast) var(--ease-standard);
+
+	svg {
+		width: 18px;
+		height: 18px;
+	}
+
+	// phone only — Spark Amber is a reserved signal
+	&--call {
+		background-color: var(--accent);
+		background-image: var(--grad-sheen-light);
+		color: var(--accent-on);
+
+		&:hover { background-color: var(--accent-hover); }
+		&:active { background-color: var(--accent-active); }
+	}
+
+	// filled primary action
+	&--book {
+		background-color: var(--brand-primary);
+		background-image: var(--grad-sheen-dark);
+		color: var(--brand-primary-on);
+
+		&:hover {
+			background-color: var(--brand-primary-hover);
+			color: var(--brand-primary-on);
+		}
+
+		&:active { background-color: var(--brand-primary-active); }
+	}
+
+	&--outline {
+		background: transparent;
+		color: var(--fg);
+		border-color: var(--border-strong);
+
+		&:hover { border-color: var(--fg); }
+	}
+
+	&--inverted {
+		background-color: var(--on-dark);
+		background-image: var(--grad-white);
+		color: var(--link);
+
+		&:hover {
+			background-color: var(--surface-alt);
+			color: var(--link-hover);
+		}
+	}
+
+	&--header {
+		height: 44px;
+		padding: 0 18px;
+
+		font-size: var(--text-sm);
+	}
+}

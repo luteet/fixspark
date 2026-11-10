@@ -1,0 +1,51 @@
+.business {
+	&__band {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		gap: var(--space-8);
+		padding: clamp(28px, 4.5vw, 64px);
+
+		background-color: var(--teal-band);
+		background-image:
+			linear-gradient(150deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 45%, rgba(11, 42, 60, 0.16) 100%);
+		border-radius: var(--radius-xl);
+
+		color: var(--on-dark);
+
+		.button {
+			flex: none;
+		}
+	}
+
+	&__title {
+		max-width: 20ch;
+
+		font-size: clamp(24px, 2.6vw, 32px);
+
+		color: var(--on-dark);
+	}
+
+	&__text {
+		margin-top: var(--space-3);
+		max-width: 48ch;
+
+		font-size: var(--text-base);
+		line-height: 1.65;
+
+		color: var(--on-dark);
+		opacity: 0.85;
+	}
+}
+
+@media (max-width: 560px) {
+	.business__band {
+		padding: 28px 24px;
+
+		.button {
+			width: 100%;
+		}
+	}
+}

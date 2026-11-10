@@ -1,0 +1,23 @@
+@use '../mixin' as mixin;
+
+/* Inter — body */
+@font-face {
+	@include mixin.font('Inter', 400, 'Inter-Regular');
+}
+
+@font-face {
+	@include mixin.font('Inter', 500, 'Inter-Medium');
+}
+
+@font-face {
+	@include mixin.font('Inter', 600, 'Inter-SemiBold');
+}
+
+/* Plus Jakarta Sans — display */
+@font-face {
+	@include mixin.font('Plus Jakarta Sans', 600, 'PlusJakartaSans-SemiBold');
+}
+
+@font-face {
+	@include mixin.font('Plus Jakarta Sans', 700, 'PlusJakartaSans-Bold');
+}

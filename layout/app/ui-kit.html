@@ -1,0 +1,669 @@
+@@include("html/header.html", {"title": "Fix Spark — UI Kit", "description": "Design tokens and component reference for the Fix Spark Harbor Navy service system."})
+
+<main class="main" id="main">
+	<section class="kit-hero" id="top" data-theme="dark-surface">
+		<div class="container kit-hero__inner">
+			<p class="eyebrow">Design system · Harbor Navy</p>
+			<h1 class="kit-hero__title">The Fix Spark component sheet</h1>
+			<p class="kit-hero__lead">Every token and component the repair site is built from, on one page: surfaces, type steps, buttons, cards, price rows, forms and the dark band set. Nothing here is a separate library — the specimens below use the production classes and the same stylesheet as the homepage.</p>
+			<nav class="kit-hero__nav" aria-label="UI kit sections">
+				<a class="chip" href="#colors">Colors</a>
+				<a class="chip" href="#type">Typography</a>
+				<a class="chip" href="#buttons">Actions</a>
+				<a class="chip" href="#layout">Layout</a>
+				<a class="chip" href="#pricing">Pricing</a>
+				<a class="chip" href="#book">Forms</a>
+				<a class="chip" href="#dark">Dark surface</a>
+			</nav>
+		</div>
+	</section>
+
+	<section class="section" id="colors">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Tokens</p>
+					<h2 class="section-head__title">Color is a role, not a mood.</h2>
+					<p class="section-lead">Surface area per screen is roughly 70% white and mist, 15% teal, 10% navy and no more than 5% amber. Steel is dark-surface only, teal is light-surface only, and amber never appears as text, link or border.</p>
+				</div>
+			</div>
+
+			<h3 class="kit-subhead kit-subhead--flush">Surfaces</h3>
+			<ul class="kit-grid">
+				<li class="kit-swatch" style="--swatch: var(--bg)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--bg / --surface</span>
+					<span class="kit-swatch__value">#FFFFFF · Canvas White</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--surface-alt)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--surface-alt</span>
+					<span class="kit-swatch__value">#F4F7F8 · Mist</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--surface-sunken)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--surface-sunken</span>
+					<span class="kit-swatch__value">#E7F2F1 · Icon tiles</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--surface-dark)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--surface-dark</span>
+					<span class="kit-swatch__value">#0B2A3C · Harbor Navy</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--surface-dark-raised)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--surface-dark-raised</span>
+					<span class="kit-swatch__value">#12394E · Raised navy</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--surface-dark-deep)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--surface-dark-deep</span>
+					<span class="kit-swatch__value">#08202E · Footer</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--border)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--border</span>
+					<span class="kit-swatch__value">#DCE5EA · Hairline</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--border-strong)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--border-strong</span>
+					<span class="kit-swatch__value">#C3D2DA · Inputs</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--border-dark)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--border-dark</span>
+					<span class="kit-swatch__value">#1D4A5F · On navy</span>
+				</li>
+			</ul>
+
+			<h3 class="kit-subhead">Foreground</h3>
+			<ul class="kit-grid">
+				<li class="kit-swatch" style="--swatch: var(--fg)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--fg</span>
+					<span class="kit-swatch__value">#0B2A3C · Headings</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--fg-2)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--fg-2</span>
+					<span class="kit-swatch__value">#2E4A5C · Body</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--muted)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--muted</span>
+					<span class="kit-swatch__value">#63798A · Metadata</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--meta)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--meta</span>
+					<span class="kit-swatch__value">#8496A1 · Disabled labels</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--on-dark)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--on-dark</span>
+					<span class="kit-swatch__value">#FFFFFF · On navy</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--on-dark-muted)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--on-dark-muted</span>
+					<span class="kit-swatch__value">#9DB8C9 · Steel</span>
+				</li>
+			</ul>
+
+			<h3 class="kit-subhead">Accent and signal</h3>
+			<ul class="kit-grid">
+				<li class="kit-swatch" style="--swatch: var(--accent)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--accent</span>
+					<span class="kit-swatch__value">#F2A93B · Spark Amber</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--accent-hover)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--accent-hover</span>
+					<span class="kit-swatch__value">#E79A25</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--accent-active)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--accent-active</span>
+					<span class="kit-swatch__value">#D99226</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--accent-tint)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--accent-tint</span>
+					<span class="kit-swatch__value">#FCEBD0 · Rating pill</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--icon)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--icon / --link</span>
+					<span class="kit-swatch__value">#0F7C7A · Pacific Teal</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--link-hover)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--link-hover</span>
+					<span class="kit-swatch__value">#0B6361</span>
+				</li>
+			</ul>
+
+			<h3 class="kit-subhead">Semantic — validation and status only</h3>
+			<ul class="kit-grid">
+				<li class="kit-swatch" style="--swatch: var(--success)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--success</span>
+					<span class="kit-swatch__value">#1F8A5B</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--warn)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--warn</span>
+					<span class="kit-swatch__value">#A66317</span>
+				</li>
+				<li class="kit-swatch" style="--swatch: var(--danger)">
+					<span class="kit-swatch__chip" aria-hidden="true"></span>
+					<span class="kit-swatch__name">--danger</span>
+					<span class="kit-swatch__value">#C0392B</span>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="section section--alt" id="type">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Typography</p>
+					<h2 class="section-head__title">Two families, ten steps.</h2>
+					<p class="section-lead">Plus Jakarta Sans carries every heading, label and price; Inter carries body copy. Tracking turns negative above 32px, and prices always use tabular figures so columns do not shift.</p>
+				</div>
+			</div>
+
+			<div class="kit-demo">
+				<div class="kit-type">
+					<p class="kit-type__meta">--text-4xl · 56px · Plus Jakarta Sans 700</p>
+					<p class="kit-type__sample kit-type__sample--display">The price is on the page.</p>
+				</div>
+				<div class="kit-type">
+					<p class="kit-type__meta">--text-2xl · 32px · Plus Jakarta Sans 700</p>
+					<p class="kit-type__sample kit-type__sample--h2">Ten appliance types. One diagnostic fee.</p>
+				</div>
+				<div class="kit-type">
+					<p class="kit-type__meta">--text-xl · 26px · Plus Jakarta Sans 700</p>
+					<p class="kit-type__sample kit-type__sample--h3">What repairs cost before you call.</p>
+				</div>
+				<div class="kit-type">
+					<p class="kit-type__meta">--text-lg · 20px · Plus Jakarta Sans 600</p>
+					<p class="kit-type__sample kit-type__sample--h4">Refrigerator repair</p>
+				</div>
+				<div class="kit-type">
+					<p class="kit-type__meta">--price-size · 24px · tabular-nums</p>
+					<p class="kit-type__sample kit-type__sample--price">$149–420</p>
+				</div>
+				<div class="kit-type">
+					<p class="kit-type__meta">--text-base · 16px · Inter 400 · line-height 1.6</p>
+					<p class="kit-type__sample kit-type__sample--body">The diagnostic visit is $89 and is credited toward the repair. Ranges cover parts and labor, and we confirm the exact price before any work starts.</p>
+				</div>
+				<div class="kit-type">
+					<p class="kit-type__meta">--text-xs · 13px · Inter 400</p>
+					<p class="kit-type__sample kit-type__sample--caption">North Park · Sub-Zero · Oct 2026</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" id="buttons">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Actions</p>
+					<h2 class="section-head__title">Amber means call.</h2>
+					<p class="section-lead">One amber button per viewport, reserved for the phone. Filled navy is the primary action, outline is secondary, and the text link stays teal without an underline until hover.</p>
+				</div>
+			</div>
+
+			<div class="kit-grid kit-grid--wide">
+				<div class="kit-demo">
+					<p class="kit-caption">Buttons · .button</p>
+					<div class="kit-demo__row">
+						<a class="button button--call" href="tel:+16195550142">
+							<svg width="18" height="18" aria-hidden="true" focusable="false">
+								<use href="img/sprites.svg#phone" />
+							</svg>
+							Call (619) 555-0142
+						</a>
+						<a class="button button--book" href="#book">Book service</a>
+						<a class="button button--outline" href="#pricing">See repair ranges</a>
+					</div>
+				</div>
+
+				<div class="kit-demo">
+					<p class="kit-caption">Rating · .rating-pill / .stars</p>
+					<div class="kit-demo__row">
+						<span class="rating-pill">
+							<span class="stars" aria-hidden="true">★★★★★</span>
+							<span class="rating-pill__text">4.9 · 187 Google reviews</span>
+						</span>
+						<span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
+					</div>
+					<p class="kit-note">The pill is the only amber tint on the page besides the stars. Text inside it is navy, never white.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--alt" id="layout">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Layout</p>
+					<h2 class="section-head__title">A 4px grid and three elevations.</h2>
+					<p class="section-lead">Spacing runs on a 4px base, radii step from 4px to a pill, and depth never exceeds a hairline border plus one soft lift. When in doubt, subtract a box.</p>
+				</div>
+			</div>
+
+			<p class="kit-caption">Spacing · --space-*</p>
+			<ul class="kit-scale">
+				<li class="kit-scale__row"><span class="kit-scale__token">--space-1</span><span class="kit-scale__bar" style="--size: var(--space-1)"></span><span class="kit-scale__value">4px</span></li>
+				<li class="kit-scale__row"><span class="kit-scale__token">--space-2</span><span class="kit-scale__bar" style="--size: var(--space-2)"></span><span class="kit-scale__value">8px</span></li>
+				<li class="kit-scale__row"><span class="kit-scale__token">--space-3</span><span class="kit-scale__bar" style="--size: var(--space-3)"></span><span class="kit-scale__value">12px</span></li>
+				<li class="kit-scale__row"><span class="kit-scale__token">--space-4</span><span class="kit-scale__bar" style="--size: var(--space-4)"></span><span class="kit-scale__value">16px</span></li>
+				<li class="kit-scale__row"><span class="kit-scale__token">--space-6</span><span class="kit-scale__bar" style="--size: var(--space-6)"></span><span class="kit-scale__value">24px</span></li>
+				<li class="kit-scale__row"><span class="kit-scale__token">--space-8</span><span class="kit-scale__bar" style="--size: var(--space-8)"></span><span class="kit-scale__value">32px</span></li>
+				<li class="kit-scale__row"><span class="kit-scale__token">--space-12</span><span class="kit-scale__bar" style="--size: var(--space-12)"></span><span class="kit-scale__value">48px</span></li>
+				<li class="kit-scale__row"><span class="kit-scale__token">--space-16</span><span class="kit-scale__bar" style="--size: var(--space-16)"></span><span class="kit-scale__value">64px</span></li>
+				<li class="kit-scale__row"><span class="kit-scale__token">--space-20</span><span class="kit-scale__bar" style="--size: var(--space-20)"></span><span class="kit-scale__value">80px</span></li>
+			</ul>
+
+			<h3 class="kit-subhead">Radius</h3>
+			<div class="kit-radius">
+				<div class="kit-radius__item">
+					<span class="kit-radius__box" style="--radius: var(--radius-xs)" aria-hidden="true"></span>
+					<span class="kit-radius__name">--radius-xs</span>
+					<span class="kit-radius__value">4px</span>
+				</div>
+				<div class="kit-radius__item">
+					<span class="kit-radius__box" style="--radius: var(--radius-sm)" aria-hidden="true"></span>
+					<span class="kit-radius__name">--radius-sm</span>
+					<span class="kit-radius__value">8px · inputs</span>
+				</div>
+				<div class="kit-radius__item">
+					<span class="kit-radius__box" style="--radius: var(--radius-md)" aria-hidden="true"></span>
+					<span class="kit-radius__name">--radius-md</span>
+					<span class="kit-radius__value">10px · buttons</span>
+				</div>
+				<div class="kit-radius__item">
+					<span class="kit-radius__box" style="--radius: var(--radius-lg)" aria-hidden="true"></span>
+					<span class="kit-radius__name">--radius-lg</span>
+					<span class="kit-radius__value">14px · cards</span>
+				</div>
+				<div class="kit-radius__item">
+					<span class="kit-radius__box" style="--radius: var(--radius-xl)" aria-hidden="true"></span>
+					<span class="kit-radius__name">--radius-xl</span>
+					<span class="kit-radius__value">20px · panels</span>
+				</div>
+				<div class="kit-radius__item">
+					<span class="kit-radius__box" style="--radius: var(--radius-pill)" aria-hidden="true"></span>
+					<span class="kit-radius__name">--radius-pill</span>
+					<span class="kit-radius__value">9999px · badges</span>
+				</div>
+			</div>
+
+			<h3 class="kit-subhead">Elevation</h3>
+			<div class="kit-elev">
+				<div class="kit-elev__item">
+					<span class="kit-elev__name">--elev-flat</span>
+					<span class="kit-elev__meta">Default: sections, tables, hero</span>
+				</div>
+				<div class="kit-elev__item kit-elev__item--ring">
+					<span class="kit-elev__name">--elev-ring</span>
+					<span class="kit-elev__meta">1px hairline frame</span>
+				</div>
+				<div class="kit-elev__item kit-elev__item--raised">
+					<span class="kit-elev__name">--elev-raised</span>
+					<span class="kit-elev__meta">Hovered cards, sticky bar</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" id="services">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Residential & commercial</p>
+					<h2 class="section-head__title">Service cards carry the price.</h2>
+					<p class="section-lead">A 40px icon tile, a 20px service name and one line of price metadata. The whole card is clickable and the price is part of the component, never a paragraph.</p>
+				</div>
+			</div>
+
+			<div class="kit-grid">
+				<a class="service-card" href="#book">
+					<span class="service-card__icon">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#refrigerator" />
+						</svg>
+					</span>
+					<h3 class="service-card__title">Refrigerator repair</h3>
+					<p class="service-card__price">Diagnostic <b>$89</b> · Repairs from <b>$149</b></p>
+					<span class="service-card__link">View service
+						<svg width="14" height="14" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#arrow-right" />
+						</svg>
+					</span>
+				</a>
+
+				<a class="service-card" href="#book">
+					<span class="service-card__icon">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#washer" />
+						</svg>
+					</span>
+					<h3 class="service-card__title">Washer repair</h3>
+					<p class="service-card__price">Diagnostic <b>$89</b> · Repairs from <b>$129</b></p>
+					<span class="service-card__link">View service
+						<svg width="14" height="14" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#arrow-right" />
+						</svg>
+					</span>
+				</a>
+
+				<a class="service-card" href="#book">
+					<span class="service-card__icon">
+						<svg width="20" height="20" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#commercial-kitchen" />
+						</svg>
+					</span>
+					<h3 class="service-card__title">Commercial kitchen equipment</h3>
+					<p class="service-card__price">Diagnostic <b>$89</b> · Repairs from <b>$189</b></p>
+					<span class="service-card__link">View service
+						<svg width="14" height="14" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#arrow-right" />
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--alt" id="pricing">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Published pricing</p>
+					<h2 class="section-head__title">Price rows are one component.</h2>
+					<p class="section-lead">Service name left at 16px, range right at 24px navy with tabular figures, 56px rows and hairlines only. The diagnostic row is the single tinted row on the board.</p>
+				</div>
+			</div>
+
+			<div class="pricing__shell">
+				<div class="pricing__board">
+					<div class="pricing__diagnostic">
+						<span class="pricing__name">Diagnostic visit — credited toward the repair</span>
+						<span class="pricing__range">$89</span>
+					</div>
+					<div class="pricing__col">
+						<div class="pricing__row"><span class="pricing__name">Refrigerator repair</span><span class="pricing__range">$149–420</span></div>
+						<div class="pricing__row"><span class="pricing__name">Washer repair</span><span class="pricing__range">$129–320</span></div>
+						<div class="pricing__row"><span class="pricing__name">Oven repair</span><span class="pricing__range">$139–380</span></div>
+					</div>
+					<div class="pricing__col">
+						<div class="pricing__row"><span class="pricing__name">Dishwasher repair</span><span class="pricing__range">$119–290</span></div>
+						<div class="pricing__row"><span class="pricing__name">Ice maker repair</span><span class="pricing__range">$159–360</span></div>
+						<div class="pricing__row"><span class="pricing__name">Commercial kitchen</span><span class="pricing__range">From $189</span></div>
+					</div>
+				</div>
+				<p class="pricing__note">If the appliance is beyond economical repair, we say so before you spend more on it. Commercial work is quoted after a site visit; the diagnostic still applies.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" id="repairs">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Proof</p>
+					<h2 class="section-head__title">Case and review cards.</h2>
+					<p class="section-lead">Cases caption the area, brand and date above the fault, then put the invoice price bottom-right. Reviews keep the quote at 16px and the source at 13px muted.</p>
+				</div>
+			</div>
+
+			<div class="kit-grid kit-grid--wide">
+				<article class="case-card">
+					<div class="case-card__media" role="img" aria-label="Case 01: refrigerator repair in North Park.">
+						<span class="case-card__index">Case 01</span>
+						<svg width="48" height="48" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#refrigerator" />
+						</svg>
+					</div>
+					<div class="case-card__body">
+						<p class="case-card__meta">North Park · Sub-Zero · Oct 2026</p>
+						<h3 class="case-card__title">Refrigerator not cooling</h3>
+						<p class="case-card__text">Defrost heater and thermistor replaced in one visit. Same-day, two-hour arrival window.</p>
+						<span class="case-card__price">$310</span>
+					</div>
+				</article>
+
+				<article class="case-card">
+					<div class="case-card__media" role="img" aria-label="Case 02: washer repair in Chula Vista.">
+						<span class="case-card__index">Case 02</span>
+						<svg width="48" height="48" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#washer" />
+						</svg>
+					</div>
+					<div class="case-card__body">
+						<p class="case-card__meta">Chula Vista · LG · Sep 2026</p>
+						<h3 class="case-card__title">Washer leaking at the door</h3>
+						<p class="case-card__text">Door boot and drain pump replaced. The customer approved the price before we started.</p>
+						<span class="case-card__price">$245</span>
+					</div>
+				</article>
+
+				<article class="review-card">
+					<span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
+					<blockquote class="review-card__text">“Told me the diagnostic price on the phone, showed up in two hours and had the part on the van. The invoice matched the range they quoted.”</blockquote>
+					<p class="review-card__meta"><strong>Maria K.</strong> · Chula Vista</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--alt" id="areas">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Coverage</p>
+					<h2 class="section-head__title">Area cards.</h2>
+					<p class="section-lead">Zone name, a list of neighborhoods and one same-day note pinned to the bottom with a hairline above it.</p>
+				</div>
+			</div>
+
+			<div class="kit-grid">
+				<article class="area-card">
+					<h3 class="area-card__title">Central San Diego</h3>
+					<ul class="area-card__list">
+						<li>Downtown & East Village</li>
+						<li>North Park</li>
+						<li>Hillcrest</li>
+						<li>City Heights</li>
+					</ul>
+					<p class="area-card__note"><b>Same-day</b> before noon</p>
+				</article>
+
+				<article class="area-card">
+					<h3 class="area-card__title">South Bay</h3>
+					<ul class="area-card__list">
+						<li>Chula Vista</li>
+						<li>National City</li>
+						<li>Imperial Beach</li>
+						<li>Otay Mesa</li>
+					</ul>
+					<p class="area-card__note"><b>Same-day</b> before noon</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" id="business">
+		<div class="container">
+			<p class="kit-caption">Teal band · .business__band — the only filled teal surface on a page</p>
+			<div class="business__band">
+				<div>
+					<h2 class="business__title">Appliance repair for your business</h2>
+					<p class="business__text">Cafes, offices, salons, short-term rentals and property managers. Priority scheduling, one invoice per property, and commercial kitchen equipment covered by the same licensed technicians.</p>
+				</div>
+				<a class="button button--inverted" href="#book">Request commercial service</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--alt" id="book">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Forms</p>
+					<h2 class="section-head__title">Four required fields, no more.</h2>
+					<p class="section-lead">Inputs are 48px tall with 16px text to stop iOS zoom, a hairline border and a 2px teal focus border. The submit button is full width with a caption underneath.</p>
+				</div>
+			</div>
+
+			<div class="kit-grid kit-grid--wide">
+				<div>
+					<p class="kit-caption">Form card · .form-card</p>
+					<div class="form-card kit-form">
+						<div class="form-card__field">
+							<label class="form-card__label" for="kit-name">Name</label>
+							<input class="form-card__input" id="kit-name" type="text" autocomplete="name" placeholder="Alex Rivera" required>
+						</div>
+						<div class="form-card__field">
+							<label class="form-card__label" for="kit-phone">Phone</label>
+							<input class="form-card__input" id="kit-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(619) 555-0142" required>
+						</div>
+						<div class="form-card__field">
+							<label class="form-card__label" for="kit-zip">ZIP code</label>
+							<input class="form-card__input" id="kit-zip" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" placeholder="92104" required>
+						</div>
+						<div class="form-card__field">
+							<label class="form-card__label" for="kit-service">Service</label>
+							<select class="form-card__select" id="kit-service" required>
+								<option value="" selected disabled>Choose an appliance</option>
+								<option>Refrigerator repair</option>
+								<option>Washer repair</option>
+								<option>Dishwasher repair</option>
+								<option>Commercial kitchen equipment</option>
+							</select>
+						</div>
+						<button class="button button--book form-card__button" type="button">Book service</button>
+						<p class="form-card__note">Diagnostic $89, credited toward the repair. We call back within 15 minutes during business hours.</p>
+					</div>
+				</div>
+
+				<div>
+					<p class="kit-caption">Navy panel · .booking__panel</p>
+					<div class="booking__panel" data-theme="dark-surface">
+						<p class="eyebrow">Book a visit</p>
+						<h3 class="booking__title">Tell us the appliance and the ZIP.</h3>
+						<p class="booking__text">Four fields. We call back within 15 minutes during business hours with a two-hour arrival window.</p>
+						<a class="button button--call booking__call" href="tel:+16195550142">
+							<svg width="18" height="18" aria-hidden="true" focusable="false">
+								<use href="img/sprites.svg#phone" />
+							</svg>
+							(619) 555-0142
+						</a>
+						<ul class="booking__credentials">
+							<li>
+								<svg width="18" height="18" aria-hidden="true" focusable="false">
+									<use href="img/sprites.svg#check" />
+								</svg>
+								BEAR licensed and insured
+							</li>
+							<li>
+								<svg width="18" height="18" aria-hidden="true" focusable="false">
+									<use href="img/sprites.svg#check" />
+								</svg>
+								90-day parts and labor warranty
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" id="faq">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Accordions</p>
+					<h2 class="section-head__title">Answers open in place.</h2>
+					<p class="section-lead">Native details/summary rows: 16px 600 question, a teal plus that becomes a minus, and a mist background once open.</p>
+				</div>
+			</div>
+
+			<div class="faq__list">
+				<details class="faq__item">
+					<summary class="faq__question">Do you charge for the diagnostic visit?</summary>
+					<div class="faq__answer">Yes. The diagnostic is $89 and it is credited toward the repair if you go ahead. We give you the repair price before any work starts, so you can decide with the number in front of you.</div>
+				</details>
+				<details class="faq__item">
+					<summary class="faq__question">How fast can you come out?</summary>
+					<div class="faq__answer">Same-day visits are usual when you call before noon across all four service zones. If a part has to be ordered, you get the ETA before we leave, and we schedule the return visit at that price.</div>
+				</details>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--alt" id="dark">
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Dark surface</p>
+					<h2 class="section-head__title">Components on Harbor Navy.</h2>
+					<p class="section-lead">Add data-theme="dark-surface" to the band and the on-dark ramp takes over: white text, steel metadata, raised navy fills and hairline borders. Chips and steel text belong here and nowhere else.</p>
+				</div>
+			</div>
+
+			<div class="kit-dark" data-theme="dark-surface">
+				<div class="kit-demo">
+					<p class="kit-caption">Buttons · .button--call / --book / --outline</p>
+					<div class="kit-demo__row">
+						<a class="button button--call" href="tel:+16195550142">
+							<svg width="18" height="18" aria-hidden="true" focusable="false">
+								<use href="img/sprites.svg#phone" />
+							</svg>
+							Call now
+						</a>
+						<a class="button button--book" href="#book">Book service</a>
+						<a class="button button--outline" href="#pricing">Repair ranges</a>
+					</div>
+				</div>
+
+				<div class="kit-demo">
+					<p class="kit-caption">Badges and trust rows · .chip / .rating-pill / .trust__item</p>
+					<div class="kit-demo__row">
+						<span class="chip">BEAR licensed</span>
+						<span class="chip">Insured</span>
+						<span class="chip">90-day warranty</span>
+						<span class="rating-pill">
+							<span class="stars" aria-hidden="true">★★★★★</span>
+							<span class="rating-pill__text">4.9 · 187 Google reviews</span>
+						</span>
+					</div>
+					<div class="kit-demo__row">
+						<span class="trust__item">
+							<svg width="18" height="18" aria-hidden="true" focusable="false">
+								<use href="img/sprites.svg#calendar-check" />
+							</svg>
+							90-day parts & labor
+						</span>
+						<span class="trust__item">
+							<svg width="18" height="18" aria-hidden="true" focusable="false">
+								<use href="img/sprites.svg#pin" />
+							</svg>
+							Four service zones
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+@@include("html/footer.html")
