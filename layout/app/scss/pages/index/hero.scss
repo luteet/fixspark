@@ -54,27 +54,7 @@
 	// .hero__eyebrow
 
 	&__eyebrow {
-		display: inline-flex;
-		align-items: center;
-		gap: 10px;
-
-		font-size: var(--text-2xs);
-		font-weight: var(--weight-semibold);
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-
-		color: var(--on-dark-muted);
-
-		// .hero__eyebrow::before
-
-		&::before {
-			content: "";
-
-			width: 22px;
-			height: 2px;
-
-			background: var(--on-dark-muted);
-		}
+		border-color: var(--border-dark);
 	}
 
 	// .hero__title
