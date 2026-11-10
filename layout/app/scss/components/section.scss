@@ -1,6 +1,10 @@
 .section {
 	padding-block: var(--section-y-desktop);
-	scroll-margin-top: calc(var(--header-h) + 16px);
+	scroll-margin-top: calc(var(--header-h) + var(--page-gutter) + 16px);
+
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-xl);
 
 	&--alt {
 		background: var(--surface-alt);
