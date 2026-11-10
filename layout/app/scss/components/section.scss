@@ -56,10 +56,14 @@
 
 		height: 200%; aspect-ratio: 1;
 
-		background: url(../img/noise.png) center / 1024px repeat;
+		background: url(../img/noise.png) center / 750px repeat;
 		mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
 
 		mix-blend-mode: overlay;
+
+		@media (min-width: 62rem) {
+			background: url(../img/noise.png) center / 1024px repeat;
+		}
 	}
 
 	&.mode-2 {
