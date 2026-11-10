@@ -1,0 +1,132 @@
+.marquee {
+	position: relative;
+
+	overflow: hidden;
+
+	padding-block: var(--space-6);
+
+	background: var(--accent);
+	color: var(--accent-on);
+	border-radius: var(--radius-xl);
+
+	// .marquee:hover
+
+	&:hover .marquee__track {
+		animation-play-state: paused;
+	}
+
+	// .marquee__track
+
+	&__track {
+		display: flex;
+		width: max-content;
+
+		animation: marquee-scroll var(--marquee-duration, 60s) linear infinite;
+	}
+
+	// .marquee__group
+
+	&__group {
+		display: flex;
+		flex: none;
+		align-items: center;
+
+		gap: var(--space-10);
+
+		// trailing gap keeps the seam identical to the inner gaps
+		padding-inline-end: var(--space-10);
+	}
+
+	// .marquee__item
+
+	&__item {
+		display: inline-flex;
+		align-items: center;
+
+		font-family: var(--font-display);
+		font-size: var(--text-lg);
+		font-weight: var(--weight-semibold);
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		white-space: nowrap;
+
+		svg {
+			width: 24px;
+			height: 24px;
+
+			margin-inline-end: var(--space-2);
+
+			color: currentColor;
+			opacity: .85;
+		}
+
+		// separator dot, centred between two items
+
+		&::after {
+			content: "";
+
+			width: 6px;
+			height: 6px;
+
+			margin-inline-start: var(--space-10);
+
+			border-radius: var(--radius-pill);
+			background-color: currentColor;
+
+			opacity: .45;
+		}
+	}
+}
+
+@keyframes marquee-scroll {
+	from { transform: translate3d(0, 0, 0); }
+	to { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (max-width: 900px) {
+	.marquee {
+		// .marquee__group
+
+		&__group {
+			gap: var(--space-6);
+
+			padding-inline-end: var(--space-6);
+		}
+
+		// .marquee__item
+
+		&__item {
+			font-size: var(--text-xs);
+
+			&::after {
+				margin-inline-start: var(--space-6);
+			}
+		}
+	}
+}
+
+@media (max-width: 560px) {
+	.marquee {
+		padding-block: var(--space-3);
+
+		// .marquee__item
+
+		&__item {
+			svg {
+				width: 16px;
+				height: 16px;
+			}
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.marquee {
+		overflow-x: auto;
+	}
+
+	.marquee__track {
+		animation: none;
+		transform: none;
+	}
+}
