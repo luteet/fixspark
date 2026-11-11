@@ -75,8 +75,10 @@
 
 		// .faq__question:hover
 
-		&:hover {
-			color: var(--link-hover);
+		@media (hover: hover) and (pointer: fine) {
+			&:hover {
+				color: var(--link-hover);
+			}
 		}
 
 		// .faq__question:focus-visible
