@@ -18,11 +18,16 @@
 	// .trust__benefits
 
 	&__benefits {
-		display: flex;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 		flex-wrap: wrap;
 		align-items: center;
 
 		gap: 12px 32px;
+
+		@media (min-width: 36rem) {
+			display: flex;
+		}
 	}
 
 	// .trust__item
