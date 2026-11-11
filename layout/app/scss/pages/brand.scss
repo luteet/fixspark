@@ -1,0 +1,27 @@
+.brand-page {
+	// .brand-page__title
+
+	&__title {
+		margin-top: var(--space-3);
+		max-width: 24ch;
+
+		font-size: clamp(28px, 4vw, var(--text-3xl));
+	}
+
+	// .brand-page__actions
+
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3);
+	}
+
+	// .brand-page__back
+
+	&__back {
+		margin-top: var(--space-8);
+
+		font-size: var(--text-sm);
+		color: var(--muted);
+	}
+}

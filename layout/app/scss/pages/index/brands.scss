@@ -1,0 +1,204 @@
+.brands {
+	// .brands__grid
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		@media (min-width: 36rem) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media (min-width: 64rem) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	// .brands__item
+
+	&__item {
+		display: flex;
+
+		perspective: 400px;
+
+		margin: -.5px;
+	}
+
+	&__item:hover, &__item:has(.is-active) {
+		z-index: 2;
+	}
+
+	&__item:first-child &__link {
+		border-top-left-radius: var(--radius-md);
+	}
+
+	&__item:last-child &__link {
+		border-bottom-right-radius: var(--radius-md);
+	}
+
+	@media (max-width: 35.9994rem) {
+		&__item:nth-child(2) &__link {
+			border-top-right-radius: var(--radius-md);
+		}
+
+		&__item:nth-child(2n - 2):nth-last-child(1) &__link,
+		&__item:nth-child(2n - 2):nth-last-child(2) &__link {
+			border-bottom-right-radius: var(--radius-md);
+		}
+
+		&__item:nth-child(2n - 1):nth-last-child(1) &__link,
+		&__item:nth-child(2n - 1):nth-last-child(2) &__link {
+			border-bottom-left-radius: var(--radius-md);
+		}
+	}
+
+	@media (min-width: 36rem) {
+		
+		&__item:nth-child(3) &__link {
+			border-bottom-right-radius: var(--radius-md);
+		}
+
+		&__item:nth-child(3n - 3):nth-last-child(1) &__link,
+		&__item:nth-child(3n - 3):nth-last-child(2) &__link,
+		&__item:nth-child(3n - 3):nth-last-child(3) &__link {
+			border-bottom-right-radius: var(--radius-md);
+		}
+
+		&__item:nth-child(3n - 2):nth-last-child(1) &__link,
+		&__item:nth-child(3n - 2):nth-last-child(2) &__link,
+		&__item:nth-child(3n - 2):nth-last-child(3) &__link {
+			border-bottom-left-radius: var(--radius-md);
+		}
+	}
+	
+	@media (min-width: 64rem) {
+		&__item:nth-child(3) &__link {
+			border-bottom-right-radius: 0;
+		}
+
+		&__item:nth-child(3n - 3):nth-last-child(1) &__link,
+		&__item:nth-child(3n - 3):nth-last-child(2) &__link,
+		&__item:nth-child(3n - 3):nth-last-child(3) &__link {
+			border-bottom-right-radius: 0;
+		}
+
+		&__item:nth-child(3n - 2):nth-last-child(1) &__link,
+		&__item:nth-child(3n - 2):nth-last-child(2) &__link,
+		&__item:nth-child(3n - 2):nth-last-child(3) &__link {
+			border-bottom-left-radius: 0;
+		}
+
+		&__item:nth-child(4) &__link {
+			border-bottom-right-radius: var(--radius-md);
+		}
+		
+		&__item:nth-child(4n - 4):nth-last-child(1) &__link,
+		&__item:nth-child(4n - 4):nth-last-child(2) &__link,
+		&__item:nth-child(4n - 4):nth-last-child(3) &__link,
+		&__item:nth-child(4n - 4):nth-last-child(4) &__link {
+			border-bottom-right-radius: var(--radius-md);
+		}
+
+		&__item:nth-child(4n - 3):nth-last-child(1) &__link,
+		&__item:nth-child(4n - 3):nth-last-child(2) &__link,
+		&__item:nth-child(4n - 3):nth-last-child(3) &__link,
+		&__item:nth-child(4n - 3):nth-last-child(4) &__link {
+			border-bottom-left-radius: var(--radius-md);
+		}
+	}
+
+	// .brands__link
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-2);
+
+		flex: 1 1 auto;
+
+		min-height: var(--control-h);
+		padding: var(--space-4) var(--space-2) var(--space-4) var(--space-4);
+
+		background-color: var(--surface);
+		background-image: var(--grad-card);
+		border: 1px solid var(--border);
+
+		color: var(--fg);
+		text-decoration: none;
+
+		transition: border-color var(--motion-base) var(--ease-standard),
+					color var(--motion-base) var(--ease-standard);
+
+		@media (min-width: 48rem) {
+			padding: var(--space-6) var(--space-6);
+		}
+
+		@media (hover: hover) and (pointer: fine) {
+			// .brands__link:hover
+
+			&:hover {
+				transform: translateZ(5px);
+
+				box-shadow: var(--elev-raised);
+				border-color: var(--border-strong);
+				color: var(--link);
+
+				.brands__arrow { transform: translateX(3px); }
+			}
+		}
+	}
+
+	// .brands__name
+
+	&__name {
+		font-family: var(--font-display);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-semibold);
+		letter-spacing: -0.01em;
+		line-height: 1.25;
+
+		@media (min-width: 36rem) {
+			font-size: var(--text-base);
+		}
+	}
+
+	// .brands__arrow
+
+	&__arrow {
+		display: inline-flex;
+
+		flex: none;
+
+		color: var(--icon);
+
+		opacity: .35;
+
+		transition: transform var(--motion-base) var(--ease-standard),
+			color var(--motion-base) var(--ease-standard);
+
+		@media (min-width: 36rem) {
+			opacity: 1;
+		}
+	}
+
+	// .brands__note
+
+	&__note {
+		margin-top: var(--space-6);
+		max-width: 62ch;
+
+		font-size: var(--text-sm);
+		color: var(--muted);
+
+		a {
+			font-weight: var(--weight-medium);
+
+			@media (hover: hover) and (pointer: fine) {
+				// .brands__note a:hover
+
+				&:hover { color: var(--link-hover); }
+			}
+		}
+	}
+}
