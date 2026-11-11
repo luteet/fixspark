@@ -153,7 +153,12 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		justify-content: center;
 		gap: var(--space-2);
+
+		@media (min-width: 36rem) {
+			justify-content: stretch;
+		}
 	}
 
 	// .hero__media
