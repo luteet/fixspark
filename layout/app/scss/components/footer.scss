@@ -1,10 +1,13 @@
 .footer {
+	position: relative;
+	
 	flex: 0 0 auto;
 
 	margin: 0 var(--page-gutter) var(--page-gutter);
 	padding-top: var(--space-16);
 
-	background: var(--surface-dark-deep);
+	background-image: var(--grad-sheen-dark);
+	background-color: var(--surface-dark-deep);
 	border-radius: var(--radius-xl);
 	color: var(--on-dark-muted);
 
