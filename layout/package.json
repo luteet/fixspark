@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "modern-normalize": "^3.0.1",
+    "slim-select": "^4.6.4",
     "swiper": "^14.4.0"
   },
   "overrides": {

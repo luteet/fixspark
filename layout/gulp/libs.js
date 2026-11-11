@@ -14,7 +14,7 @@ export const libs = {
 		//'node_modules/split-type/umd/index.min.js', // split text | npm i split-type --save | https://www.npmjs.com/package/split-type
 		//'node_modules/@studio-freight/lenis/dist/lenis.min.js', // smooth scroll | npm i @studio-freight/lenis --save | https://github.com/studio-freight/lenis
 		//'node_modules/@barba/core/dist/barba.umd.js', // smooth transitions between pages | npm install @barba/core --save | https://barba.js.org/docs/getstarted/intro/
-		//'node_modules/slim-select/dist/slimselect.min.js', // Select | npm i slim-select --save | https://www.npmjs.com/package/slim-select
+		'node_modules/slim-select/dist/slimselect.js', // Select | npm i slim-select --save | https://www.npmjs.com/package/slim-select
 		//'node_modules/sticky-js/dist/sticky.min.js' // Sticky | npm i sticky-js --save | https://www.npmjs.com/package/sticky-js
 		//'node_modules/nouislider/dist/nouislider.min.js', // Custom input[range] | npm i nouislider --save | https://www.npmjs.com/package/nouislider
 		//'node_modules/simplebar/dist/simplebar.min.js', // Custom scrollbar | npm i simplebar --save | https://www.npmjs.com/package/simplebar
@@ -27,7 +27,7 @@ export const libs = {
 		//'node_modules/keen-slider/keen-slider.min.css', // Slider (Keen slider)
 		//'node_modules/@splidejs/splide/dist/css/splide.min.css', // Slider (Splide)
 		'node_modules/swiper/swiper.min.css', // Slider (Swiper)
-		//'node_modules/slim-select/dist/slimselect.css', // Select
+		'node_modules/slim-select/dist/slimselect.css', // Select
 		//'node_modules/aos/dist/aos.css', // Animation
 		//'node_modules/nouislider/dist/nouislider.css', // custom input[range]
 		//'node_modules/simplebar/dist/simplebar.min.css', // scrollbar

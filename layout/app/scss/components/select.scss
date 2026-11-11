@@ -1,0 +1,123 @@
+/* Custom select — SlimSelect skin.
+ * The library keeps the native <select> as the form value holder and renders
+ * `.ss-main` in its place, while the dropdown panel (`.ss-content`) is
+ * appended to <body>. Both roots are therefore styled outside the form.
+ * Sizes and colours resolve through the tokens in `global.scss` only. */
+
+.ss-main,
+.ss-content {
+	--ss-bg-color: var(--surface);
+	--ss-font-color: var(--fg);
+	--ss-placeholder-color: var(--muted);
+	--ss-disabled-color: var(--surface-alt);
+	--ss-border-color: var(--border-strong);
+	--ss-highlight-color: var(--brand-primary-tint);
+	--ss-primary-color: var(--brand-primary);
+	--ss-focus-color: var(--link);
+	--ss-main-height: var(--control-h);
+	--ss-search-height: var(--control-h);
+	--ss-option-height: var(--space-10);
+	--ss-spacing-l: var(--space-4);
+	--ss-spacing-m: var(--space-2);
+	--ss-spacing-s: var(--space-1);
+	--ss-border-radius: var(--radius-sm);
+	--ss-animation-timing: var(--motion-fast);
+}
+
+// .ss-main — the closed control that replaces the native select
+
+.ss-main {
+	height: var(--control-h);
+	padding: 0 var(--space-4);
+
+	font-family: var(--font-body);
+	font-size: var(--text-base);
+	color: var(--fg);
+
+	background-color: var(--surface);
+	border: 1px solid var(--border-strong);
+	border-radius: var(--radius-sm);
+
+	transition:
+		border-color var(--motion-fast) var(--ease-standard),
+		box-shadow var(--motion-fast) var(--ease-standard);
+
+	// .ss-main:focus
+
+	&:focus {
+		border-color: var(--link);
+		box-shadow: var(--focus-ring);
+	}
+
+	// .ss-main[aria-invalid="true"]
+
+	&[aria-invalid="true"] {
+		border-color: var(--danger);
+
+		&:focus { box-shadow: 0 0 0 2px var(--danger); }
+	}
+
+	// .ss-main .ss-values
+
+	.ss-values {
+		padding: 0;
+
+		// .ss-main .ss-values .ss-single, .ss-main .ss-values .ss-placeholder
+
+		.ss-single,
+		.ss-placeholder {
+			padding: 0;
+		}
+	}
+
+	// .ss-main .ss-arrow
+
+	.ss-arrow {
+		width: var(--space-3);
+		height: var(--space-3);
+		margin: auto 0 auto var(--space-2);
+
+		path { stroke: var(--muted); }
+	}
+}
+
+// .ss-content — the dropdown panel
+
+.ss-content {
+	font-family: var(--font-body);
+	font-size: var(--text-base);
+
+	background-color: var(--surface);
+	border-color: var(--border);
+	box-shadow: var(--elev-raised);
+
+	// .ss-content .ss-option
+
+	.ss-option {
+		color: var(--fg);
+
+		// .ss-content .ss-option:hover, .ss-content .ss-option.ss-highlighted
+
+		&:hover:not(.ss-disabled),
+		&.ss-highlighted {
+			color: var(--fg);
+			background-color: var(--surface-alt);
+			border-left: 0;
+		}
+
+		// .ss-content .ss-option.ss-selected
+
+		&:not(.ss-disabled).ss-selected {
+			color: var(--fg);
+			background-color: var(--brand-primary-tint);
+			font-weight: var(--weight-semibold);
+		}
+
+		// .ss-content .ss-option.ss-disabled
+
+		&.ss-disabled {
+			color: var(--meta);
+			background-color: transparent;
+		}
+	}
+}

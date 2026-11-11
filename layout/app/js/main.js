@@ -111,6 +111,38 @@ if (window.Swiper && heroWordSlider) {
 }
 
 
+// Custom select (SlimSelect from libs.min.js). The native <select> stays in the
+// form as the value holder; the library renders its control right next to it.
+
+const serviceSelect = document.getElementById("service");
+
+function setServiceError(isError) {
+	const field = serviceSelect ? serviceSelect.closest(".form-card__field") : null;
+	const slimMain = field ? field.querySelector(".ss-main") : null;
+
+	if (!slimMain) return;
+
+	slimMain.setAttribute("aria-invalid", isError ? "true" : "false");
+
+	if (isError) slimMain.focus();
+}
+
+if (window.SlimSelect && serviceSelect) {
+	new window.SlimSelect({
+		select: serviceSelect,
+		settings: {
+			showSearch: false,
+			allowDeselect: false
+		},
+		events: {
+			afterChange: function () {
+				setServiceError(false);
+			}
+		}
+	});
+}
+
+
 // Booking form (preview only)
 
 const form = document.getElementById("booking-form");
@@ -121,7 +153,14 @@ if (form && statusElement) {
 		event.preventDefault();
 
 		if (!form.checkValidity()) {
-			form.reportValidity();
+			// the native <select> is hidden by SlimSelect, so browsers cannot
+			// anchor a validation bubble to it — flag the custom control instead
+			if (serviceSelect && !serviceSelect.checkValidity()) setServiceError(true);
+
+			const invalidControl = form.querySelector(":invalid:not(select)");
+
+			if (invalidControl) invalidControl.reportValidity();
+
 			return;
 		}
 
