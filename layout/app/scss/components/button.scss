@@ -38,12 +38,17 @@
 		background-image: var(--grad-sheen-light);
 		color: var(--accent-on);
 
-		// .button--call:hover
+		transition: background-color var(--motion-base) var(--ease-standard);
 
-		&:hover { background-color: var(--accent-hover); }
-		// .button--call:active
+		@media (hover: hover) and (pointer: fine) {
+			// .button--call:hover
 
-		&:active { background-color: var(--accent-active); }
+			&:hover { background-color: var(--accent-hover); }
+
+			// .button--call:active
+
+			&:active { background-color: var(--accent-active); }
+		}
 	}
 
 	// filled primary action
