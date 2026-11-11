@@ -196,6 +196,8 @@ html {
 	font-size: 16px;
 
 	scroll-behavior: smooth;
+	// без этого аккордеоны при смене высоты заставляют браузер «подкручивать» страницу
+	overflow-anchor: none;
 	-webkit-text-size-adjust: 100%;
 
 	--container-padding: var(--container-gutter-desktop);

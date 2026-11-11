@@ -9,7 +9,7 @@
 	<link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/PlusJakartaSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="css/style.min.css?v=1794404717732">
+	<link rel="stylesheet" href="css/style.min.css?v=1794405942415">
 </head>
 
 <body>
@@ -621,26 +621,66 @@
 					</div>
 
 					<div class="faq__list">
-						<details class="faq__item">
-							<summary class="faq__question">Do you charge for the diagnostic visit?</summary>
-							<div class="faq__answer">Yes. The diagnostic is $89 and it is credited toward the repair if you go ahead. We give you the repair price before any work starts, so you can decide with the number in front of you.</div>
-						</details>
-						<details class="faq__item">
-							<summary class="faq__question">How fast can you come out?</summary>
-							<div class="faq__answer">Same-day visits are usual when you call before noon across all four service zones. If a part has to be ordered, you get the ETA before we leave, and we schedule the return visit at that price.</div>
-						</details>
-						<details class="faq__item">
-							<summary class="faq__question">Which brands do you repair?</summary>
-							<div class="faq__answer">Major residential brands including Sub-Zero, LG, Whirlpool, Samsung, GE, Bosch, Maytag and KitchenAid, plus commercial kitchen equipment. If we cannot source the part, we tell you on the first visit rather than leave you waiting.</div>
-						</details>
-						<details class="faq__item">
-							<summary class="faq__question">Is the work warrantied?</summary>
-							<div class="faq__answer">Parts and labor are covered for 90 days. The warranty is written on the invoice, not just on this page, and it applies to the specific repair we performed.</div>
-						</details>
-						<details class="faq__item">
-							<summary class="faq__question">Do you take commercial jobs?</summary>
-							<div class="faq__answer">Cafes, offices, salons, short-term rentals and property managers. Priority scheduling, one invoice per property, and the same licensed technicians as residential work.</div>
-						</details>
+						<div class="faq__column">
+							<div class="faq__item">
+								<h3 class="faq__heading">
+									<button class="faq__question" id="faq-question-1" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+										Do you charge for the diagnostic visit?
+										<span class="faq__icon" aria-hidden="true"></span>
+									</button>
+								</h3>
+								<div class="faq__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+									<div class="faq__answer-inner">Yes. The diagnostic is $89 and it is credited toward the repair if you go ahead. We give you the repair price before any work starts, so you can decide with the number in front of you.</div>
+								</div>
+							</div>
+							<div class="faq__item">
+								<h3 class="faq__heading">
+									<button class="faq__question" id="faq-question-2" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+										How fast can you come out?
+										<span class="faq__icon" aria-hidden="true"></span>
+									</button>
+								</h3>
+								<div class="faq__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+									<div class="faq__answer-inner">Same-day visits are usual when you call before noon across all four service zones. If a part has to be ordered, you get the ETA before we leave, and we schedule the return visit at that price.</div>
+								</div>
+							</div>
+							<div class="faq__item">
+								<h3 class="faq__heading">
+									<button class="faq__question" id="faq-question-3" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+										Which brands do you repair?
+										<span class="faq__icon" aria-hidden="true"></span>
+									</button>
+								</h3>
+								<div class="faq__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+									<div class="faq__answer-inner">Major residential brands including Sub-Zero, LG, Whirlpool, Samsung, GE, Bosch, Maytag and KitchenAid, plus commercial kitchen equipment. If we cannot source the part, we tell you on the first visit rather than leave you waiting.</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="faq__column">
+							<div class="faq__item">
+								<h3 class="faq__heading">
+									<button class="faq__question" id="faq-question-4" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+										Is the work warrantied?
+										<span class="faq__icon" aria-hidden="true"></span>
+									</button>
+								</h3>
+								<div class="faq__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+									<div class="faq__answer-inner">Parts and labor are covered for 90 days. The warranty is written on the invoice, not just on this page, and it applies to the specific repair we performed.</div>
+								</div>
+							</div>
+							<div class="faq__item">
+								<h3 class="faq__heading">
+									<button class="faq__question" id="faq-question-5" type="button" aria-expanded="false" aria-controls="faq-answer-5">
+										Do you take commercial jobs?
+										<span class="faq__icon" aria-hidden="true"></span>
+									</button>
+								</h3>
+								<div class="faq__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
+									<div class="faq__answer-inner">Cafes, offices, salons, short-term rentals and property managers. Priority scheduling, one invoice per property, and the same licensed technicians as residential work.</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -813,8 +853,8 @@
 		</div>
 	</div>
 
-	<script src="js/libs.min.js?v=1794404717732"></script>
-	<script src="js/main.js?v=1794404717732" type="module"></script>
+	<script src="js/libs.min.js?v=1794405942415"></script>
+	<script src="js/main.js?v=1794405942415" type="module"></script>
 
 </body>
 
