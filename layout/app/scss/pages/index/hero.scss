@@ -96,8 +96,12 @@
 		display: flex;
 		align-items: center;
 
+		background-color: var(--accent);
+		background-image: var(--grad-sheen-light);
+		background-clip: text;
+
 		white-space: nowrap;
-		color: var(--accent);
+		color: transparent;
 	}
 
 	// .hero__lead
