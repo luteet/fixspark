@@ -313,8 +313,49 @@
 		background-color: var(--surface-alt);
 		border: 1px solid var(--border);
 		border-radius: var(--radius-xl);
+		box-shadow: var(--elev-static);
 
-		overflow: hidden;
+		overflow: clip;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0; top: 0;
+
+			transform: translate(-50%, -50%);
+
+			width: 200%; aspect-ratio: 1;
+
+			background-color: var(--icon);
+			mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+
+			mix-blend-mode: overlay;
+			opacity: 0.15;
+
+			z-index: 2;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0; top: 0;
+
+			transform: translate(-50%, -50%);
+
+			width: 200%; aspect-ratio: 1;
+
+			background: url(../img/noise.png) center / 750px repeat;
+			mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+
+			mix-blend-mode: overlay;
+			opacity: 0.15;
+
+			z-index: 2;
+
+			@media (min-width: 62rem) {
+				background: url(../img/noise.png) center / 1024px repeat;
+			}
+		}
 
 		.swiper-wrapper {
 			height: 100%;
