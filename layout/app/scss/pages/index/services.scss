@@ -298,6 +298,9 @@
 
 		min-width: 0;
 
+		border-radius: var(--radius-xl);
+		overflow: clip;
+
 		@media (max-width: 64rem) {
 			display: none;
 		}
@@ -328,6 +331,7 @@
 
 			background-color: var(--icon);
 			mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+			border-radius: var(--radius-xl);
 
 			mix-blend-mode: overlay;
 			opacity: 0.15;
@@ -346,6 +350,7 @@
 
 			background: url(../img/noise.png) center / 750px repeat;
 			mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+			border-radius: var(--radius-xl);
 
 			mix-blend-mode: overlay;
 			opacity: 0.15;
@@ -379,11 +384,15 @@
 		height: 100%;
 		margin: 0;
 
+		border-radius: var(--radius-xl);
+
 		img {
 			display: block;
 
 			width: 100%;
 			height: 100%;
+
+			border-radius: var(--radius-xl);
 
 			object-fit: cover;
 		}
