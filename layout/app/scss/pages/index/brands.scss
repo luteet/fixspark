@@ -128,6 +128,7 @@
 		text-decoration: none;
 
 		transition: transform var(--motion-base) var(--ease-standard),
+					background-color var(--motion-base) var(--ease-standard),
 					border-color var(--motion-base) var(--ease-standard),
 					color var(--motion-base) var(--ease-standard);
 
@@ -143,6 +144,7 @@
 
 				box-shadow: var(--elev-raised);
 				border-color: var(--border-strong);
+				background-color: var(--brand-primary-tint);
 				color: var(--link);
 
 				.brands__arrow { 
@@ -162,6 +164,11 @@
 		font-weight: var(--weight-semibold);
 		letter-spacing: -0.01em;
 		line-height: 1.25;
+
+		@media (hover: none) {
+			text-decoration: underline;
+			text-underline-offset: 0.35ch;
+		}
 
 		@media (min-width: 36rem) {
 			font-size: var(--text-base);
