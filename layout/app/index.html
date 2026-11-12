@@ -285,56 +285,35 @@
 			</div>
 
 			<div class="repairs__grid">
-				<article class="case-card">
-					<div class="case-card__media" aria-label="Case 01: refrigerator repair in North Park.">
-						<picture>
-							<source srcset="img/index/repairs/repairs-image-1.avif" type="image/avif">
-							<source srcset="img/index/repairs/repairs-image-1.webp" type="image/webp">
-							<img src="img/index/repairs/repairs-image-1.png" alt="" width="366" height="274" loading="lazy">
-						</picture>
-						<span class="case-card__price" aria-hidden="true">$310</span>
-					</div>
-					<div class="case-card__body">
-						<p class="case-card__meta">North Park · Sub-Zero · Oct 2026</p>
-						<h3 class="case-card__title">Refrigerator not cooling</h3>
-						<p class="case-card__text">Defrost heater and thermistor replaced in one visit. Same-day, two-hour arrival window.</p>
-						<span class="visually-hidden">Total: $310</span>
-					</div>
-				</article>
-
-				<article class="case-card">
-					<div class="case-card__media" aria-label="Case 02: washer repair in Chula Vista.">
-						<picture>
-							<source srcset="img/index/repairs/repairs-image-2.avif" type="image/avif">
-							<source srcset="img/index/repairs/repairs-image-2.webp" type="image/webp">
-							<img src="img/index/repairs/repairs-image-2.png" alt="" width="366" height="274" loading="lazy">
-						</picture>
-						<span class="case-card__price" aria-hidden="true">$245</span>
-					</div>
-					<div class="case-card__body">
-						<p class="case-card__meta">Chula Vista · LG · Sep 2026</p>
-						<h3 class="case-card__title">Washer leaking at the door</h3>
-						<p class="case-card__text">Door boot and drain pump replaced. The customer approved the price before we started.</p>
-						<span class="visually-hidden">Total: $245</span>
-					</div>
-				</article>
-
-				<article class="case-card">
-					<div class="case-card__media" aria-label="Case 03: oven repair in La Mesa.">
-						<picture>
-							<source srcset="img/index/repairs/repairs-image-3.avif" type="image/avif">
-							<source srcset="img/index/repairs/repairs-image-3.webp" type="image/webp">
-							<img src="img/index/repairs/repairs-image-3.png" alt="" width="366" height="274" loading="lazy">
-						</picture>
-						<span class="case-card__price" aria-hidden="true">$268</span>
-					</div>
-					<div class="case-card__body">
-						<p class="case-card__meta">La Mesa · Whirlpool · Sep 2026</p>
-						<h3 class="case-card__title">Oven won't heat</h3>
-						<p class="case-card__text">Bake element and thermostat replaced; tested at temperature before we left.</p>
-						<span class="visually-hidden">Total: $268</span>
-					</div>
-				</article>
+				@@loop("html/case-card.html", [
+					{
+						"number": "01",
+						"image": "1",
+						"label": "refrigerator repair in North Park",
+						"price": "310",
+						"meta": "North Park · Sub-Zero · Oct 2026",
+						"title": "Refrigerator not cooling",
+						"text": "Defrost heater and thermistor replaced in one visit. Same-day, two-hour arrival window."
+					},
+					{
+						"number": "02",
+						"image": "2",
+						"label": "washer repair in Chula Vista",
+						"price": "245",
+						"meta": "Chula Vista · LG · Sep 2026",
+						"title": "Washer leaking at the door",
+						"text": "Door boot and drain pump replaced. The customer approved the price before we started."
+					},
+					{
+						"number": "03",
+						"image": "3",
+						"label": "oven repair in La Mesa",
+						"price": "268",
+						"meta": "La Mesa · Whirlpool · Sep 2026",
+						"title": "Oven won't heat",
+						"text": "Bake element and thermostat replaced; tested at temperature before we left."
+					}
+				])
 			</div>
 		</div>
 	</section>
@@ -360,31 +339,33 @@
 
 			<div class="swiper reviews__swiper">
 				<div class="swiper-wrapper">
-					<article class="swiper-slide review-card">
-						<span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
-						<blockquote class="review-card__text">“Told me the diagnostic price on the phone, showed up in two hours and had the part on the van. The invoice matched the range they quoted.”</blockquote>
-						<p class="review-card__meta"><strong>Maria K.</strong> · Chula Vista</p>
-					</article>
-					<article class="swiper-slide review-card">
-						<span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
-						<blockquote class="review-card__text">“He showed me the burnt element before replacing it and explained the final price. No upsell, no surprise line items.”</blockquote>
-						<p class="review-card__meta"><strong>Devon R.</strong> · North Park</p>
-					</article>
-					<article class="swiper-slide review-card">
-						<span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
-						<blockquote class="review-card__text">“We manage six rental units. One call, one invoice per property, and the office dishwasher was back the same afternoon.”</blockquote>
-						<p class="review-card__meta"><strong>Priya S.</strong> · Property manager, Mission Valley</p>
-					</article>
-					<article class="swiper-slide review-card">
-						<span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
-						<blockquote class="review-card__text">“Booked at 8am, technician was here before noon. Replaced the drain pump, cleaned up after himself, and the final bill sat at the low end of the repair range.”</blockquote>
-						<p class="review-card__meta"><strong>Andre T.</strong> · Encinitas</p>
-					</article>
-					<article class="swiper-slide review-card">
-						<span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
-						<blockquote class="review-card__text">“The dryer stopped mid-cycle. They found the thermal fuse and a blocked vent, showed me both, and the flat rate held. No call-out surprises.”</blockquote>
-						<p class="review-card__meta"><strong>Lena M.</strong> · La Mesa</p>
-					</article>
+					@@loop("html/review-card.html", [
+						{
+							"name": "Maria K.",
+							"location": "Chula Vista",
+							"text": "Told me the diagnostic price on the phone, showed up in two hours and had the part on the van. The invoice matched the range they quoted."
+						},
+						{
+							"name": "Devon R.",
+							"location": "North Park",
+							"text": "He showed me the burnt element before replacing it and explained the final price. No upsell, no surprise line items."
+						},
+						{
+							"name": "Priya S.",
+							"location": "Property manager, Mission Valley",
+							"text": "We manage six rental units. One call, one invoice per property, and the office dishwasher was back the same afternoon."
+						},
+						{
+							"name": "Andre T.",
+							"location": "Encinitas",
+							"text": "Booked at 8am, technician was here before noon. Replaced the drain pump, cleaned up after himself, and the final bill sat at the low end of the repair range."
+						},
+						{
+							"name": "Lena M.",
+							"location": "La Mesa",
+							"text": "The dryer stopped mid-cycle. They found the thermal fuse and a blocked vent, showed me both, and the flat rate held. No call-out surprises."
+						}
+					])
 				</div>
 			</div>
 
@@ -491,64 +472,38 @@
 
 			<div class="faq__list">
 				<div class="faq__column">
-					<div class="faq__item">
-						<h3 class="faq__heading">
-							<button class="faq__question" id="faq-question-1" type="button" aria-expanded="false" aria-controls="faq-answer-1">
-								Do you charge for the diagnostic visit?
-								<span class="faq__icon" aria-hidden="true"></span>
-							</button>
-						</h3>
-						<div class="faq__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
-							<div class="faq__answer-inner">Yes. The diagnostic is $89 and it is credited toward the repair if you go ahead. We give you the repair price before any work starts, so you can decide with the number in front of you.</div>
-						</div>
-					</div>
-					<div class="faq__item">
-						<h3 class="faq__heading">
-							<button class="faq__question" id="faq-question-2" type="button" aria-expanded="false" aria-controls="faq-answer-2">
-								How fast can you come out?
-								<span class="faq__icon" aria-hidden="true"></span>
-							</button>
-						</h3>
-						<div class="faq__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
-							<div class="faq__answer-inner">Same-day visits are usual when you call before noon across all four service zones. If a part has to be ordered, you get the ETA before we leave, and we schedule the return visit at that price.</div>
-						</div>
-					</div>
-					<div class="faq__item">
-						<h3 class="faq__heading">
-							<button class="faq__question" id="faq-question-3" type="button" aria-expanded="false" aria-controls="faq-answer-3">
-								Which brands do you repair?
-								<span class="faq__icon" aria-hidden="true"></span>
-							</button>
-						</h3>
-						<div class="faq__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
-							<div class="faq__answer-inner">Major residential brands including Sub-Zero, LG, Whirlpool, Samsung, GE, Bosch, Maytag and KitchenAid, plus commercial kitchen equipment. If we cannot source the part, we tell you on the first visit rather than leave you waiting.</div>
-						</div>
-					</div>
+					@@loop("html/faq-item.html", [
+						{
+							"id": "1",
+							"question": "Do you charge for the diagnostic visit?",
+							"answer": "Yes. The diagnostic is $89 and it is credited toward the repair if you go ahead. We give you the repair price before any work starts, so you can decide with the number in front of you."
+						},
+						{
+							"id": "2",
+							"question": "How fast can you come out?",
+							"answer": "Same-day visits are usual when you call before noon across all four service zones. If a part has to be ordered, you get the ETA before we leave, and we schedule the return visit at that price."
+						},
+						{
+							"id": "3",
+							"question": "Which brands do you repair?",
+							"answer": "Major residential brands including Sub-Zero, LG, Whirlpool, Samsung, GE, Bosch, Maytag and KitchenAid, plus commercial kitchen equipment. If we cannot source the part, we tell you on the first visit rather than leave you waiting."
+						}
+					])
 				</div>
 
 				<div class="faq__column">
-					<div class="faq__item">
-						<h3 class="faq__heading">
-							<button class="faq__question" id="faq-question-4" type="button" aria-expanded="false" aria-controls="faq-answer-4">
-								Is the work warrantied?
-								<span class="faq__icon" aria-hidden="true"></span>
-							</button>
-						</h3>
-						<div class="faq__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
-							<div class="faq__answer-inner">Parts and labor are covered for 90 days. The warranty is written on the invoice, not just on this page, and it applies to the specific repair we performed.</div>
-						</div>
-					</div>
-					<div class="faq__item">
-						<h3 class="faq__heading">
-							<button class="faq__question" id="faq-question-5" type="button" aria-expanded="false" aria-controls="faq-answer-5">
-								Do you take commercial jobs?
-								<span class="faq__icon" aria-hidden="true"></span>
-							</button>
-						</h3>
-						<div class="faq__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
-							<div class="faq__answer-inner">Cafes, offices, salons, short-term rentals and property managers. Priority scheduling, one invoice per property, and the same licensed technicians as residential work.</div>
-						</div>
-					</div>
+					@@loop("html/faq-item.html", [
+						{
+							"id": "4",
+							"question": "Is the work warrantied?",
+							"answer": "Parts and labor are covered for 90 days. The warranty is written on the invoice, not just on this page, and it applies to the specific repair we performed."
+						},
+						{
+							"id": "5",
+							"question": "Do you take commercial jobs?",
+							"answer": "Cafes, offices, salons, short-term rentals and property managers. Priority scheduling, one invoice per property, and the same licensed technicians as residential work."
+						}
+					])
 				</div>
 			</div>
 		</div>
@@ -567,266 +522,34 @@
 			</div>
 
 			<ul class="brands__grid">
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Sub-Zero</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Wolf</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Thermador</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Viking</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Miele</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Gaggenau</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Dacor</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">JennAir</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Bosch</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Cove</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">LG</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Samsung</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">GE</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Whirlpool</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">KitchenAid</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Maytag</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Frigidaire</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Kenmore</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">ASKO</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Fisher & Paykel</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Bertazzoni</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">BlueStar</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Monogram</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">DCS</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">U-Line</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
-				<li class="brands__item">
-					<a class="brands__link" href="brand.html">
-						<span class="brands__name">Café</span>
-						<span class="brands__arrow" aria-hidden="true">
-							<svg width="24" height="24" aria-hidden="true" focusable="false">
-								<use href="img/sprites.svg#chevron-right" />
-							</svg>
-						</span>
-					</a>
-				</li>
+				@@loop("html/brands-item.html", [
+					{ "name": "Sub-Zero" },
+					{ "name": "Wolf" },
+					{ "name": "Thermador" },
+					{ "name": "Viking" },
+					{ "name": "Miele" },
+					{ "name": "Gaggenau" },
+					{ "name": "Dacor" },
+					{ "name": "JennAir" },
+					{ "name": "Bosch" },
+					{ "name": "Cove" },
+					{ "name": "LG" },
+					{ "name": "Samsung" },
+					{ "name": "GE" },
+					{ "name": "Whirlpool" },
+					{ "name": "KitchenAid" },
+					{ "name": "Maytag" },
+					{ "name": "Frigidaire" },
+					{ "name": "Kenmore" },
+					{ "name": "ASKO" },
+					{ "name": "Fisher & Paykel" },
+					{ "name": "Bertazzoni" },
+					{ "name": "BlueStar" },
+					{ "name": "Monogram" },
+					{ "name": "DCS" },
+					{ "name": "U-Line" },
+					{ "name": "Café" }
+				])
 			</ul>
 
 			<p class="brands__note">Don't see your brand? <a href="tel:+16195550142">Call (619) 555-0142</a> — we source parts for most major brands, and we say so on the first visit if we can't.</p>
