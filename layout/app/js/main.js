@@ -282,10 +282,6 @@ if (servicesLinks.length) {
 			showServiceSlide(index);
 		});
 	});
-
-	servicesList && servicesList.addEventListener("mouseleave", function () {
-		showServiceSlide(0);
-	});
 }
 
 
