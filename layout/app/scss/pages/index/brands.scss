@@ -19,8 +19,6 @@
 	&__item {
 		display: flex;
 
-		perspective: 400px;
-
 		margin: -.5px;
 	}
 
@@ -140,8 +138,6 @@
 			// .brands__link:hover
 
 			&:hover {
-				transform: translateZ(5px);
-
 				box-shadow: var(--elev-raised);
 				border-color: var(--border-strong);
 				background-color: var(--brand-primary-tint);
