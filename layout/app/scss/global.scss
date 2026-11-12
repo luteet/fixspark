@@ -41,6 +41,7 @@
 	--meta: #8496a1;               /* disabled labels only */
 	--border: #dce5ea;             /* 1px hairline: cards, table rules */
 	--border-soft: #e9eff2;        /* inner dividers */
+	--border-soft-2: rgba(233,239,242,.25);        /* inner dividers */
 	--border-strong: #c3d2da;      /* inputs, 3:1 boundary */
 
 	/* ─── Signal accent (phone only) ──────────────────────────────── */
@@ -65,6 +66,7 @@
 
 	/* ─── Semantic (validation and status only) ───────────────────── */
 	--success: #1f8a5b;
+	--success-rgb: 31, 138, 91;
 	--warn: #a66317;
 	--danger: #c0392b;
 
@@ -196,9 +198,9 @@ html {
 
 	font-size: 16px;
 
-	scroll-behavior: smooth;
+	//scroll-behavior: smooth;
 	// без этого аккордеоны при смене высоты заставляют браузер «подкручивать» страницу
-	overflow-anchor: none;
+	//overflow-anchor: none;
 	-webkit-text-size-adjust: 100%;
 
 	--container-padding: var(--container-gutter-desktop);
