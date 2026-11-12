@@ -32,6 +32,8 @@ function setMenu(open) {
 	body.classList.toggle("is-mobile-nav-active", open);
 	header && header.classList.toggle("header--menu-open", open);
 
+	if (!open) setDropdown(false);
+
 	burger.setAttribute("aria-expanded", open ? "true" : "false");
 	burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
 }
@@ -127,8 +129,8 @@ function setServiceError(isError) {
 	if (isError) slimMain.focus();
 }
 
-if (window.SlimSelect && serviceSelect) {
-	new window.SlimSelect({
+const serviceSelectControl = window.SlimSelect && serviceSelect
+	? new window.SlimSelect({
 		select: serviceSelect,
 		settings: {
 			showSearch: false,
@@ -139,6 +141,96 @@ if (window.SlimSelect && serviceSelect) {
 				setServiceError(false);
 			}
 		}
+	})
+	: null;
+
+
+// Header services dropdown. Desktop opens on hover/focus and click; below the
+// nav breakpoint the same markup becomes an inline accordion in the mobile menu.
+
+const servicesDropdown = document.querySelector(".header__nav-item--has-dropdown");
+const servicesDropdownToggle = servicesDropdown
+	? servicesDropdown.querySelector(".header__dropdown-toggle")
+	: null;
+const servicesDropdownLinks = servicesDropdown
+	? servicesDropdown.querySelectorAll(".header__dropdown-link")
+	: [];
+const dropdownHoverQuery = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)");
+
+let dropdownCloseTimer;
+let viewportIsDesktop = window.innerWidth > MENU_BREAKPOINT;
+
+function isDropdownOpen() {
+	return servicesDropdown ? servicesDropdown.classList.contains("is-open") : false;
+}
+
+function setDropdown(open) {
+	if (!servicesDropdown || !servicesDropdownToggle) return;
+
+	clearTimeout(dropdownCloseTimer);
+
+	servicesDropdown.classList.toggle("is-open", open);
+	servicesDropdownToggle.setAttribute("aria-expanded", open ? "true" : "false");
+}
+
+if (servicesDropdown && servicesDropdownToggle) {
+	servicesDropdownToggle.addEventListener("click", function () {
+		setDropdown(!isDropdownOpen());
+	});
+
+	servicesDropdown.addEventListener("mouseenter", function () {
+		if (dropdownHoverQuery.matches) setDropdown(true);
+	});
+
+	servicesDropdown.addEventListener("mouseleave", function () {
+		if (!dropdownHoverQuery.matches) return;
+
+		clearTimeout(dropdownCloseTimer);
+		dropdownCloseTimer = setTimeout(function () {
+			if (!servicesDropdown.contains(document.activeElement)) setDropdown(false);
+		}, 150);
+	});
+
+	servicesDropdown.addEventListener("focusout", function (event) {
+		if (!servicesDropdown.contains(event.relatedTarget)) setDropdown(false);
+	});
+
+	document.addEventListener("click", function (event) {
+		if (isDropdownOpen() && !servicesDropdown.contains(event.target)) setDropdown(false);
+	});
+
+	document.addEventListener("keydown", function (event) {
+		if (event.key === "Escape" && isDropdownOpen()) {
+			setDropdown(false);
+			servicesDropdownToggle.focus();
+		}
+	});
+
+	// Choosing a service pre-selects it in the booking form and closes the panel
+
+	servicesDropdownLinks.forEach(function (link) {
+		link.addEventListener("click", function () {
+			const serviceName = link.getAttribute("data-service");
+
+			if (serviceSelect && serviceName) {
+				if (serviceSelectControl) {
+					serviceSelectControl.setSelected(serviceName);
+				} else {
+					serviceSelect.value = serviceName;
+				}
+			}
+
+			setDropdown(false);
+		});
+	});
+
+	window.addEventListener("resize", function () {
+		const isDesktop = window.innerWidth > MENU_BREAKPOINT;
+
+		if (isDesktop === viewportIsDesktop) return;
+
+		viewportIsDesktop = isDesktop;
+		setDropdown(false);
 	});
 }
 
