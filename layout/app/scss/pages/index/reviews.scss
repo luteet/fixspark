@@ -32,10 +32,18 @@
 	// .reviews__swiper
 
 	&__swiper {
+		margin-inline: calc(0px - var(--container-padding));
+		padding-inline: var(--container-padding);
+
 		overflow: hidden;
 
 		--swiper-pagination-color: var(--brand-primary);
 		--swiper-pagination-bullet-inactive-color: var(--border-strong);
+
+		@media (min-width: 1200px) {
+			margin-inline: 0;
+			padding-inline: 0;
+		}
 
 		.swiper-slide {
 			height: auto;
