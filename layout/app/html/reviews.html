@@ -1,0 +1,66 @@
+<section class="section section--alt reviews" id="reviews">
+	<div class="section-background mode-3" aria-hidden="true"></div>
+
+	<div class="container">
+		<div class="section-head">
+			<div class="section-head__text">
+				<p class="eyebrow">Google reviews</p>
+				<h2 class="section-head__title">The invoice matched the quote.</h2>
+				<p class="section-lead">187 reviews, 4.9 average. The recurring note is the same: the price was clear before the visit and the work was explained.</p>
+			</div>
+			<a href="#" class="reviews__summary" aria-label="187 Google reviews. View more">
+				<div class="reviews__score">4.9</div>
+				<div>
+					<span class="stars" aria-hidden="true">★★★★★</span>
+					<p class="reviews__meta">187 Google reviews</p>
+				</div>
+			</a>
+		</div>
+
+		<div class="swiper reviews__swiper">
+			<div class="swiper-wrapper">
+				@@loop("review-card.html", [
+					{
+						"name": "Maria K.",
+						"location": "Chula Vista",
+						"text": "Told me the diagnostic price on the phone, showed up in two hours and had the part on the van. The invoice matched the range they quoted."
+					},
+					{
+						"name": "Devon R.",
+						"location": "North Park",
+						"text": "He showed me the burnt element before replacing it and explained the final price. No upsell, no surprise line items."
+					},
+					{
+						"name": "Priya S.",
+						"location": "Property manager, Mission Valley",
+						"text": "We manage six rental units. One call, one invoice per property, and the office dishwasher was back the same afternoon."
+					},
+					{
+						"name": "Andre T.",
+						"location": "Encinitas",
+						"text": "Booked at 8am, technician was here before noon. Replaced the drain pump, cleaned up after himself, and the final bill sat at the low end of the repair range."
+					},
+					{
+						"name": "Lena M.",
+						"location": "La Mesa",
+						"text": "The dryer stopped mid-cycle. They found the thermal fuse and a blocked vent, showed me both, and the flat rate held. No call-out surprises."
+					}
+				])
+			</div>
+		</div>
+
+		<div class="reviews__controls">
+			<button type="button" class="reviews__nav reviews__prev" aria-label="Previous reviews">
+				<svg width="18" height="18" aria-hidden="true" focusable="false">
+					<use href="img/sprites.svg#chevron-left" />
+				</svg>
+			</button>
+			<div class="swiper-pagination reviews__pagination"></div>
+			<button type="button" class="reviews__nav reviews__next" aria-label="Next reviews">
+				<svg width="18" height="18" aria-hidden="true" focusable="false">
+					<use href="img/sprites.svg#chevron-right" />
+				</svg>
+			</button>
+		</div>
+	</div>
+</section>
