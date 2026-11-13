@@ -1,0 +1,183 @@
+@@include("html/header.html", {"title": "Repairs — Fix Spark appliance repair, San Diego County", "description": "Real Fix Spark repairs by appliance: what failed, what it cost and the neighborhood it was in. Diagnostic $89, credited toward the repair."})
+
+<main class="main" id="main">
+	<section class="repairs-hero" id="top" data-theme="dark-surface">
+		<div class="repairs-hero__decor section-background mode-2" aria-hidden="true"></div>
+
+		<div class="container repairs-hero__inner">
+			<div class="repairs-hero__content">
+				<p class="eyebrow repairs-hero__eyebrow">Repairs log · San Diego County</p>
+				<h1 class="repairs-hero__title">What we fixed, <br> and what it cost.</h1>
+				<p class="repairs-hero__lead">Ten appliance categories, one $89 diagnostic credited toward the repair, and a published range for every job. Pick a category below, hover a photo to read what failed, click to open the full-size image.</p>
+
+				<div class="repairs-hero__actions">
+					<a class="button button--call" href="tel:+16195550142">
+						<svg width="18" height="18" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#phone" />
+						</svg>
+						Call (619) 555-0142
+					</a>
+					<a class="button button--book" href="#repairs">Browse the cases</a>
+				</div>
+			</div>
+
+			<figure class="repairs-hero__media">
+				<img src="https://via.placeholder.com/760x620?text=Repair+photo" width="760" height="620" alt="Placeholder for a photo of a finished repair">
+				<figcaption class="repairs-hero__caption">North Park · Sub-Zero · defrost heater · $310</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<section class="section cases" id="repairs">
+		<div class="section-background" aria-hidden="true"></div>
+
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Cases by appliance</p>
+					<h2 class="section-head__title">Work we can show, <br> appliance by appliance.</h2>
+					<p class="section-lead">Each tile is a finished visit: the fault, the part and the invoice price. Hover to read it, click to open the photo in a new tab.</p>
+				</div>
+			</div>
+
+			<div class="cases__tabs">
+				<div class="cases__nav" role="group" aria-label="Filter cases by appliance">
+					<button class="cases__tab" type="button" data-cases-filter="all" aria-pressed="true">
+						All
+						<span class="cases__tab-count">13</span>
+					</button>
+					<button class="cases__tab" type="button" data-cases-filter="refrigeration" aria-pressed="false">
+						Refrigeration
+						<span class="cases__tab-count">3</span>
+					</button>
+					<button class="cases__tab" type="button" data-cases-filter="laundry" aria-pressed="false">
+						Laundry
+						<span class="cases__tab-count">3</span>
+					</button>
+					<button class="cases__tab" type="button" data-cases-filter="cooking" aria-pressed="false">
+						Cooking
+						<span class="cases__tab-count">3</span>
+					</button>
+					<button class="cases__tab" type="button" data-cases-filter="dishwashing" aria-pressed="false">
+						Dishwashing
+						<span class="cases__tab-count">2</span>
+					</button>
+					<button class="cases__tab" type="button" data-cases-filter="commercial" aria-pressed="false">
+						Commercial
+						<span class="cases__tab-count">2</span>
+					</button>
+				</div>
+
+				<ul class="cases__gallery">
+					@@loop("html/case-tile.html", [
+						{
+							"category": "refrigeration",
+							"label": "Refrigerator+repair",
+							"alt": "Refrigerator repair in North Park — placeholder image",
+							"title": "Refrigerator not cooling · $310",
+							"text": "Sub-Zero, North Park. Defrost heater and thermistor replaced in one visit, same day."
+						},
+						{
+							"category": "refrigeration",
+							"label": "Freezer+repair",
+							"alt": "Freezer repair in Mira Mesa — placeholder image",
+							"title": "Freezer not freezing · $295",
+							"text": "Whirlpool, Mira Mesa. Start relay and evaporator fan motor replaced; tested at temperature."
+						},
+						{
+							"category": "refrigeration",
+							"label": "Ice+maker+repair",
+							"alt": "Ice maker repair in La Jolla — placeholder image",
+							"title": "Ice maker stopped · $260",
+							"text": "KitchenAid, La Jolla. Water inlet valve and filter changed, line flushed and tested."
+						},
+						{
+							"category": "laundry",
+							"label": "Washer+repair",
+							"alt": "Washer repair in Chula Vista — placeholder image",
+							"title": "Washer leaking at the door · $245",
+							"text": "LG, Chula Vista. Door boot and drain pump replaced. The customer approved the price before we started."
+						},
+						{
+							"category": "laundry",
+							"label": "Dryer+repair",
+							"alt": "Dryer repair in La Mesa — placeholder image",
+							"title": "Dryer not heating · $210",
+							"text": "Maytag, La Mesa. Thermal fuse and blocked vent cleared; the flat rate held."
+						},
+						{
+							"category": "laundry",
+							"label": "Washer+spin+repair",
+							"alt": "Washer repair in City Heights — placeholder image",
+							"title": "Washer not spinning · $265",
+							"text": "Samsung, City Heights. Drive belt and door lock assembly replaced, spin cycle tested."
+						},
+						{
+							"category": "cooking",
+							"label": "Oven+repair",
+							"alt": "Oven repair in La Mesa — placeholder image",
+							"title": "Oven won't heat · $268",
+							"text": "Whirlpool, La Mesa. Bake element and thermostat replaced; tested at temperature before we left."
+						},
+						{
+							"category": "cooking",
+							"label": "Stove+repair",
+							"alt": "Stove repair in Encinitas — placeholder image",
+							"title": "Stove igniter not sparking · $185",
+							"text": "GE, Encinitas. Spark module and one igniter replaced; all four burners lighting again."
+						},
+						{
+							"category": "cooking",
+							"label": "Microwave+repair",
+							"alt": "Microwave repair in Hillcrest — placeholder image",
+							"title": "Microwave not heating · $165",
+							"text": "Sharp, Hillcrest. Magnetron and diode replaced, leakage checked and signed off on the invoice."
+						},
+						{
+							"category": "dishwashing",
+							"label": "Dishwasher+repair",
+							"alt": "Dishwasher repair in Normal Heights — placeholder image",
+							"title": "Dishwasher not draining · $230",
+							"text": "Bosch, Normal Heights. Drain pump replaced and the filter housing cleaned; cycle finished dry."
+						},
+						{
+							"category": "dishwashing",
+							"label": "Dishwasher+leak+repair",
+							"alt": "Dishwasher repair in Carlsbad — placeholder image",
+							"title": "Dishwasher leaking underneath · $195",
+							"text": "KitchenAid, Carlsbad. Door gasket and water inlet valve replaced, floor under the unit dried and checked."
+						},
+						{
+							"category": "commercial",
+							"label": "Commercial+refrigeration",
+							"alt": "Commercial prep fridge repair in East Village — placeholder image",
+							"title": "Prep fridge down before service · $420",
+							"text": "True, East Village. Compressor start components and condenser cleaned; back to temperature by 4 PM."
+						},
+						{
+							"category": "commercial",
+							"label": "Commercial+dishwasher",
+							"alt": "Commercial dishwasher repair in Mission Valley — placeholder image",
+							"title": "Commercial dishwasher not filling · $390",
+							"text": "Hobart, Mission Valley. Water inlet valve and float switch replaced; one invoice for the property."
+						}
+					])
+				</ul>
+
+				<p class="visually-hidden" role="status" aria-live="polite" data-cases-status></p>
+			</div>
+		</div>
+	</section>
+
+	@@include("html/reviews.html")
+
+	@@include("html/business.html")
+
+	@@include("html/areas.html")
+
+	@@include("html/booking.html")
+
+	@@include("html/marquee.html")
+</main>
+
+@@include("html/footer.html")

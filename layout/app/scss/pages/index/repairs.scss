@@ -9,6 +9,8 @@
 }
 
 .case-card {
+	position: relative;
+
 	display: flex;
 	flex-direction: column;
 
@@ -18,6 +20,8 @@
 	border-radius: var(--radius-lg);
 
 	overflow: hidden;
+
+	transition: border-color var(--motion-base) var(--ease-standard);
 
 	// .case-card__media
 
@@ -77,6 +81,8 @@
 			width: 100%; height: 100%;
 
 			object-fit: cover;
+
+			transition: transform var(--motion-base) var(--ease-standard);
 		}
 	}
 
@@ -147,7 +153,8 @@
 		font-variant-numeric: tabular-nums;
 	}
 
-	// .case-card__link
+	// .case-card__link — the link stretches over the whole card so the image
+	// and the title are clickable too
 
 	&__link {
 		display: inline-flex;
@@ -156,6 +163,24 @@
 
 		text-decoration: underline;
 		text-underline-offset: 0.35ch;
+
+		&::after {
+			content: "";
+
+			position: absolute;
+			inset: 0;
+			z-index: 3;
+		}
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		// .case-card:hover
+
+		&:hover {
+			border-color: var(--border-strong);
+
+			.case-card__media img { transform: scale(1.03); }
+		}
 	}
 	
 }

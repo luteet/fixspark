@@ -1,0 +1,211 @@
+.cases {
+	// .cases__nav
+
+	&__nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+
+		margin-bottom: var(--space-6);
+	}
+
+	// .cases__tab
+
+	&__tab {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+
+		min-height: 40px;
+		padding: 0 var(--space-4);
+
+		background-color: var(--surface);
+		border: 1px solid var(--border-strong);
+		border-radius: var(--radius-pill);
+
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		line-height: 1;
+
+		color: var(--fg-2);
+
+		cursor: pointer;
+
+		transition: background-color var(--motion-fast) var(--ease-standard),
+			border-color var(--motion-fast) var(--ease-standard),
+			color var(--motion-fast) var(--ease-standard);
+
+		@media (hover: hover) and (pointer: fine) {
+			&:hover:not([aria-pressed="true"]) {
+				border-color: var(--fg);
+				color: var(--fg);
+			}
+		}
+
+		// .cases__tab[aria-pressed="true"]
+
+		&[aria-pressed="true"] {
+			background-color: var(--surface-dark-raised);
+			background-image: var(--grad-sheen-dark);
+			border-color: var(--brand-primary);
+			color: var(--brand-primary-on);
+
+			.cases__tab-count {
+				color: var(--brand-primary-on);
+				opacity: 0.7;
+			}
+		}
+	}
+
+	// .cases__tab-count
+
+	&__tab-count {
+		font-size: var(--text-2xs);
+		font-weight: var(--weight-semibold);
+		font-variant-numeric: tabular-nums;
+
+		color: var(--muted);
+	}
+
+	// .cases__gallery
+
+	&__gallery {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: var(--space-4);
+
+		// the tiles collapse when a filter is picked — the scroll lock in
+		// main.js handles the offset, so the browser must not re-anchor it
+		overflow-anchor: none;
+
+		@media (max-width: 64rem) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		@media (max-width: 40rem) {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+}
+
+.case-tile {
+	// .case-tile__link
+
+	&__link {
+		position: relative;
+
+		display: block;
+
+		aspect-ratio: 4 / 3;
+
+		background-color: var(--surface-sunken);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+
+		overflow: hidden;
+
+		color: var(--on-dark);
+		text-decoration: none;
+
+		transition: border-color var(--motion-base) var(--ease-standard);
+	}
+
+	// .case-tile__image
+
+	&__image {
+		position: absolute;
+		left: 0; top: 0;
+
+		width: 100%; height: 100%;
+
+		object-fit: cover;
+
+		transition: transform var(--motion-base) var(--ease-standard);
+	}
+
+	// .case-tile__body
+
+	&__body {
+		position: absolute;
+		left: 0; right: 0; bottom: 0;
+		z-index: 2;
+
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+
+		padding: var(--space-10) var(--space-4) var(--space-4);
+
+		background-image: linear-gradient(180deg, rgba(11, 42, 60, 0) 0%, rgba(11, 42, 60, 0.88) 62%, rgba(11, 42, 60, 0.96) 100%);
+
+		color: var(--on-dark);
+
+		@media (hover: hover) and (pointer: fine) {
+			opacity: 0;
+			transform: translateY(8px);
+
+			transition: opacity var(--motion-base) var(--ease-standard),
+				transform var(--motion-base) var(--ease-standard);
+		}
+	}
+
+	// .case-tile__title
+
+	&__title {
+		font-family: var(--font-display);
+		font-size: var(--text-md);
+		font-weight: var(--weight-semibold);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+
+		color: var(--on-dark);
+	}
+
+	// .case-tile__text
+
+	&__text {
+		font-size: var(--text-xs);
+		line-height: 1.5;
+
+		color: var(--on-dark-muted);
+	}
+
+	// .case-tile__hint
+
+	&__hint {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+
+		margin-top: var(--space-2);
+
+		font-size: var(--text-2xs);
+		font-weight: var(--weight-semibold);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+
+		color: var(--on-dark);
+
+		svg {
+			width: 14px;
+			height: 14px;
+		}
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		&__link:hover,
+		&__link:focus-visible {
+			border-color: var(--border-strong);
+
+			.case-tile__body {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		&__link:hover .case-tile__image {
+			transform: scale(1.04);
+		}
+	}
+}

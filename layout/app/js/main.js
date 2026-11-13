@@ -377,6 +377,76 @@ if (servicesLinks.length) {
 }
 
 
+// Cases filter (repairs page). The buttons are a toggle group, not ARIA tabs:
+// "All" and every appliance category filter the same gallery in place, so the
+// tiles keep their single source of markup. Hidden tiles drop out of tab order.
+
+// Switching filters changes the gallery height, and the browser's scroll
+// anchoring would try to compensate by moving the page. The click locks the
+// scroll offset for the next two frames instead, so the viewport stays exactly
+// where the visitor was when they picked a category.
+
+function lockCasesScroll() {
+	const savedScrollY = window.scrollY;
+	const root = document.documentElement;
+	const previousBehavior = root.style.scrollBehavior;
+
+	root.style.scrollBehavior = "auto";
+
+	function restore() {
+		if (Math.abs(window.scrollY - savedScrollY) > 0.5) window.scrollTo(0, savedScrollY);
+	}
+
+	requestAnimationFrame(function () {
+		restore();
+
+		requestAnimationFrame(function () {
+			restore();
+			root.style.scrollBehavior = previousBehavior;
+		});
+	});
+}
+
+const casesFilters = document.querySelectorAll(".cases__tabs");
+
+casesFilters.forEach(function (group) {
+	const filterButtons = Array.from(group.querySelectorAll(".cases__tab"));
+	const tiles = Array.from(group.querySelectorAll(".case-tile"));
+	const status = group.querySelector("[data-cases-status]");
+
+	if (!filterButtons.length || !tiles.length) return;
+
+	function applyCasesFilter(filter) {
+		let visible = 0;
+
+		filterButtons.forEach(function (button) {
+			const isActive = button.getAttribute("data-cases-filter") === filter;
+
+			button.setAttribute("aria-pressed", isActive ? "true" : "false");
+		});
+
+		tiles.forEach(function (tile) {
+			const matches = filter === "all" || tile.getAttribute("data-cases-category") === filter;
+
+			tile.hidden = !matches;
+
+			if (matches) visible++;
+		});
+
+		if (status) {
+			status.textContent = visible + (visible === 1 ? " case shown" : " cases shown");
+		}
+	}
+
+	filterButtons.forEach(function (button) {
+		button.addEventListener("click", function () {
+			lockCasesScroll();
+			applyCasesFilter(button.getAttribute("data-cases-filter") || "all");
+		});
+	});
+});
+
+
 // Aspect ratio for images
 
 const imageAspectRatio = document.querySelectorAll(".image-aspect-ratio, figure img");

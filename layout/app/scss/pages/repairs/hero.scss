@@ -1,0 +1,200 @@
+.repairs-hero {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+
+	padding-top: calc(var(--header-h) + var(--space-16));
+	padding-bottom: var(--section-y-desktop);
+
+	background: var(--surface-dark);
+	border-radius: var(--radius-xl);
+
+	color: var(--on-dark);
+
+	// .repairs-hero__decor
+
+	&__decor {
+		z-index: 2;
+	}
+
+	// .repairs-hero__inner
+
+	&__inner {
+		position: relative;
+		z-index: 3;
+
+		display: grid;
+		grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+		align-items: center;
+
+		gap: clamp(32px, 5vw, 64px);
+	}
+
+	// .repairs-hero__eyebrow
+
+	&__eyebrow {
+		border-color: var(--border-dark);
+	}
+
+	// .repairs-hero__title
+
+	&__title {
+		margin-top: var(--space-5);
+		max-width: 16ch;
+
+		font-size: clamp(34px, 4.4vw, 52px);
+		font-weight: var(--weight-bold);
+		line-height: 1.05;
+		letter-spacing: -0.025em;
+		text-wrap: pretty;
+
+		color: var(--on-dark);
+	}
+
+	// .repairs-hero__lead
+
+	&__lead {
+		margin-top: var(--space-5);
+		max-width: 52ch;
+
+		font-size: var(--text-md);
+		line-height: 1.65;
+
+		color: var(--on-dark-muted);
+	}
+
+	// .repairs-hero__actions
+
+	&__actions {
+		margin-top: var(--space-8);
+
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-3);
+	}
+
+	// .repairs-hero__facts
+
+	&__facts {
+		margin-top: var(--space-8);
+
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--space-3) var(--space-6);
+
+		max-width: 54ch;
+
+		font-size: var(--text-sm);
+		line-height: 1.45;
+		color: var(--on-dark-muted);
+
+		li {
+			display: flex;
+			align-items: center;
+			gap: var(--space-2);
+		}
+
+		svg {
+			width: 18px;
+			height: 18px;
+
+			color: var(--on-dark-muted);
+		}
+	}
+
+	// .repairs-hero__media
+
+	&__media {
+		position: relative;
+
+		aspect-ratio: 6 / 5;
+		min-width: 0;
+		margin: 0;
+
+		background-color: var(--surface-dark-raised);
+		border: 1px solid var(--border-dark);
+		border-radius: var(--radius-xl);
+
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			left: 0; top: 0;
+
+			width: 100%; height: 100%;
+
+			object-fit: cover;
+		}
+	}
+
+	// .repairs-hero__caption
+
+	&__caption {
+		position: absolute;
+		left: var(--space-4); bottom: var(--space-4);
+		right: var(--space-4);
+
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-2);
+
+		padding: var(--space-2) var(--space-4);
+
+		width: fit-content;
+		max-width: calc(100% - var(--space-8));
+
+		background-color: var(--surface-dark-raised);
+		border: 1px solid var(--border-dark);
+		border-radius: var(--radius-pill);
+
+		font-size: var(--text-xs);
+		font-weight: var(--weight-medium);
+		line-height: 1.4;
+
+		color: var(--on-dark);
+	}
+
+	@media (max-width: 1024px) {
+		padding-bottom: var(--section-y-tablet);
+	}
+
+	@media (max-width: 900px) {
+		// .repairs-hero__inner
+
+		&__inner {
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		// .repairs-hero__title
+
+		&__title {
+			max-width: 20ch;
+		}
+	}
+
+	@media (max-width: 560px) {
+		padding-top: calc(var(--header-h) + var(--space-10));
+		padding-bottom: var(--section-y-phone);
+
+		// .repairs-hero__actions .button
+
+		&__actions .button {
+			width: 100%;
+		}
+
+		// .repairs-hero__facts
+
+		&__facts {
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		// .repairs-hero__media
+
+		&__media {
+			aspect-ratio: 4 / 3;
+		}
+	}
+}
