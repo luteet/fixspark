@@ -157,9 +157,9 @@
 		left: 50%;
 		z-index: 60;
 
-		width: min(604px, calc(100vw - var(--page-gutter) * 4));
+		width: min(550px, calc(100vw - var(--page-gutter) * 4));
 
-		padding: var(--space-2);
+		//padding: var(--space-2);
 
 		background: var(--surface);
 		border: 1px solid var(--border);
@@ -208,8 +208,27 @@
 
 	&__dropdown-list {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: var(--space-1) var(--space-2);
+		grid-template-columns: 1fr 1fr;
+
+		@media (min-width: 56.25rem) {
+			> li:nth-child(odd) {
+				border-right: 1px solid var(--border-soft);
+			}
+
+			> li:not(:nth-last-child(-n + 2)) {
+				border-bottom: 1px solid var(--border-soft);
+			}
+		}
+	}
+
+	@media (min-width: 56.25rem) {
+		&__dropdown-list > li:first-child > &__dropdown-link {
+			border-top-left-radius: calc(var(--radius-md) + 3px);
+		}
+
+		&__dropdown-list > li:nth-child(2) > &__dropdown-link {
+			border-top-right-radius: calc(var(--radius-md) + 3px);
+		}
 	}
 
 	// .header__dropdown-link
@@ -221,11 +240,15 @@
 
 		padding: var(--space-2) var(--space-3);
 
-		border-radius: var(--radius-md);
 		color: var(--fg);
 
 		transition: background-color var(--motion-fast) var(--ease-standard),
-			color var(--motion-fast) var(--ease-standard);
+					color var(--motion-fast) var(--ease-standard);
+
+		@media (min-width: 56.25rem) {
+			background-color: var(--surface);
+			background-image: var(--grad-card);
+		}
 
 		@media (hover: hover) and (pointer: fine) {
 			&:hover {
@@ -254,7 +277,7 @@
 	// .header__dropdown-icon
 
 	&__dropdown-icon {
-		display: grid;
+		display: none;
 		place-items: center;
 		flex: none;
 
@@ -334,8 +357,7 @@
 		justify-content: space-between;
 		gap: var(--space-2) var(--space-4);
 
-		margin-top: var(--space-2);
-		padding: var(--space-3) var(--space-3) var(--space-1);
+		padding: var(--space-2) var(--space-3);
 
 		border-top: 1px solid var(--border-soft);
 	}
@@ -601,7 +623,7 @@
 
 			display: none;
 
-			width: auto;
+			width: 100%;
 
 			padding: 0;
 
@@ -634,7 +656,7 @@
 		// .header__dropdown-link
 
 		&__dropdown-link {
-			padding: var(--space-2) 0;
+			padding: var(--space-2);
 		}
 
 		// .header__dropdown-arrow
