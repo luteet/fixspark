@@ -616,12 +616,15 @@
 			display: block;
 		}
 
-		// .header__dropdown — inline accordion instead of a floating panel
+		// .header__dropdown — inline accordion instead of a floating panel.
+		// Height is animated through a grid row (0fr → 1fr) on the wrapper,
+		// so the panel does not need a hardcoded max-height.
 
 		&__dropdown {
 			position: static;
 
-			display: none;
+			display: grid;
+			grid-template-rows: 0fr;
 
 			width: 100%;
 
@@ -632,15 +635,29 @@
 			border-radius: 0;
 			box-shadow: none;
 
-			transition: none;
+			transform: translateY(-8px);
+
+			transition: grid-template-rows var(--motion-base) var(--ease-standard),
+				opacity var(--motion-base) var(--ease-standard),
+				transform var(--motion-base) var(--ease-standard),
+				visibility var(--motion-base) var(--ease-standard);
 
 			&::before { content: none; }
+		}
+
+		// .header__dropdown-inner — the clipped row the accordion animates
+
+		&__dropdown-inner {
+			overflow: hidden;
+
+			min-height: 0;
 		}
 
 		// .header__nav-item--has-dropdown.is-open .header__dropdown
 
 		&__nav-item--has-dropdown.is-open &__dropdown {
-			display: block;
+			grid-template-rows: 1fr;
+
 			transform: none;
 		}
 
