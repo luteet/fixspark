@@ -1,0 +1,82 @@
+/* ─────────────────────────────────────────────────────────────────────────
+ * Cross-document View Transitions (MPA)
+ *
+ * Every page is its own document, so moving between them replaces the whole
+ * document. `@view-transition { navigation: auto }` lets the View Transition
+ * API animate that swap: the outgoing page dissolves and the incoming one
+ * fades in instead of flashing white between documents.
+ *
+ * The header and the mobile sticky bar are the same markup on every page, so
+ * they carry a `view-transition-name`: the browser treats them as one
+ * persistent element and holds them steady while the content changes under
+ * them. The footer intentionally gets no name — it is a long in-flow block,
+ * and morphing it between two scroll positions would look like it flies away.
+ *
+ * Motion budget — opacity only: --motion-fast out, --motion-base in,
+ * --ease-standard. `prefers-reduced-motion` turns the animations off.
+ * Browsers without support ignore the at-rule and the pseudo-elements, so
+ * navigation simply stays instant.
+ * ─────────────────────────────────────────────────────────────────── */
+
+@view-transition {
+	navigation: auto;
+}
+
+// Persistent chrome — the name must be unique within the document
+
+.header {
+	view-transition-name: site-header;
+}
+
+.sticky-bar {
+	view-transition-name: site-sticky-bar;
+}
+
+// Snapshots of an identical header/bar are pixel copies, so a cross-fade would
+// only make them translucent. The old snapshot stays in place until the new
+// document takes over instead.
+
+::view-transition-old(site-header),
+::view-transition-new(site-header),
+::view-transition-old(site-sticky-bar),
+::view-transition-new(site-sticky-bar) {
+	animation: none;
+}
+
+// Content: leaves quickly, arrives calmly — the overlap keeps the document
+// background from showing through between the two snapshots
+
+::view-transition-old(root) {
+	animation: var(--motion-fast) var(--ease-standard) both view-transition-page-out;
+}
+
+::view-transition-new(root) {
+	animation: var(--motion-base) var(--ease-standard) both view-transition-page-in;
+}
+
+@keyframes view-transition-page-out {
+	to { opacity: 0; }
+}
+
+@keyframes view-transition-page-in {
+	from { opacity: 0; }
+}
+
+// Toggled from main.js on `pageswap`. The outgoing document is snapshotted
+// right after that event, so states that are still animating out (an open
+// mobile menu, an open dropdown) must vanish instantly instead of landing in
+// the frame half-closed.
+
+.is-leaving *,
+.is-leaving *::before,
+.is-leaving *::after {
+	transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}

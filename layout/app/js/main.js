@@ -523,6 +523,20 @@ window.addEventListener("resize", function () {
 });
 
 
+// Cross-document View Transitions (styles live in components/view-transition.scss).
+// The outgoing document is snapshotted right after `pageswap` fires, so anything
+// that is still animating shut — an open mobile menu, an open services dropdown —
+// is dropped here instead of being frozen half-closed into the fade.
+
+window.addEventListener("pageswap", function (event) {
+	if (!event.viewTransition) return;
+
+	html.classList.add("is-leaving");
+	setMenu(false);
+	setDropdown(false);
+});
+
+
 // Viewport units + header height
 
 function resize() {
