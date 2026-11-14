@@ -6,41 +6,22 @@
  * API animate that swap: the incoming page fades in over the outgoing one
  * instead of flashing white between documents.
  *
- * The header and the mobile sticky bar are the same markup on every page, so
- * they carry a `view-transition-name`: the browser treats them as one
- * persistent element and holds them steady while the content changes under
- * them. The footer intentionally gets no name — it is a long in-flow block,
- * and morphing it between two scroll positions would look like it flies away.
+ * The fixed chrome (header, mobile sticky bar) is kept out of the swap. Its
+ * snapshot is pinned to the viewport instead of the scrolling document, which
+ * produced small artifacts while the two pages crossed, so it is not morphed:
+ * the page hides it while the documents change and fades it back in once the
+ * new page is on screen. main.js toggles the states — `is-leaving` on the
+ * outgoing document, `is-chrome-hidden` on the incoming one.
  *
  * Motion — opacity only: the new page dissolves in over --motion-page with
- * --ease-standard, so the swap reads as a cross-fade rather than a cut.
- * `prefers-reduced-motion` turns the animation off. Browsers without support
- * ignore the at-rule and the pseudo-elements, so navigation stays instant.
+ * --ease-standard, so the swap reads as a cross-fade rather than a cut; the
+ * chrome returns with --motion-base. `prefers-reduced-motion` turns both off.
+ * Browsers without support ignore the at-rule and the pseudo-elements, so
+ * navigation stays instant.
  * ─────────────────────────────────────────────────────────────────── */
 
 @view-transition {
 	navigation: auto;
-}
-
-// Persistent chrome — the name must be unique within the document
-
-.header {
-	view-transition-name: site-header;
-}
-
-.sticky-bar {
-	view-transition-name: site-sticky-bar;
-}
-
-// Snapshots of an identical header/bar are pixel copies, so a cross-fade would
-// only make them translucent. The old snapshot stays in place until the new
-// document takes over instead.
-
-::view-transition-old(site-header),
-::view-transition-new(site-header),
-::view-transition-old(site-sticky-bar),
-::view-transition-new(site-sticky-bar) {
-	animation: none;
 }
 
 // Content: a plain cross-fade. The new snapshot is painted above the old one,
@@ -60,10 +41,31 @@
 	from { opacity: 0; }
 }
 
+// Fixed chrome stays out of the swap: `is-leaving` hides it in the document
+// that is being replaced (the transition kill below makes it vanish in the
+// same frame), `is-chrome-hidden` keeps it hidden in the new document until
+// the cross-fade is over.
+
+.is-leaving .header,
+.is-leaving .sticky-bar,
+.is-chrome-hidden .header,
+.is-chrome-hidden .sticky-bar {
+	opacity: 0;
+}
+
+// Must be gone before the new document is snapshotted, so no fade on the way
+// in — the fade happens on the way back, once `.is-chrome-hidden` is removed
+
+.is-chrome-hidden .header,
+.is-chrome-hidden .sticky-bar {
+	transition: none;
+	pointer-events: none;
+}
+
 // Toggled from main.js on `pageswap`. The outgoing document is snapshotted
 // right after that event, so states that are still animating out (an open
-// mobile menu, an open dropdown) must vanish instantly instead of landing in
-// the frame half-closed.
+// mobile menu, an open dropdown, the header itself) must vanish instantly
+// instead of landing in the frame half-closed.
 
 .is-leaving *,
 .is-leaving *::before,

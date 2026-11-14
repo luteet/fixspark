@@ -524,9 +524,14 @@ window.addEventListener("resize", function () {
 
 
 // Cross-document View Transitions (styles live in components/view-transition.scss).
-// The outgoing document is snapshotted right after `pageswap` fires, so anything
-// that is still animating shut — an open mobile menu, an open services dropdown —
-// is dropped here instead of being frozen half-closed into the fade.
+// The fixed header and sticky bar are kept out of the swap: the outgoing document
+// hides them here, the incoming one keeps them hidden until the cross-fade ends.
+// `pageswap` fires right before the old page is snapshotted and `pagereveal` right
+// before the new one is, so states that are still animating shut — an open mobile
+// menu, an open services dropdown — never land in the frame half-closed.
+
+const CHROME_HIDDEN = "is-chrome-hidden";
+const CHROME_REVEAL_FALLBACK = 1200;
 
 window.addEventListener("pageswap", function (event) {
 	if (!event.viewTransition) return;
@@ -534,6 +539,22 @@ window.addEventListener("pageswap", function (event) {
 	html.classList.add("is-leaving");
 	setMenu(false);
 	setDropdown(false);
+});
+
+window.addEventListener("pagereveal", function (event) {
+	if (!event.viewTransition) return;
+
+	html.classList.add(CHROME_HIDDEN);
+
+	function revealChrome() {
+		html.classList.remove(CHROME_HIDDEN);
+	}
+
+	event.viewTransition.finished.then(revealChrome, revealChrome);
+
+	// safety net: a skipped or cancelled transition must never leave the header
+	// hidden for good
+	setTimeout(revealChrome, CHROME_REVEAL_FALLBACK);
 });
 
 
