@@ -181,7 +181,9 @@ app/
   `--radius-xl` (крупные панели), `--radius-pill`.
 - Контролы: высота `--control-h` (48px), в `sticky-bar`/хэдере — 44px.
 - Анимация: только `opacity`/`transform`, ≤200ms; учитывать `prefers-reduced-motion`
-  (глобальный блок в `global.scss` уже это делает).
+  (глобальный блок в `global.scss` уже это делает). Единственное исключение —
+  `--motion-page` (400ms) для cross-document перехода между страницами
+  (`components/view-transition.scss`).
 
 ## HTML и контент
 

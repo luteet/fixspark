@@ -3,8 +3,8 @@
  *
  * Every page is its own document, so moving between them replaces the whole
  * document. `@view-transition { navigation: auto }` lets the View Transition
- * API animate that swap: the outgoing page dissolves and the incoming one
- * fades in instead of flashing white between documents.
+ * API animate that swap: the incoming page fades in over the outgoing one
+ * instead of flashing white between documents.
  *
  * The header and the mobile sticky bar are the same markup on every page, so
  * they carry a `view-transition-name`: the browser treats them as one
@@ -12,10 +12,10 @@
  * them. The footer intentionally gets no name — it is a long in-flow block,
  * and morphing it between two scroll positions would look like it flies away.
  *
- * Motion budget — opacity only: --motion-fast out, --motion-base in,
- * --ease-standard. `prefers-reduced-motion` turns the animations off.
- * Browsers without support ignore the at-rule and the pseudo-elements, so
- * navigation simply stays instant.
+ * Motion — opacity only: the new page dissolves in over --motion-page with
+ * --ease-standard, so the swap reads as a cross-fade rather than a cut.
+ * `prefers-reduced-motion` turns the animation off. Browsers without support
+ * ignore the at-rule and the pseudo-elements, so navigation stays instant.
  * ─────────────────────────────────────────────────────────────────── */
 
 @view-transition {
@@ -43,19 +43,17 @@
 	animation: none;
 }
 
-// Content: leaves quickly, arrives calmly — the overlap keeps the document
-// background from showing through between the two snapshots
+// Content: a plain cross-fade. The new snapshot is painted above the old one,
+// so keeping the old page fully opaque underneath and fading the new page in
+// from zero means the two documents always overlap — the background never
+// shows through between them.
 
 ::view-transition-old(root) {
-	animation: var(--motion-fast) var(--ease-standard) both view-transition-page-out;
+	animation: none;
 }
 
 ::view-transition-new(root) {
-	animation: var(--motion-base) var(--ease-standard) both view-transition-page-in;
-}
-
-@keyframes view-transition-page-out {
-	to { opacity: 0; }
+	animation: var(--motion-page) var(--ease-standard) both view-transition-page-in;
 }
 
 @keyframes view-transition-page-in {
