@@ -1,0 +1,225 @@
+.price-board {
+	// .price-board__shell
+
+	&__shell {
+		padding: clamp(20px, 3vw, 40px);
+
+		background-color: var(--surface);
+		background-image: var(--grad-card);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-xl);
+	}
+
+	// .price-board__diagnostic
+
+	&__diagnostic {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		gap: var(--space-3) var(--space-6);
+		padding: var(--space-4) var(--space-5);
+
+		background-color: var(--surface-sunken);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+	}
+
+	// .price-board__diagnostic-text
+
+	&__diagnostic-text {
+		display: grid;
+		gap: var(--space-1);
+
+		min-width: 0;
+	}
+
+	// .price-board__diagnostic-name
+
+	&__diagnostic-name {
+		font-family: var(--font-display);
+		font-size: var(--text-base);
+		font-weight: var(--weight-semibold);
+
+		color: var(--fg);
+	}
+
+	// .price-board__diagnostic-note
+
+	&__diagnostic-note {
+		max-width: 62ch;
+
+		font-size: var(--text-sm);
+		line-height: 1.55;
+
+		color: var(--fg-2);
+	}
+
+	// .price-board__diagnostic-value
+
+	&__diagnostic-value {
+		font-family: var(--font-display);
+		font-size: var(--text-xl);
+		font-weight: var(--weight-bold);
+		letter-spacing: -0.01em;
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+
+		color: var(--fg);
+	}
+
+	// .price-board__grid
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0 var(--space-10);
+
+		margin-top: var(--space-6);
+
+		@media (max-width: 56.25rem) {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
+	// .price-board__item
+
+	&__item {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-rows: auto auto;
+		align-items: start;
+
+		gap: var(--space-1) var(--space-6);
+		padding: var(--space-4) 0;
+
+		border-bottom: 1px solid var(--border);
+	}
+
+	// .price-board__item-title
+
+	&__item-title {
+		font-size: var(--text-lg);
+		font-weight: var(--weight-semibold);
+		letter-spacing: 0;
+		line-height: 1.3;
+	}
+
+	// .price-board__item-text
+
+	&__item-text {
+		max-width: 46ch;
+
+		font-size: var(--text-sm);
+		line-height: 1.55;
+		text-wrap: balance;
+
+		color: var(--muted);
+	}
+
+	// .price-board__item-value
+
+	&__item-value {
+		grid-column: 2;
+		grid-row: 1 / span 2;
+		align-self: center;
+
+		font-family: var(--font-display);
+		font-size: var(--text-xl);
+		font-weight: var(--weight-bold);
+		letter-spacing: -0.01em;
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+
+		color: var(--fg);
+	}
+
+	// .price-board__note
+
+	&__note {
+		margin-top: var(--space-6);
+		max-width: 70ch;
+
+		font-size: var(--text-sm);
+		line-height: 1.6;
+
+		color: var(--muted);
+	}
+
+	// .price-board__guarantee
+
+	&__guarantee {
+		margin-top: var(--space-6);
+
+		display: flex;
+		align-items: flex-start;
+
+		gap: var(--space-3);
+		padding: var(--space-4);
+
+		background-color: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+
+		font-size: var(--text-sm);
+		line-height: 1.55;
+
+		color: var(--fg-2);
+
+		svg {
+			margin-top: 0;
+
+			width: 22px;
+			height: 22px;
+
+			color: var(--icon);
+		}
+
+		b {
+			font-weight: var(--weight-semibold);
+
+			color: var(--fg);
+		}
+	}
+
+	@media (max-width: 45rem) {
+		// .price-board__shell
+
+		&__shell {
+			padding: 20px;
+		}
+
+		// .price-board__diagnostic
+
+		&__diagnostic {
+			padding: var(--space-4);
+		}
+	}
+
+	@media (max-width: 35rem) {
+		// .price-board__item
+
+		&__item {
+			gap: var(--space-1) var(--space-4);
+		}
+
+		// .price-board__item-title
+
+		&__item-title {
+			font-size: var(--text-base);
+		}
+
+		// .price-board__item-value
+
+		&__item-value {
+			font-size: var(--text-lg);
+		}
+
+		// .price-board__diagnostic-value
+
+		&__diagnostic-value {
+			font-size: var(--text-lg);
+		}
+	}
+}
