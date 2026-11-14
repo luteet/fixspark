@@ -72,10 +72,6 @@
 
 	&.mode-2 {
 		opacity: .075;
-		
-		@media (min-width: 62rem) {
-			opacity: .05;
-		}
 
 		&::after {
 			background-color: var(--icon);
