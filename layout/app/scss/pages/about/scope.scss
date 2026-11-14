@@ -1,0 +1,164 @@
+.about-scope {
+	// .about-scope__grid
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--space-4);
+
+		@media (max-width: 56.25rem) {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
+	// .about-scope__card
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: var(--space-4);
+		padding: var(--space-8);
+
+		background-color: var(--surface);
+		background-image: var(--grad-card);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+
+		@media (max-width: 35rem) {
+			padding: var(--space-5);
+		}
+	}
+
+	// .about-scope__title
+
+	&__title {
+		font-size: var(--text-xl);
+		font-weight: var(--weight-semibold);
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+	}
+
+	// .about-scope__text
+
+	&__text {
+		font-size: var(--text-sm);
+		line-height: 1.6;
+
+		color: var(--fg-2);
+	}
+
+	// .about-scope__list
+
+	&__list {
+		width: 100%;
+	}
+
+	// .about-scope__item
+
+	&__item {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+
+		gap: var(--space-4);
+		padding-block: var(--space-3);
+
+		border-bottom: 1px solid var(--border-soft);
+
+		font-size: var(--text-sm);
+		line-height: 1.4;
+
+		&:first-child {
+			border-top: 1px solid var(--border-soft);
+		}
+	}
+
+	// .about-scope__name
+
+	&__name {
+		min-width: 0;
+
+		color: var(--fg-2);
+	}
+
+	// .about-scope__value
+
+	&__value {
+		flex: none;
+
+		font-family: var(--font-display);
+		font-weight: var(--weight-semibold);
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+
+		color: var(--fg);
+	}
+
+	// .about-scope__segments
+
+	&__segments {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--space-3) var(--space-4);
+
+		width: 100%;
+
+		font-size: var(--text-sm);
+		line-height: 1.4;
+
+		color: var(--fg-2);
+
+		li {
+			display: flex;
+			align-items: center;
+
+			gap: var(--space-2);
+			min-width: 0;
+		}
+
+		svg {
+			width: 16px;
+			height: 16px;
+
+			color: var(--icon);
+		}
+
+		@media (max-width: 35rem) {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
+	// .about-scope__note
+
+	&__note {
+		font-size: var(--text-xs);
+		line-height: 1.5;
+
+		color: var(--muted);
+	}
+
+	// .about-scope__link
+
+	&__link {
+		margin-top: auto;
+		padding-top: var(--space-2);
+
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+
+		color: var(--link);
+		text-decoration: underline;
+		text-underline-offset: 0.35ch;
+
+		@media (hover: hover) and (pointer: fine) {
+			// .about-scope__link:hover
+
+			&:hover {
+				color: var(--link-hover);
+				text-decoration: underline;
+			}
+		}
+	}
+}

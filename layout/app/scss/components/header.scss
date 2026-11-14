@@ -382,8 +382,15 @@
 	&__dropdown-more {
 		font-size: var(--text-sm);
 		font-weight: var(--weight-medium);
-
+		text-decoration: underline;
+		text-underline-offset: 0.35ch;
 		color: var(--link);
+
+		@media (hover: hover) and (pointer: fine) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	// .header__actions
