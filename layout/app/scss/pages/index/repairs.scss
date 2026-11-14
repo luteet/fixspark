@@ -37,6 +37,8 @@
 		border-bottom: 1px solid var(--border);
 		color: var(--icon);
 
+		overflow: clip;
+
 		&::before {
 			content: "";
 
@@ -163,6 +165,10 @@
 
 		text-decoration: underline;
 		text-underline-offset: 0.35ch;
+
+		&:hover {
+			text-decoration: underline;
+		}
 
 		&::after {
 			content: "";

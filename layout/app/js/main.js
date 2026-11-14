@@ -145,6 +145,24 @@ const serviceSelectControl = window.SlimSelect && serviceSelect
 	: null;
 
 
+// Service page: preselect the page's own service in the booking form.
+// The page opts in with data-preselect-service="<option label>" on <main>.
+
+const preselectRoot = document.querySelector("[data-preselect-service]");
+
+if (serviceSelect && preselectRoot) {
+	const preselectName = preselectRoot.getAttribute("data-preselect-service");
+
+	if (preselectName) {
+		if (serviceSelectControl) {
+			serviceSelectControl.setSelected(preselectName);
+		} else {
+			serviceSelect.value = preselectName;
+		}
+	}
+}
+
+
 // Header services dropdown. Desktop opens on hover/focus and click; below the
 // nav breakpoint the same markup becomes an inline accordion in the mobile menu.
 

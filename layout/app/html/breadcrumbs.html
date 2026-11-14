@@ -1,0 +1,15 @@
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+	<ol class="breadcrumbs__list">
+		<li class="breadcrumbs__item">
+			<a class="breadcrumbs__link" href="./#top">Home</a>
+		</li>
+@@if (typeof parent !== "undefined" && parent) {
+		<li class="breadcrumbs__item">
+			<a class="breadcrumbs__link" href="@@parent_href">@@parent</a>
+		</li>
+}
+		<li class="breadcrumbs__item">
+			<span class="breadcrumbs__current" aria-current="page">@@current</span>
+		</li>
+	</ol>
+</nav>

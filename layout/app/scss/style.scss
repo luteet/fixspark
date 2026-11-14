@@ -5,6 +5,7 @@
 
 @forward "components/fonts";
 @forward "components/section";
+@forward "components/breadcrumbs";
 @forward "components/brand";
 @forward "components/button";
 @forward "components/form";
@@ -28,5 +29,10 @@
 @forward "pages/brand";
 @forward "pages/repairs/hero";
 @forward "pages/repairs/cases";
+@forward "pages/service/hero";
+@forward "pages/service/price";
+@forward "pages/service/symptoms";
+@forward "pages/service/steps";
+@forward "pages/service/more";
 
 // new
