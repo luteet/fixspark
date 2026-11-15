@@ -32,7 +32,7 @@ function setMenu(open) {
 	body.classList.toggle("is-mobile-nav-active", open);
 	header && header.classList.toggle("header--menu-open", open);
 
-	if (!open) setDropdown(false);
+	if (!open) closeDropdowns();
 
 	burger.setAttribute("aria-expanded", open ? "true" : "false");
 	burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
@@ -163,70 +163,70 @@ if (serviceSelect && preselectRoot) {
 }
 
 
-// Header services dropdown. Desktop opens on hover/focus and click; below the
-// nav breakpoint the same markup becomes an inline accordion in the mobile menu.
+// Header dropdowns (services, brands). Desktop opens on hover/focus and click;
+// below the nav breakpoint the same markup becomes an inline accordion in the
+// mobile menu. Only one panel is open at a time.
 
-const servicesDropdown = document.querySelector(".header__nav-item--has-dropdown");
-const servicesDropdownToggle = servicesDropdown
-	? servicesDropdown.querySelector(".header__dropdown-toggle")
-	: null;
-const servicesDropdownLinks = servicesDropdown
-	? servicesDropdown.querySelectorAll(".header__dropdown-link")
-	: [];
+const dropdownItems = document.querySelectorAll(".header__nav-item--has-dropdown");
 const dropdownHoverQuery = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)");
+const dropdownCloseTimers = new WeakMap();
 
-let dropdownCloseTimer;
 let viewportIsDesktop = window.innerWidth > MENU_BREAKPOINT;
 
-function isDropdownOpen() {
-	return servicesDropdown ? servicesDropdown.classList.contains("is-open") : false;
+function setDropdown(item, open) {
+	const toggle = item ? item.querySelector(".header__dropdown-toggle") : null;
+
+	if (!item || !toggle) return;
+
+	clearTimeout(dropdownCloseTimers.get(item));
+
+	item.classList.toggle("is-open", open);
+	toggle.setAttribute("aria-expanded", open ? "true" : "false");
 }
 
-function setDropdown(open) {
-	if (!servicesDropdown || !servicesDropdownToggle) return;
-
-	clearTimeout(dropdownCloseTimer);
-
-	servicesDropdown.classList.toggle("is-open", open);
-	servicesDropdownToggle.setAttribute("aria-expanded", open ? "true" : "false");
+function closeDropdowns() {
+	dropdownItems.forEach(function (item) {
+		setDropdown(item, false);
+	});
 }
 
-if (servicesDropdown && servicesDropdownToggle) {
-	servicesDropdownToggle.addEventListener("click", function () {
-		setDropdown(!isDropdownOpen());
+dropdownItems.forEach(function (item) {
+	const toggle = item.querySelector(".header__dropdown-toggle");
+	const links = item.querySelectorAll(".header__dropdown-link");
+
+	if (!toggle) return;
+
+	toggle.addEventListener("click", function () {
+		const isOpen = item.classList.contains("is-open");
+
+		closeDropdowns();
+		setDropdown(item, !isOpen);
 	});
 
-	servicesDropdown.addEventListener("mouseenter", function () {
-		if (dropdownHoverQuery.matches) setDropdown(true);
-	});
-
-	servicesDropdown.addEventListener("mouseleave", function () {
+	item.addEventListener("mouseenter", function () {
 		if (!dropdownHoverQuery.matches) return;
 
-		clearTimeout(dropdownCloseTimer);
-		dropdownCloseTimer = setTimeout(function () {
-			if (!servicesDropdown.contains(document.activeElement)) setDropdown(false);
-		}, 150);
+		closeDropdowns();
+		setDropdown(item, true);
 	});
 
-	servicesDropdown.addEventListener("focusout", function (event) {
-		if (!servicesDropdown.contains(event.relatedTarget)) setDropdown(false);
+	item.addEventListener("mouseleave", function () {
+		if (!dropdownHoverQuery.matches) return;
+
+		clearTimeout(dropdownCloseTimers.get(item));
+
+		dropdownCloseTimers.set(item, setTimeout(function () {
+			if (!item.contains(document.activeElement)) setDropdown(item, false);
+		}, 150));
 	});
 
-	document.addEventListener("click", function (event) {
-		if (isDropdownOpen() && !servicesDropdown.contains(event.target)) setDropdown(false);
-	});
-
-	document.addEventListener("keydown", function (event) {
-		if (event.key === "Escape" && isDropdownOpen()) {
-			setDropdown(false);
-			servicesDropdownToggle.focus();
-		}
+	item.addEventListener("focusout", function (event) {
+		if (!item.contains(event.relatedTarget)) setDropdown(item, false);
 	});
 
 	// Choosing a service pre-selects it in the booking form and closes the panel
 
-	servicesDropdownLinks.forEach(function (link) {
+	links.forEach(function (link) {
 		link.addEventListener("click", function () {
 			const serviceName = link.getAttribute("data-service");
 
@@ -238,19 +238,39 @@ if (servicesDropdown && servicesDropdownToggle) {
 				}
 			}
 
-			setDropdown(false);
+			setDropdown(item, false);
 		});
 	});
+});
 
-	window.addEventListener("resize", function () {
-		const isDesktop = window.innerWidth > MENU_BREAKPOINT;
-
-		if (isDesktop === viewportIsDesktop) return;
-
-		viewportIsDesktop = isDesktop;
-		setDropdown(false);
+document.addEventListener("click", function (event) {
+	dropdownItems.forEach(function (item) {
+		if (!item.contains(event.target)) setDropdown(item, false);
 	});
-}
+});
+
+document.addEventListener("keydown", function (event) {
+	if (event.key !== "Escape") return;
+
+	dropdownItems.forEach(function (item) {
+		if (!item.classList.contains("is-open")) return;
+
+		const toggle = item.querySelector(".header__dropdown-toggle");
+
+		setDropdown(item, false);
+
+		if (toggle) toggle.focus();
+	});
+});
+
+window.addEventListener("resize", function () {
+	const isDesktop = window.innerWidth > MENU_BREAKPOINT;
+
+	if (isDesktop === viewportIsDesktop) return;
+
+	viewportIsDesktop = isDesktop;
+	closeDropdowns();
+});
 
 
 // Booking form (preview only)
@@ -528,7 +548,7 @@ window.addEventListener("resize", function () {
 // hides them here, the incoming one keeps them hidden until the cross-fade ends.
 // `pageswap` fires right before the old page is snapshotted and `pagereveal` right
 // before the new one is, so states that are still animating shut — an open mobile
-// menu, an open services dropdown — never land in the frame half-closed.
+// menu, an open header dropdown — never land in the frame half-closed.
 
 const CHROME_HIDDEN = "is-chrome-hidden";
 const CHROME_REVEAL_FALLBACK = 1200;
@@ -552,7 +572,7 @@ window.addEventListener("pageswap", function (event) {
 
 	html.classList.add("is-leaving");
 	setMenu(false);
-	setDropdown(false);
+	closeDropdowns();
 });
 
 window.addEventListener("pagereveal", function (event) {
