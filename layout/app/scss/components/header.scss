@@ -449,6 +449,13 @@
 		font-variant-numeric: tabular-nums;
 
 		color: var(--on-dark);
+
+		// tablet keeps the horizontal nav but drops the number from the header,
+		// so eight nav items still fit next to the Call button
+
+		@media (max-width: 63.9375rem) {
+			display: none;
+		}
 	}
 
 	// .header--scrolled .header__phone, .header--menu-open .header__phone

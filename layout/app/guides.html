@@ -1,0 +1,154 @@
+@@include("html/header.html", {"title": "Guides — Fix Spark appliance repair, San Diego County", "description": "Appliance repair guides from the Fix Spark technician desk: the faults we see most in San Diego County, the checks worth doing before you call, and the published repair ranges behind every quote."})
+
+<main class="main" id="main">
+	<section class="guides-hero" id="top" data-theme="dark-surface">
+		<div class="guides-hero__decor section-background mode-2" aria-hidden="true"></div>
+
+		<div class="container guides-hero__inner">
+			<div class="guides-hero__content">
+				@@include("html/breadcrumbs.html", {"parent": "", "parent_href": "", "current": "Guides"})
+
+				<p class="eyebrow guides-hero__eyebrow">Guides · San Diego County</p>
+				<h1 class="guides-hero__title">What fails, <br> and what it costs to fix.</h1>
+				<p class="guides-hero__lead">Eight guides from the technicians who run the calls: the faults we meet most often, the checks worth doing before you ring us, and the published ranges behind every quote. No buying advice, no brand cheerleading — just what the meter, the part number and the invoice say.</p>
+
+				<div class="guides-hero__actions">
+					<a class="button button--call" href="tel:+16195550142">
+						<svg width="18" height="18" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#phone" />
+						</svg>
+						Call (619) 555-0142
+					</a>
+					<a class="button button--book" href="#guides">Browse the guides</a>
+				</div>
+			</div>
+
+			<a class="guides-hero__feature" href="guide.html">
+				<span class="guides-hero__feature-media">
+					<picture>
+						<source srcset="img/index/services-v2/services-image-2.avif" type="image/avif">
+						<source srcset="img/index/services-v2/services-image-2.webp" type="image/webp">
+						<img src="img/index/services-v2/services-image-2.jpg" alt="Technician checking cabinet temperatures on a built-in refrigerator" width="1024" height="1568">
+					</picture>
+				</span>
+				<span class="guides-hero__feature-body">
+					<span class="guides-hero__feature-label">Featured guide</span>
+					<span class="guides-hero__feature-title">Refrigerator not cooling: the five checks we make first.</span>
+					<span class="guides-hero__feature-text">Airflow and the defrost cycle before any sealed-system part. What the $89 diagnostic covers, in the order a technician works.</span>
+					<span class="guides-hero__feature-meta">
+						<span>Diagnostics</span>
+						<span aria-hidden="true">·</span>
+						<span>8 min read</span>
+					</span>
+				</span>
+			</a>
+		</div>
+	</section>
+
+	<section class="section guides" id="guides">
+		<div class="section-background" aria-hidden="true"></div>
+
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">All guides</p>
+					<h2 class="section-head__title">Appliance faults, <br> written down properly.</h2>
+					<p class="section-lead">Every guide names the appliance, the part that usually fails and the range we quote for the repair. Where a fault can be checked at home without tools, the steps are listed.</p>
+				</div>
+
+				<p class="guides__count">8 guides · updated November 2026</p>
+			</div>
+
+			<ul class="guides__grid">
+				@@loop("html/guide-card.html", [
+					{
+						"topic": "Diagnostics",
+						"title": "Washer won't drain: pump, hose or pressure switch.",
+						"text": "A drum full of water is one of four failures. The order to test them in, and the point where the repair stops making sense.",
+						"date": "November 4, 2026",
+						"read": "6 min read",
+						"image": "img/index/services-v2/services-image-4",
+						"alt": "Front-load washer with the drain filter housing opened on a service call",
+						"href": "guide.html"
+					},
+					{
+						"topic": "Costs",
+						"title": "What the $89 diagnostic actually covers.",
+						"text": "Twenty minutes of testing, a pressure reading, a part number and a price before anything is ordered — and the fee is credited toward the repair.",
+						"date": "October 28, 2026",
+						"read": "5 min read",
+						"image": "img/index/services/services-image-2",
+						"alt": "Multimeter and pressure gauges laid out beside a service invoice",
+						"href": "guide.html"
+					},
+					{
+						"topic": "Maintenance",
+						"title": "Cleaning condenser coils: the 20-minute job that pays for itself.",
+						"text": "Dust on the coil is the cheapest fault we find. How to reach it, what to use, and the running cost of leaving it alone.",
+						"date": "October 20, 2026",
+						"read": "4 min read",
+						"image": "img/index/services-v2/services-image-9",
+						"alt": "Condenser coils behind a refrigerator after cleaning",
+						"href": "guide.html"
+					},
+					{
+						"topic": "Costs",
+						"title": "When the repair costs more than the appliance.",
+						"text": "The sealed-system threshold, the age of the unit and the two numbers that decide it. We quote the repair and the alternative in writing.",
+						"date": "October 12, 2026",
+						"read": "7 min read",
+						"image": "img/index/services/services-image-3",
+						"alt": "Technician comparing a replacement part with the failed one on the counter",
+						"href": "guide.html"
+					},
+					{
+						"topic": "Diagnostics",
+						"title": "Dishwasher leaves water in the bottom: three causes.",
+						"text": "A blocked filter, a tired drain pump or a kinked hose. What you can clear yourself before booking a visit.",
+						"date": "October 3, 2026",
+						"read": "5 min read",
+						"image": "img/index/services-v2/services-image-6",
+						"alt": "Dishwasher filter housing open with standing water in the sump",
+						"href": "guide.html"
+					},
+					{
+						"topic": "Maintenance",
+						"title": "Dryer vent cleaning: the fire risk nobody checks.",
+						"text": "Lint in the run, a crushed flex duct or a blocked outside flap. How to test the airflow yourself in under a minute.",
+						"date": "September 25, 2026",
+						"read": "4 min read",
+						"image": "img/index/services-v2/services-image-8",
+						"alt": "Dryer vent run opened for cleaning with the lint trap removed",
+						"href": "guide.html"
+					},
+					{
+						"topic": "Commercial",
+						"title": "Commercial refrigeration: the morning check before service.",
+						"text": "What a kitchen can record before 9 AM — cabinet temperatures, door seals, condenser condition — that turns a breakdown into a scheduled repair.",
+						"date": "September 16, 2026",
+						"read": "6 min read",
+						"image": "img/index/services-v2/services-image-7",
+						"alt": "Commercial prep refrigerator in a restaurant kitchen with the panel removed",
+						"href": "guide.html"
+					},
+					{
+						"topic": "Diagnostics",
+						"title": "Washer not spinning: belt, lid lock or control.",
+						"text": "Three parts produce the same symptom. The cheap test comes first, and the drain cycle tells you which one you have.",
+						"date": "September 8, 2026",
+						"read": "6 min read",
+						"image": "img/index/services-v2/services-image-5",
+						"alt": "Top-load washer with the drive belt and motor exposed during repair",
+						"href": "guide.html"
+					}
+				])
+			</ul>
+		</div>
+	</section>
+
+	@@include("html/booking.html")
+
+	@@include("html/marquee.html")
+</main>
+
+@@include("html/footer.html")

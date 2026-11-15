@@ -1,0 +1,186 @@
+// Two-column reading shell: a sticky table of contents and a small contact
+// card on the left, the content column on the right. The content styles
+// themselves live in components/prose — this file only places them.
+
+.article {
+	// .article__inner
+
+	&__inner {
+		display: grid;
+		grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+		align-items: start;
+
+		gap: var(--space-6) clamp(32px, 5vw, 72px);
+
+		@media (max-width: 56.25rem) {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
+	// .article__aside
+
+	&__aside {
+		display: grid;
+		gap: var(--space-5);
+
+		min-width: 0;
+
+		@media (min-width: 56.25rem) {
+			position: sticky;
+			top: calc(var(--header-h) + var(--space-8));
+
+			max-height: calc(100vh + var(--space-6) - var(--header-h) * 2);
+
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+	}
+
+	// .article__toc
+
+	&__toc {
+		padding: var(--space-5);
+
+		background-color: var(--surface-alt);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+	}
+
+	// .article__toc-title
+
+	&__toc-title {
+		font-family: var(--font-body);
+		font-size: var(--text-2xs);
+		font-weight: var(--weight-semibold);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+
+		color: var(--muted);
+	}
+
+	// .article__toc-list
+
+	&__toc-list {
+		counter-reset: article-toc;
+
+		margin-top: var(--space-4);
+
+		display: grid;
+		gap: var(--space-2);
+
+		list-style: none;
+
+		li {
+			counter-increment: article-toc;
+
+			list-style: none;
+			min-width: 0;
+		}
+	}
+
+	// .article__toc-link
+
+	&__toc-link {
+		position: relative;
+
+		display: block;
+		padding-left: calc(var(--space-4) + var(--space-1));
+
+		font-size: var(--text-sm);
+		line-height: 1.4;
+
+		color: var(--fg-2);
+
+		transition: color var(--motion-fast) var(--ease-standard);
+
+		&::before {
+			content: counter(article-toc) ".";
+
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			font-variant-numeric: tabular-nums;
+
+			color: var(--meta);
+		}
+
+		@media (hover: hover) and (pointer: fine) {
+			// .article__toc-link:hover
+
+			&:hover { color: var(--link); }
+		}
+	}
+
+	// .article__card
+
+	&__card {
+		padding: var(--space-5);
+
+		background-color: var(--surface);
+		background-image: var(--grad-card);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+	}
+
+	// .article__card-title
+
+	&__card-title {
+		font-family: var(--font-display);
+		font-size: var(--text-md);
+		font-weight: var(--weight-semibold);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+
+		color: var(--fg);
+	}
+
+	// .article__card-text
+
+	&__card-text {
+		margin-top: var(--space-2);
+
+		font-size: var(--text-sm);
+		line-height: 1.6;
+
+		color: var(--fg-2);
+	}
+
+	// .article__card-call
+
+	&__card-call {
+		width: 100%;
+		margin-top: var(--space-4);
+	}
+
+	// .article__card-link
+
+	&__card-link {
+		display: inline-block;
+
+		margin-top: var(--space-3);
+
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+		line-height: 1.4;
+
+		color: var(--link);
+		text-decoration: underline;
+		text-underline-offset: 0.35ch;
+
+		@media (hover: hover) and (pointer: fine) {
+			// .article__card-link:hover
+
+			&:hover { 
+				color: var(--link-hover);
+				text-decoration: underline;
+			}
+		}
+	}
+
+	// .article__body
+
+	&__body {
+		min-width: 0;
+	}
+}

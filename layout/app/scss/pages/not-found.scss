@@ -51,7 +51,7 @@
 		line-height: 1;
 		font-variant-numeric: tabular-nums;
 		color: transparent;
-		//text-shadow: 0 10px 0px var(--border-soft);
+		
 		filter: 
 			drop-shadow(0px 1px 0px var(--border-dark)) 
 			drop-shadow(0px -1px 0px var(--border-dark))
@@ -59,7 +59,6 @@
 			drop-shadow(1px 0 0px var(--border-dark));
 
 		user-select: none;
-
 		
 	}
 

@@ -8,6 +8,8 @@
 @forward "components/breadcrumbs";
 @forward "components/brand";
 @forward "components/button";
+@forward "components/prose";
+@forward "components/article";
 @forward "components/form";
 @forward "components/select";
 @forward "components/header";
@@ -44,6 +46,9 @@
 @forward "pages/about/scope";
 @forward "pages/legal/hero";
 @forward "pages/legal/content";
+@forward "pages/guides/hero";
+@forward "pages/guides/list";
+@forward "pages/guide/hero";
 @forward "pages/not-found";
 
 // new
