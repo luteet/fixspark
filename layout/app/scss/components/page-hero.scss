@@ -435,6 +435,11 @@
 			flex-direction: column;
 			align-items: center;
 
+			// the grid gap is for the two-column layout only; the stacked
+			// column relies on the element margins below
+
+			gap: 0;
+
 			text-align: center;
 		}
 
@@ -445,6 +450,7 @@
 		}
 
 		.page-hero__lead {
+			margin-top: var(--space-4);
 			max-width: 56ch;
 
 			text-wrap: balance;
