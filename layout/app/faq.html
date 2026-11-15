@@ -1,0 +1,347 @@
+@@include("html/header.html", {"title": "FAQ — Fix Spark appliance repair, San Diego County", "description": "Every question Fix Spark answers on the phone, sorted by topic: the $89 diagnostic, published repair ranges, same-day visits, factory parts, the 90-day warranty, brands and the San Diego County ZIP codes we cover."})
+
+<main class="main" id="main">
+	<section class="faq-hero" id="top" data-theme="dark-surface">
+		<div class="faq-hero__decor section-background mode-2" aria-hidden="true"></div>
+
+		<div class="container faq-hero__inner">
+			<div class="faq-hero__content">
+				@@include("html/breadcrumbs.html", {"parent": "", "parent_href": "", "current": "FAQ"})
+
+				<p class="eyebrow faq-hero__eyebrow">Answers · San Diego County</p>
+				<h1 class="faq-hero__title">Every question, <br> answered before the visit.</h1>
+				<p class="faq-hero__lead">Thirty-six answers to what people actually ask on the phone: the $89 diagnostic, the published ranges, same-day visits, factory parts, the 90-day warranty and the ZIP codes we cover. Pick a topic, search the list, or call and get the same answer from a person.</p>
+
+				<div class="faq-hero__actions">
+					<a class="button button--call" href="tel:+16195550142">
+						<svg width="18" height="18" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#phone" />
+						</svg>
+						Call (619) 555-0142
+					</a>
+					<a class="button button--book" href="#faq">Browse the questions</a>
+				</div>
+			</div>
+
+			<div class="faq-hero__panel">
+				<p class="faq-hero__panel-title">The short version</p>
+
+				<ul class="faq-hero__facts">
+					<li>
+						<svg width="18" height="18" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#check" />
+						</svg>
+						Diagnostic $89, credited toward the repair
+					</li>
+					<li>
+						<svg width="18" height="18" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#check" />
+						</svg>
+						Published range for every appliance, parts and labor included
+					</li>
+					<li>
+						<svg width="18" height="18" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#check" />
+						</svg>
+						90-day parts and labor warranty, written on the invoice
+					</li>
+					<li>
+						<svg width="18" height="18" aria-hidden="true" focusable="false">
+							<use href="img/sprites.svg#check" />
+						</svg>
+						Mon – Sat, 7 AM – 7 PM · callback within 15 minutes
+					</li>
+				</ul>
+
+				<p class="faq-hero__panel-note">Not on the list? <a href="tel:+16195550142">Call (619) 555-0142</a> — the phone is answered by a person during business hours.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section faq-page" id="faq" data-faq-page="8">
+		<div class="section-background" aria-hidden="true"></div>
+
+		<div class="container">
+			<div class="section-head">
+				<div class="section-head__text">
+					<p class="eyebrow">Answers by topic</p>
+					<h2 class="section-head__title">Thirty-six questions, <br> sorted the way people ask them.</h2>
+					<p class="section-lead">Filter by topic or search the list. Every answer is the one the technician or the office gives on the phone — prices, parts and warranty included.</p>
+				</div>
+
+				<p class="faq-page__count">36 questions · 6 topics · updated November 2026</p>
+			</div>
+
+			<div class="faq-page__toolbar">
+				<div class="faq-page__search">
+					<label class="visually-hidden" for="faq-search">Search questions</label>
+					<input class="faq-page__search-input" id="faq-search" type="search" placeholder="Search — warranty, parts, ZIP, same day" autocomplete="off" data-faq-search>
+				</div>
+
+				<div class="faq-page__tabs" role="group" aria-label="Filter questions by topic" data-faq-tabs>
+					<button class="faq-page__tab" type="button" data-faq-tab data-faq-filter="all" aria-pressed="true">
+						All
+						<span class="faq-page__tab-count">36</span>
+					</button>
+					<button class="faq-page__tab" type="button" data-faq-tab data-faq-filter="pricing" aria-pressed="false">
+						Pricing & diagnostic
+						<span class="faq-page__tab-count">8</span>
+					</button>
+					<button class="faq-page__tab" type="button" data-faq-tab data-faq-filter="booking" aria-pressed="false">
+						Booking & visits
+						<span class="faq-page__tab-count">7</span>
+					</button>
+					<button class="faq-page__tab" type="button" data-faq-tab data-faq-filter="warranty" aria-pressed="false">
+						Warranty & parts
+						<span class="faq-page__tab-count">6</span>
+					</button>
+					<button class="faq-page__tab" type="button" data-faq-tab data-faq-filter="brands" aria-pressed="false">
+						Brands & appliances
+						<span class="faq-page__tab-count">7</span>
+					</button>
+					<button class="faq-page__tab" type="button" data-faq-tab data-faq-filter="area" aria-pressed="false">
+						Service area
+						<span class="faq-page__tab-count">4</span>
+					</button>
+					<button class="faq-page__tab" type="button" data-faq-tab data-faq-filter="commercial" aria-pressed="false">
+						Commercial
+						<span class="faq-page__tab-count">4</span>
+					</button>
+				</div>
+			</div>
+
+			<div class="faq-page__list" data-faq-list>
+				@@loop("html/faq-item-category.html", [
+					{
+						"id": "1",
+						"category": "pricing",
+						"question": "Do you charge for the diagnostic visit?",
+						"answer": "Yes. The diagnostic is $89 and it is credited toward the repair if you go ahead. We give you the repair price before any work starts, so you can decide with the number in front of you."
+					},
+					{
+						"id": "2",
+						"category": "pricing",
+						"question": "How does the $89 diagnostic work?",
+						"answer": "The diagnostic is a single on-site visit fee. It covers testing and a written diagnosis, and the full $89 is credited toward the repair if you approve the work."
+					},
+					{
+						"id": "3",
+						"category": "pricing",
+						"question": "Why is the repair a range instead of a flat price?",
+						"answer": "The range covers the common parts and labor for that appliance. The exact price depends on the failed component and access; we confirm it on site before starting."
+					},
+					{
+						"id": "4",
+						"category": "pricing",
+						"question": "Is there a trip fee on top of the diagnostic?",
+						"answer": "No. The diagnostic is the only visit fee. There is no separate trip charge, and the repair range already includes parts and labor."
+					},
+					{
+						"id": "5",
+						"category": "pricing",
+						"question": "Can the price change after I approve it?",
+						"answer": "Only if the diagnosis changes once the appliance is opened, and you approve the new number first. The invoice never includes work you did not agree to."
+					},
+					{
+						"id": "6",
+						"category": "pricing",
+						"question": "Do you charge extra for evenings or weekends?",
+						"answer": "No. The same published ranges apply Monday through Saturday, 7 AM to 7 PM. Emergency commercial call-outs are quoted before dispatch."
+					},
+					{
+						"id": "7",
+						"category": "pricing",
+						"question": "What if the appliance is not worth repairing?",
+						"answer": "We tell you before you spend more on it. The diagnostic still applies, and you keep the written diagnosis and the part price."
+					},
+					{
+						"id": "8",
+						"category": "pricing",
+						"question": "How is the price set before the visit?",
+						"answer": "Every appliance has a published range that covers parts and labor. The technician confirms the exact price on site before work starts; the full table is on the <a href=\"pricing.html\">pricing page</a>."
+					},
+					{
+						"id": "9",
+						"category": "booking",
+						"question": "How fast can you come out?",
+						"answer": "Same-day visits are usual when you call before noon across all four service zones. If a part has to be ordered, you get the ETA before we leave, and we schedule the return visit at that price."
+					},
+					{
+						"id": "10",
+						"category": "booking",
+						"question": "How do I book a visit?",
+						"answer": "Call (619) 555-0142 or use the booking form: name, phone, ZIP and appliance. We call back within 15 minutes during business hours with a two-hour arrival window."
+					},
+					{
+						"id": "11",
+						"category": "booking",
+						"question": "What should I have ready when I call?",
+						"answer": "The appliance type and brand, plus the model and serial numbers from the plate — inside the refrigerator cabinet, behind the dryer door, under the cooktop. It lets us check the parts diagram before the visit, so the van leaves with the right part."
+					},
+					{
+						"id": "12",
+						"category": "booking",
+						"question": "Can you fix it on the same visit?",
+						"answer": "Usually. Common start components, fans, thermistors and valves ride on the van. If a part has to be ordered, you get the price and the ETA before we leave, and the return visit is scheduled at that price."
+					},
+					{
+						"id": "13",
+						"category": "booking",
+						"question": "What happens if a part is not on the van?",
+						"answer": "You get the part price and the ETA before we leave, and the return visit is scheduled at the same approved price. If the appliance is beyond economical repair, we tell you first."
+					},
+					{
+						"id": "14",
+						"category": "booking",
+						"question": "Do I need to be home for the repair?",
+						"answer": "Yes. The technician needs access to the appliance and to the water or gas shut-off where it applies, and the invoice is signed at the address."
+					},
+					{
+						"id": "15",
+						"category": "booking",
+						"question": "How long does a visit take?",
+						"answer": "Most diagnostics take 20 to 30 minutes. A repair is usually finished in the same visit; sealed-system work and backordered parts can need a return appointment, booked at the price you approved."
+					},
+					{
+						"id": "16",
+						"category": "warranty",
+						"question": "Is the work warrantied?",
+						"answer": "Parts and labor are covered for 90 days. The warranty is written on the invoice, not just on this page, and it applies to the specific repair we performed."
+					},
+					{
+						"id": "17",
+						"category": "warranty",
+						"question": "Do you use factory parts?",
+						"answer": "Factory parts are matched to the model and serial before anything is ordered. Where a factory part is backordered, you get the part number, the price and the ETA before we leave."
+					},
+					{
+						"id": "18",
+						"category": "warranty",
+						"question": "Which parts do you carry on the van?",
+						"answer": "Start components, thermistors, fans, water inlet valves, door gaskets and the common heater kits. Anything else is ordered by part number once the diagnosis is confirmed."
+					},
+					{
+						"id": "19",
+						"category": "warranty",
+						"question": "What if the part is backordered?",
+						"answer": "You get the part number, the price and the ETA in writing before we leave, and the return visit is booked at the price you approved."
+					},
+					{
+						"id": "20",
+						"category": "warranty",
+						"question": "Are the technicians licensed and insured?",
+						"answer": "Yes. Fix Spark is BEAR licensed and carries liability insurance. Every repair carries a 90-day parts and labor warranty, printed on the invoice."
+					},
+					{
+						"id": "21",
+						"category": "warranty",
+						"question": "Does the diagnostic include a written report?",
+						"answer": "Yes. You keep the written diagnosis with the part number and the price, whether or not you go ahead with the repair."
+					},
+					{
+						"id": "22",
+						"category": "brands",
+						"question": "Which brands do you repair?",
+						"answer": "Major residential brands including Sub-Zero, Wolf, Thermador, Viking, Miele, Gaggenau, KitchenAid, LG, Samsung, Whirlpool, GE and Bosch, plus commercial kitchen equipment. If we cannot source the part, we tell you on the first visit rather than leave you waiting."
+					},
+					{
+						"id": "23",
+						"category": "brands",
+						"question": "Which appliances do you service?",
+						"answer": "Refrigerators, freezers, ice makers, washers, dryers, ovens, stoves and cooktops, dishwashers, microwaves and commercial kitchen equipment. Ten categories, one diagnostic fee."
+					},
+					{
+						"id": "24",
+						"category": "brands",
+						"question": "Do you repair built-in Sub-Zero refrigerators?",
+						"answer": "Yes. We work on 500-series, 600-series, Designer and PRO built-ins, plus undercounter and outdoor refrigeration. Read the model and serial from the plate inside the cabinet when you call."
+					},
+					{
+						"id": "25",
+						"category": "brands",
+						"question": "Can you fix a wine refrigerator?",
+						"answer": "Yes. Wine storage is on the same refrigeration range, $149 to $420. Temperature, evaporator fan and condenser airflow are tested before the quote."
+					},
+					{
+						"id": "26",
+						"category": "brands",
+						"question": "What if the compressor has failed?",
+						"answer": "A failed compressor is diagnosed with pressures and current draw. The replacement is quoted with parts and labor, and the 90-day warranty is written on the invoice."
+					},
+					{
+						"id": "27",
+						"category": "brands",
+						"question": "Is an old refrigerator worth repairing?",
+						"answer": "Sometimes not. If the unit is beyond economical repair, we say so before you spend more on it. The diagnostic still applies, and you keep the written diagnosis."
+					},
+					{
+						"id": "28",
+						"category": "brands",
+						"question": "Do you work on luxury ranges and built-ins?",
+						"answer": "Wolf, Thermador, Viking, Miele, Gaggenau, Dacor, JennAir, Bertazzoni, BlueStar, Monogram and DCS are on the <a href=\"brand.html\">brand list</a>. Factory parts are matched to the model and serial before anything is ordered."
+					},
+					{
+						"id": "29",
+						"category": "area",
+						"question": "Which areas do you cover?",
+						"answer": "North County, Central San Diego, East County and South Bay. Same-day visits are usual when you call before noon; the callback comes within 15 minutes during business hours."
+					},
+					{
+						"id": "30",
+						"category": "area",
+						"question": "What are your working hours?",
+						"answer": "Monday through Saturday, 7 AM to 7 PM. The line is answered by a person during those hours, and the callback comes within 15 minutes."
+					},
+					{
+						"id": "31",
+						"category": "area",
+						"question": "Do you charge for travel?",
+						"answer": "No. The diagnostic is the only visit fee, and it is the same across the four service zones."
+					},
+					{
+						"id": "32",
+						"category": "area",
+						"question": "Are you a local company?",
+						"answer": "Yes. Fix Spark is locally owned and works only in San Diego County; the owner runs the same schedule as the crew."
+					},
+					{
+						"id": "33",
+						"category": "commercial",
+						"question": "Do you take commercial jobs?",
+						"answer": "Cafes, offices, salons, short-term rentals and property managers. Priority scheduling, one invoice per property, and the same licensed technicians as residential work."
+					},
+					{
+						"id": "34",
+						"category": "commercial",
+						"question": "Do you handle commercial kitchen equipment?",
+						"answer": "Yes — prep refrigerators, commercial dishwashers, ice machines and cooking lines. Commercial call-outs are quoted after a site visit; the $89 diagnostic still applies."
+					},
+					{
+						"id": "35",
+						"category": "commercial",
+						"question": "Is priority scheduling available for businesses?",
+						"answer": "Yes. Commercial accounts get priority scheduling, and emergency call-outs are quoted before dispatch so the price is agreed before a technician is sent."
+					},
+					{
+						"id": "36",
+						"category": "commercial",
+						"question": "Can you invoice per property?",
+						"answer": "Yes. Property managers get one invoice per property, with each visit itemized by appliance and the approved price attached."
+					}
+				])
+			</div>
+
+			<p class="faq-page__empty" data-faq-empty hidden>No questions match that search. Try a shorter word, or call (619) 555-0142.</p>
+
+			<nav class="faq-page__pagination" aria-label="Question pages" data-faq-pagination hidden></nav>
+
+			<p class="visually-hidden" role="status" aria-live="polite" data-faq-status></p>
+		</div>
+	</section>
+
+	@@include("html/booking.html")
+
+	@@include("html/marquee.html")
+</main>
+
+@@include("html/footer.html")
