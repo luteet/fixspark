@@ -28,6 +28,7 @@
 			max-height: calc(100vh + var(--space-6) - var(--header-h) * 2);
 
 			overflow-y: auto;
+			overflow-x: hidden;
 		}
 	}
 

@@ -9,7 +9,7 @@
 	<link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/PlusJakartaSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="css/style.min.css?v=1794734426635">
+	<link rel="stylesheet" href="css/style.min.css?v=1794741211294">
 </head>
 
 <body>
@@ -382,9 +382,32 @@
 							<li><a href="./pricing.html">Pricing</a></li>
 							<li><a href="./repairs.html">Repairs</a></li>
 							<li><a href="./guides.html">Guides</a></li>
-							<li><a href="./about.html">About</a></li>
 							<li><a href="#areas">Areas</a></li>
-							<li><a href="./#faq">FAQ</a></li>
+							<li class="header__nav-item--has-dropdown">
+								<button class="header__dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-menu">
+									About
+									<svg width="12" height="12" aria-hidden="true" focusable="false">
+										<use href="img/sprites.svg#chevron-right" />
+									</svg>
+								</button>
+
+								<div class="header__dropdown header__dropdown--compact" id="about-menu">
+									<div class="header__dropdown-inner">
+										<ul class="header__dropdown-list header__dropdown-list--compact">
+											<li>
+												<a class="header__dropdown-link" href="./about.html">
+													<span class="header__dropdown-name">About Us</span>
+												</a>
+											</li>
+											<li>
+												<a class="header__dropdown-link" href="./#faq">
+													<span class="header__dropdown-name">FAQ</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
 							<li class="header__nav-item--mobile"><a href="tel:+16195550142">Call (619) 555-0142</a></li>
 							<li class="header__nav-item--mobile"><a href="#book">Book a visit</a></li>
 						</ul>
@@ -842,8 +865,8 @@
 		</div>
 	</div>
 
-	<script src="js/libs.min.js?v=1794734426635"></script>
-	<script src="js/main.js?v=1794734426635" type="module"></script>
+	<script src="js/libs.min.js?v=1794741211294"></script>
+	<script src="js/main.js?v=1794741211294" type="module"></script>
 
 </body>
 

@@ -267,6 +267,34 @@
 		}
 	}
 
+	// .header__dropdown--compact — narrow panel for short link lists
+
+	&__dropdown--compact {
+		width: min(14rem, calc(100vw - var(--page-gutter) * 4));
+	}
+
+	// .header__dropdown-list--compact — single-column list, no column borders
+
+	&__dropdown-list--compact {
+		grid-template-columns: minmax(0, 1fr);
+
+		> li:nth-child(odd) { border-right: 0; }
+
+		> li:not(:last-child) { border-bottom: 1px solid var(--border-soft); }
+	}
+
+	@media (min-width: 56.25rem) {
+		&__dropdown-list--compact > li:first-child > &__dropdown-link {
+			border-top-right-radius: calc(var(--radius-md) + 3px);
+		}
+
+		&__dropdown-list--compact > li:last-child > &__dropdown-link {
+			border-bottom-left-radius: calc(var(--radius-md) + 3px);
+			border-bottom-right-radius: calc(var(--radius-md) + 3px);
+			border-top-right-radius: 0;
+		}
+	}
+
 	// .header__dropdown-link
 
 	&__dropdown-link {
