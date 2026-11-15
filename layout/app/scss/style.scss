@@ -16,6 +16,7 @@
 @forward "components/sticky-bar";
 @forward "components/footer";
 @forward "components/view-transition";
+@forward "components/page-hero";
 
 @forward "pages/index/hero";
 @forward "pages/index/trust";
@@ -30,27 +31,18 @@
 @forward "pages/index/marquee";
 @forward "pages/index/brands";
 @forward "pages/brand";
-@forward "pages/repairs/hero";
 @forward "pages/repairs/cases";
-@forward "pages/service/hero";
 @forward "pages/service/price";
 @forward "pages/service/symptoms";
 @forward "pages/service/steps";
 @forward "pages/service/more";
-@forward "pages/pricing/hero";
 @forward "pages/pricing/board";
 @forward "pages/pricing/factors";
-@forward "pages/about/hero";
 @forward "pages/about/story";
 @forward "pages/about/principles";
 @forward "pages/about/scope";
-@forward "pages/legal/hero";
 @forward "pages/legal/content";
-@forward "pages/guides/hero";
 @forward "pages/guides/list";
-@forward "pages/guide/hero";
-@forward "pages/not-found";
-@forward "pages/faq/hero";
 @forward "pages/faq/list";
 
 // new
