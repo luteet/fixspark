@@ -97,6 +97,31 @@
 		color: var(--on-dark-muted);
 	}
 
+	// .footer__legal
+
+	&__legal {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		gap: var(--space-2) var(--space-4);
+	}
+
+	// .footer__legal-link
+
+	&__legal-link {
+		font-size: var(--text-2xs);
+		color: var(--on-dark-muted);
+
+		// .footer__legal-link:hover
+
+		&:hover {
+			color: var(--on-dark);
+			text-decoration: underline;
+			text-underline-offset: 3px;
+		}
+	}
+
 	// .footer__bottom
 
 	&__bottom {
