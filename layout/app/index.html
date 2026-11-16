@@ -3,11 +3,11 @@
 <main class="main" id="main">
 	<section class="hero" id="top" data-theme="dark-surface">
 		<div class="hero__decor section-background mode-2" aria-hidden="true"></div>
-		<video class="hero__background" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
+		<video class="hero__background" data-cue="fade" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
 			<source src="img/17246203-hd_1920_1080_30fps.mp4" type="video/mp4">
 		</video>
 		<div class="hero__scrim" aria-hidden="true"></div>
-		<div class="container hero__inner">
+		<div class="container hero__inner" data-cue="fade">
 			<div class="hero__content">
 				<p class="hero__eyebrow eyebrow">San Diego County · BEAR licensed · Same-day</p>
 				<h1 class="hero__title">
@@ -78,7 +78,7 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">Residential & commercial</p>
 					<h2 class="section-head__title">Ten appliance types. <br> One diagnostic fee.</h2>
@@ -86,7 +86,7 @@
 				</div>
 			</div>
 
-			<div class="services__layout">
+			<div class="services__layout" data-cue="fade">
 				<ul class="services__list">
 					@@loop("html/service-item.html", [
 						{
@@ -208,7 +208,7 @@
 		<div class="section-background mode-3" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">Published pricing</p>
 					<h2 class="section-head__title">What repairs cost before you call.</h2>
@@ -216,7 +216,7 @@
 				</div>
 			</div>
 
-			<div class="pricing__shell">
+			<div class="pricing__shell" data-cue="fade">
 				<div class="pricing__board">
 					<div class="pricing__diagnostic">
 						<span class="pricing__name">Diagnostic visit — credited toward the repair</span>
@@ -246,7 +246,7 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">Real work, documented</p>
 					<h2 class="section-head__title">Recent repairs, <br> with the invoice price.</h2>
@@ -254,7 +254,7 @@
 				</div>
 			</div>
 
-			<div class="repairs__grid">
+			<div class="repairs__grid" data-cue="fade">
 				@@loop("html/case-card.html", [
 					{
 						"number": "01",
@@ -298,14 +298,14 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">Before you call</p>
 					<h2 class="section-head__title">Questions we answer <br> on the phone anyway.</h2>
 				</div>
 			</div>
 
-			<div class="faq__list">
+			<div class="faq__list" data-cue="fade">
 				<div class="faq__column">
 					@@loop("html/faq-item.html", [
 						{
@@ -355,7 +355,7 @@
 		<div class="section-background mode-3" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">Brands we repair</p>
 					<h2 class="section-head__title">Twenty-six brands, <br> the same published prices.</h2>
@@ -363,7 +363,7 @@
 				</div>
 			</div>
 
-			<ul class="brands__grid">
+			<ul class="brands__grid" data-cue="fade">
 				@@loop("html/brands-item.html", [
 					{ "name": "Sub-Zero" },
 					{ "name": "Wolf" },
@@ -394,7 +394,7 @@
 				])
 			</ul>
 
-			<p class="brands__note">Don't see your brand? <a href="tel:+16195550142">Call (619) 555-0142</a> — we source parts for most major brands, and we say so on the first visit if we can't.</p>
+			<p class="brands__note" data-cue="fade">Don't see your brand? <a href="tel:+16195550142">Call (619) 555-0142</a> — we source parts for most major brands, and we say so on the first visit if we can't.</p>
 		</div>
 	</section>
 

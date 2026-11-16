@@ -2,7 +2,7 @@
 	<div class="section-background mode-3" aria-hidden="true"></div>
 
 	<div class="container">
-		<div class="section-head">
+		<div class="section-head" data-cue="fade">
 			<div class="section-head__text">
 				<p class="eyebrow">Google reviews</p>
 				<h2 class="section-head__title">The invoice matched the quote.</h2>
@@ -17,7 +17,7 @@
 			</a>
 		</div>
 
-		<div class="swiper reviews__swiper">
+		<div class="swiper reviews__swiper" data-cue="fade">
 			<div class="swiper-wrapper">
 				@@loop("review-card.html", [
 					{
@@ -49,7 +49,7 @@
 			</div>
 		</div>
 
-		<div class="reviews__controls">
+		<div class="reviews__controls" data-cue="fade">
 			<button type="button" class="reviews__nav reviews__prev" aria-label="Previous reviews">
 				<svg width="18" height="18" aria-hidden="true" focusable="false">
 					<use href="img/sprites.svg#chevron-left" />
