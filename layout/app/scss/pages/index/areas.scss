@@ -20,12 +20,24 @@
 	border: 1px solid var(--border);
 	border-radius: var(--radius-lg);
 
+	@media (hover: hover) and (pointer: fine) {
+		&:hover &__title {
+			color: var(--icon);
+		}
+
+		&:active &__title {
+			color: var(--link-hover);
+		}
+	}
+
 	// .area-card__title
 
 	&__title {
 		font-size: var(--text-lg);
 		font-weight: var(--weight-semibold);
 		letter-spacing: 0;
+
+		transition: color var(--motion-base) var(--ease-standard);
 	}
 
 	// .area-card__list
