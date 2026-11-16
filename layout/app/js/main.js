@@ -814,5 +814,5 @@ window.addEventListener("resize", resize);
 const cue = new ScrollCue({
 	anchorContainer: "section, .header, .footer",
 	at: -600,
-	delay: 100
+	delay: 0
 }).init();

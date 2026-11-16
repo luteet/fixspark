@@ -4,7 +4,7 @@
 	<section class="page-hero" id="top" data-theme="dark-surface">
 		<div class="page-hero__decor section-background mode-2" aria-hidden="true"></div>
 
-		<div class="container page-hero__inner">
+		<div class="container page-hero__inner" data-cue="fade">
 			<div class="page-hero__content">
 				@@include("html/breadcrumbs.html", {"parent": "", "parent_href": "", "current": "Guides"})
 
@@ -49,7 +49,7 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">All guides</p>
 					<h2 class="section-head__title">Appliance faults, <br> written down properly.</h2>
@@ -59,7 +59,7 @@
 				<p class="guides__count">8 guides · updated November 2026</p>
 			</div>
 
-			<ul class="guides__grid">
+			<ul class="guides__grid" data-cue="fade">
 				@@loop("html/guide-card.html", [
 					{
 						"topic": "Diagnostics",

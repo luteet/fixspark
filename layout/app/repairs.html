@@ -4,7 +4,7 @@
 	<section class="page-hero" id="top" data-theme="dark-surface">
 		<div class="page-hero__decor section-background mode-2" aria-hidden="true"></div>
 
-		<div class="container page-hero__inner">
+		<div class="container page-hero__inner" data-cue="fade">
 			<div class="page-hero__content">
 				@@include("html/breadcrumbs.html", {"parent": "", "parent_href": "", "current": "Repairs"})
 
@@ -34,7 +34,7 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">Cases by appliance</p>
 					<h2 class="section-head__title">Work we can show, <br> appliance by appliance.</h2>
@@ -42,7 +42,7 @@
 				</div>
 			</div>
 
-			<div class="cases__tabs">
+			<div class="cases__tabs" data-cue="fade">
 				<div class="cases__nav" role="group" aria-label="Filter cases by appliance">
 					<button class="cases__tab" type="button" data-cases-filter="all" aria-pressed="true">
 						All

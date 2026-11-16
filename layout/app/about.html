@@ -4,7 +4,7 @@
 	<section class="page-hero" id="top" data-theme="dark-surface">
 		<div class="page-hero__decor section-background mode-2" aria-hidden="true"></div>
 
-		<div class="container page-hero__inner">
+		<div class="container page-hero__inner" data-cue="fade">
 			<div class="page-hero__content">
 				@@include("html/breadcrumbs.html", {"parent": "", "parent_href": "", "current": "About"})
 
@@ -36,7 +36,7 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">Who we are</p>
 					<h2 class="section-head__title">A small crew, <br> a published rate card.</h2>
@@ -44,7 +44,7 @@
 				</div>
 			</div>
 
-			<div class="about-story__layout">
+			<div class="about-story__layout" data-cue="fade">
 				<figure class="about-story__media">
 					<img src="https://via.placeholder.com/640x800?text=Fix+Spark+van+and+crew" width="640" height="640" alt="Placeholder for a photo of the Fix Spark van and crew" loading="lazy">
 					<figcaption class="about-story__caption">The van carries the parts most visits need: start components, fans, thermistors, valves and gaskets.</figcaption>
@@ -82,7 +82,7 @@
 		<div class="section-background mode-3" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">How we work</p>
 					<h2 class="section-head__title">Four rules <br> that do not change.</h2>
@@ -90,7 +90,7 @@
 				</div>
 			</div>
 
-			<div class="about-principles__grid">
+			<div class="about-principles__grid" data-cue="fade">
 				<article class="about-principles__card">
 					<span class="about-principles__icon" aria-hidden="true">
 						<svg width="22" height="22" aria-hidden="true" focusable="false">
@@ -135,7 +135,7 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">What we repair</p>
 					<h2 class="section-head__title">Residential and commercial, <br> one rate card.</h2>
@@ -143,7 +143,7 @@
 				</div>
 			</div>
 
-			<div class="about-scope__grid">
+			<div class="about-scope__grid" data-cue="fade">
 				<article class="about-scope__card">
 					<p class="eyebrow">Residential</p>
 					<h3 class="about-scope__title">Nine appliance types, one diagnostic fee.</h3>
@@ -272,14 +272,14 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">Before you call</p>
 					<h2 class="section-head__title">Questions about <br> the company.</h2>
 				</div>
 			</div>
 
-			<div class="faq__list">
+			<div class="faq__list" data-cue="fade">
 				<div class="faq__column">
 					@@loop("html/faq-item.html", [
 						{

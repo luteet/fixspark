@@ -4,7 +4,7 @@
 	<section class="page-hero" id="top" data-theme="dark-surface">
 		<div class="page-hero__decor section-background mode-2" aria-hidden="true"></div>
 
-		<div class="container page-hero__inner">
+		<div class="container page-hero__inner" data-cue="fade">
 			<div class="page-hero__content">
 				@@include("html/breadcrumbs.html", {"parent": "", "parent_href": "", "current": "FAQ"})
 
@@ -62,7 +62,7 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">Answers by topic</p>
 					<h2 class="section-head__title">Thirty-six questions, <br> sorted the way people ask them.</h2>
@@ -72,7 +72,7 @@
 				<p class="faq-page__count">36 questions · 6 topics · updated November 2026</p>
 			</div>
 
-			<div class="faq-page__toolbar">
+			<div class="faq-page__toolbar" data-cue="fade">
 				<div class="faq-page__search">
 					<label class="visually-hidden" for="faq-search">Search questions</label>
 					<input class="faq-page__search-input" id="faq-search" type="search" placeholder="Search — warranty, parts, ZIP, same day" autocomplete="off" data-faq-search>
@@ -110,7 +110,7 @@
 				</div>
 			</div>
 
-			<div class="faq-page__list" data-faq-list>
+			<div class="faq-page__list" data-faq-list data-cue="fade">
 				@@loop("html/faq-item-category.html", [
 					{
 						"id": "1",

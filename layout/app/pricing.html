@@ -4,7 +4,7 @@
 	<section class="page-hero" id="top" data-theme="dark-surface">
 		<div class="page-hero__decor section-background mode-2" aria-hidden="true"></div>
 
-		<div class="container page-hero__inner">
+		<div class="container page-hero__inner" data-cue="fade">
 			<div class="page-hero__content">
 				@@include("html/breadcrumbs.html", {"parent": "", "parent_href": "", "current": "Pricing"})
 
@@ -45,7 +45,7 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">The rate card</p>
 					<h2 class="section-head__title">Ten appliance types, <br> one published price list.</h2>
@@ -53,7 +53,7 @@
 				</div>
 			</div>
 
-			<div class="price-board__shell">
+			<div class="price-board__shell" data-cue="fade">
 				<div class="price-board__diagnostic">
 					<div class="price-board__diagnostic-text">
 						<span class="price-board__diagnostic-name">Diagnostic visit — credited toward the repair</span>
@@ -131,7 +131,7 @@
 		<div class="section-background mode-3" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">What moves the price</p>
 					<h2 class="section-head__title">The range is honest. <br> Here is what sets the number.</h2>
@@ -139,7 +139,7 @@
 				</div>
 			</div>
 
-			<div class="price-factors__grid">
+			<div class="price-factors__grid" data-cue="fade">
 				<article class="price-factors__card">
 					<span class="price-factors__icon" aria-hidden="true">
 						<svg width="22" height="22" aria-hidden="true" focusable="false">
@@ -184,7 +184,7 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">How a price is held</p>
 					<h2 class="section-head__title">One fee, one price, <br> before the work starts.</h2>
@@ -192,7 +192,7 @@
 				</div>
 			</div>
 
-			<ol class="visit-steps__list">
+			<ol class="visit-steps__list" data-cue="fade">
 				<li class="visit-steps__item">
 					<div class="visit-steps__item-line"></div>
 					<div class="visit-steps__item-inner">
@@ -231,14 +231,14 @@
 		<div class="section-background" aria-hidden="true"></div>
 
 		<div class="container">
-			<div class="section-head">
+			<div class="section-head" data-cue="fade">
 				<div class="section-head__text">
 					<p class="eyebrow">Before you book</p>
 					<h2 class="section-head__title">Pricing questions <br> we answer on the phone anyway.</h2>
 				</div>
 			</div>
 
-			<div class="faq__list">
+			<div class="faq__list" data-cue="fade">
 				<div class="faq__column">
 					@@loop("html/faq-item.html", [
 						{
