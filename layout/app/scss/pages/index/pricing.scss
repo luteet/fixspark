@@ -46,6 +46,12 @@
 		}
 	}
 
+	// .pricing__diagnostic--commercial — the second diagnostic row (commercial rate)
+
+	&__diagnostic--commercial {
+		margin-top: var(--space-3);
+	}
+
 	// .pricing__name
 
 	&__name {

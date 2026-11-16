@@ -27,6 +27,12 @@
 		border-radius: var(--radius-md);
 	}
 
+	// .price-board__diagnostic--commercial — the second diagnostic row (commercial rate)
+
+	&__diagnostic--commercial {
+		margin-top: var(--space-3);
+	}
+
 	// .price-board__diagnostic-text
 
 	&__diagnostic-text {

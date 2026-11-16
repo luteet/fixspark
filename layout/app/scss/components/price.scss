@@ -1,0 +1,17 @@
+// .price-was — the previous price kept visible and crossed out next to the
+// current one. Only the diagnostic fee uses it: the cut is the point, so the
+// old number stays readable instead of being removed.
+
+.price-was {
+	margin-left: 0.4ch;
+
+	font-family: var(--font-body);
+	font-size: var(--text-sm);
+	font-weight: var(--weight-medium);
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+
+	color: var(--muted);
+	text-decoration: line-through;
+	text-decoration-thickness: 1px;
+}

@@ -1,4 +1,4 @@
-@@include("html/header.html", {"title": "Pricing — Fix Spark appliance repair, San Diego County", "description": "Published Fix Spark pricing: $89 diagnostic credited toward the repair, repair ranges by appliance from $99 to $420, and a 90-day parts and labor warranty."})
+@@include("html/header.html", {"title": "Pricing — Fix Spark appliance repair, San Diego County", "description": "Published Fix Spark pricing: $70 diagnostic credited toward the repair, repair ranges by appliance from $99 to $420, and a 90-day parts and labor warranty."})
 
 <main class="main" id="main">
 	<section class="page-hero" id="top" data-theme="dark-surface">
@@ -10,10 +10,11 @@
 
 				<p class="eyebrow page-hero__eyebrow">Published pricing · San Diego County</p>
 				<h1 class="page-hero__title">The price, before <br> the work starts.</h1>
-				<p class="page-hero__lead">One $89 diagnostic, credited toward the repair, and a published range for every appliance we service. Residential and commercial work across San Diego County is priced from the same rate card.</p>
+				<p class="page-hero__lead">One $70 diagnostic, credited toward the repair, and a published range for every appliance we service. Residential and commercial work across San Diego County is priced from the same rate card.</p>
 
 				<div class="page-hero__price">
-					<span class="page-hero__price-row">Diagnostic <b>$89</b></span>
+					<span class="page-hero__price-row">Diagnostic <b>$70 <s class="price-was">$89</s></b></span>
+					<span class="page-hero__price-row">Commercial diagnostic <b>$119 <s class="price-was">$149</s></b></span>
 					<span class="page-hero__price-row">Repairs <b>From&nbsp;~$99</b></span>
 				</div>
 				<p class="price-note price-note--hero">
@@ -53,17 +54,24 @@
 				<div class="section-head__text">
 					<p class="eyebrow">The rate card</p>
 					<h2 class="section-head__title">Ten appliance types, <br> one published price list.</h2>
-					<p class="section-lead">Ranges below cover parts and labor. The diagnostic is $89 and is credited toward the repair; the exact price is confirmed on site before any work starts.</p>
+					<p class="section-lead">Ranges below cover parts and labor. The standard diagnostic is $70 and the commercial diagnostic is $119; both are credited toward the repair. The exact price is confirmed on site after the diagnostic, before any work starts.</p>
 				</div>
 			</div>
 
 			<div class="price-board__shell" data-cue="fade">
 				<div class="price-board__diagnostic">
 					<div class="price-board__diagnostic-text">
-						<span class="price-board__diagnostic-name">Diagnostic visit — credited toward the repair</span>
-						<span class="price-board__diagnostic-note">One fee covers the on-site test and a written diagnosis. If you approve the repair, the $89 comes off the invoice.</span>
+						<span class="price-board__diagnostic-name">Standard diagnostic — credited toward the repair</span>
+						<span class="price-board__diagnostic-note">One fee covers the on-site test and a written diagnosis. If you approve the repair, the $70 comes off the invoice.</span>
 					</div>
-					<span class="price-board__diagnostic-value">$89</span>
+					<span class="price-board__diagnostic-value">$70 <s class="price-was">$89</s></span>
+				</div>
+				<div class="price-board__diagnostic price-board__diagnostic--commercial">
+					<div class="price-board__diagnostic-text">
+						<span class="price-board__diagnostic-name">Commercial diagnostic — credited toward the repair</span>
+						<span class="price-board__diagnostic-note">For cafes, restaurants, offices, salons, short-term rentals and property managers. One fee covers the on-site test and a written diagnosis on the commercial rate card; it is credited toward the repair.</span>
+					</div>
+					<span class="price-board__diagnostic-value">$119 <s class="price-was">$149</s></span>
 				</div>
 
 				<div class="price-board__grid">
@@ -121,7 +129,7 @@
 
 				<p class="price-note">
 					<span class="price-note__mark" aria-hidden="true">~</span>
-					<span>Repair prices marked with a tilde are approximate estimates. The exact price is confirmed after the on-site diagnostic, before any work starts. If the appliance is beyond economical repair, we say so before you spend more on it. A part that has to be ordered is quoted with its ETA before we leave. Commercial work is quoted after a site visit; the diagnostic still applies.</span>
+					<span>Repair prices marked with a tilde are approximate estimates. The exact price is confirmed after the on-site diagnostic, before any work starts. If the appliance is beyond economical repair, we say so before you spend more on it. A part that has to be ordered is quoted with its ETA before we leave. Commercial work is quoted after a site visit; the $119 commercial diagnostic applies and is credited toward the repair.</span>
 				</p>
 
 				<div class="price-board__guarantee">
@@ -211,7 +219,7 @@
 					<div class="visit-steps__item-line"></div>
 					<div class="visit-steps__item-inner">
 						<h3 class="visit-steps__title">Diagnostic on site</h3>
-						<p class="visit-steps__text">The technician tests the appliance, writes down what failed, and credits the $89 toward the repair if you proceed.</p>
+						<p class="visit-steps__text">The technician tests the appliance, writes down what failed, and credits the $70 toward the repair if you proceed.</p>
 					</div>
 				</li>
 				<li class="visit-steps__item">
@@ -250,8 +258,8 @@
 					@@loop("html/faq-item.html", [
 						{
 							"id": "1",
-							"question": "How does the $89 diagnostic work?",
-							"answer": "The diagnostic is a single on-site visit fee. It covers testing and a written diagnosis, and the full $89 is credited toward the repair if you approve the work."
+							"question": "How does the $70 diagnostic work?",
+							"answer": "The diagnostic is a single on-site visit fee. It covers testing and a written diagnosis, and the full $70 is credited toward the repair if you approve the work."
 						},
 						{
 							"id": "2",
