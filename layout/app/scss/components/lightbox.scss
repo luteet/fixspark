@@ -1,0 +1,51 @@
+/* fslightbox — full-size photo overlay.
+ *
+ * The plug-in hides the page scrollbar while a photo is open by adding its own
+ * class to <html>. The scrollbar disappears, the viewport gets wider, and every
+ * centred block (including the fixed header and the mobile sticky bar) shifts.
+ * The plug-in's remedy is a margin-right on <body>, which is useless here:
+ * <body> is width:100% in reset.scss, so the margin is clipped away, and fixed
+ * elements ignore body margins entirely.
+ *
+ * The gutter is therefore reserved up front — that is the only place where the
+ * root scrollbar lives — and the plug-in's margin is dropped so it cannot
+ * double-compensate. The overlay itself is widened in the last block below, so
+ * the reserved gutter is never visible next to a photo. */
+
+html {
+	/* Same reserved band on every page, scrollbar or not, so open/close of the
+	   lightbox cannot move anything at all. */
+	scrollbar-gutter: stable;
+}
+
+// fslightbox-open — class set by the plug-in; is-lightbox-open — the hook
+// js/modules/lightbox.js keeps in sync with it. Both are listed so the margin
+// stays dead even if the page modules did not run.
+
+html.fslightbox-open,
+html.is-lightbox-open {
+	body {
+		margin-right: 0 !important;
+	}
+}
+
+// Overlay. The plug-in sizes it as width:100% of the initial containing block,
+// and the reserved gutter is cut out of that block, so a strip of the page stayed
+// uncovered on the right. 100vw spans the whole window; the gutter is returned as
+// padding, which keeps the photo and its controls centred in the visible area.
+
+html.fslightbox-open .fslightbox-container,
+html.is-lightbox-open .fslightbox-container {
+	width: 100vw;
+
+	padding-right: var(--scrollbar-width, 0px);
+}
+
+// Engines without scrollbar-gutter (Safari < 18.2): pad the root by the measured
+// scrollbar width, published as --scrollbar-width by js/modules/lightbox.js.
+
+@supports not (scrollbar-gutter: stable) {
+	html.is-lightbox-open {
+		padding-right: var(--scrollbar-width, 0px);
+	}
+}

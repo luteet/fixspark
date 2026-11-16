@@ -18,7 +18,7 @@ export const libs = {
 		//'node_modules/sticky-js/dist/sticky.min.js' // Sticky | npm i sticky-js --save | https://www.npmjs.com/package/sticky-js
 		//'node_modules/nouislider/dist/nouislider.min.js', // Custom input[range] | npm i nouislider --save | https://www.npmjs.com/package/nouislider
 		//'node_modules/simplebar/dist/simplebar.min.js', // Custom scrollbar | npm i simplebar --save | https://www.npmjs.com/package/simplebar
-		//'node_modules/fslightbox/index.js', // Gallery | npm i fslightbox --save | https://www.npmjs.com/package/fslightbox
+		'node_modules/fslightbox/index.js', // Gallery | npm i fslightbox --save | https://www.npmjs.com/package/fslightbox
 		//'node_modules/chart.js/dist/chart.umd.min.js', // Chart | npm i chart.js --save | https://www.npmjs.com/package/chart.js
 		//'node_modules/vanillajs-datepicker/dist/js/datepicker.min.js', // datepicker | npm install --save vanillajs-datepicker | https://mymth.github.io/vanillajs-datepicker/#/
 		'app/js/scroll-cue.min.js'
