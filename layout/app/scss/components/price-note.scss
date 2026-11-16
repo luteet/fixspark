@@ -1,0 +1,46 @@
+// .price-note — explains the "~" prefix that marks approximate repair prices.
+// Sits under price boards, service lists and the page hero price panel; it is
+// deliberately quieter than the prices themselves, because the exact number is
+// only fixed after the on-site diagnostic.
+
+.price-note {
+	display: flex;
+	align-items: flex-start;
+
+	gap: var(--space-2);
+	max-width: 70ch;
+	margin-top: var(--space-4);
+
+	font-size: var(--text-sm);
+	line-height: 1.55;
+
+	color: var(--muted);
+
+	// .price-note--hero — compact version next to the diagnostic / repair pair
+
+	&--hero {
+		margin-top: var(--space-3);
+		max-width: 46ch;
+
+		font-size: var(--text-xs);
+	}
+
+	// .price-note--tight — inside a board that already has its own padding
+
+	&--tight {
+		margin-top: var(--space-3);
+	}
+
+	// .price-note__mark — the tilde, matched to the price values
+
+	&__mark {
+		flex: none;
+
+		font-family: var(--font-display);
+		font-size: var(--text-md);
+		font-weight: var(--weight-bold);
+		line-height: 1.3;
+
+		color: var(--fg);
+	}
+}
