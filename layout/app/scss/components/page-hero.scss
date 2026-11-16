@@ -192,8 +192,7 @@
 	&__media {
 		position: relative;
 
-		aspect-ratio: 6 / 5;
-		min-width: 0;
+		min-width: 100%; min-height: 100%;
 		margin: 0;
 
 		background-color: var(--surface-dark-raised);
@@ -609,6 +608,12 @@
 
 		&__title {
 			max-width: 26ch;
+		}
+
+		// .page-hero__media
+
+		&__media {
+			aspect-ratio: 4 / 3;
 		}
 	}
 
