@@ -27,7 +27,7 @@ export default {
 			html_components: 'app/html/**/*.html',
 			scss: 'app/scss/style.scss',
 			scss_folder: 'app/scss/',
-			js: 'app/js/*.js',
+			js: ['app/js/*.js', '!app/js/scroll-cue.min.js'],
 			libs,
 			img_avif: ['app/img/**/*.{jpg,jpeg,png,tiff}', '!app/img/sprites/*.svg'],
 			img_webp: ['app/img/**/*.{jpg,jpeg,png,tiff,avif}', '!app/img/sprites/*.svg'],

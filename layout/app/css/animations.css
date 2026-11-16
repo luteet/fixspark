@@ -1,0 +1,262 @@
+/* ============================================================
+   ScrollCue — Built-in Animations
+   ============================================================
+   This file provides pre-built CSS animations for common
+   scroll effects (fade, slide, zoom, flip, rotate).
+   Import it alongside base.css if you want the default set:
+   @import 'scroll-cue/styles/animations.css';
+   ============================================================ */
+
+/* ============================================================
+   1. FADE
+   ============================================================ */
+
+/* Fade In */
+[data-cue='fade'] {
+	--cue-opacity: 0;
+	transition: opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='fade'].cue-visible,
+[data-cue='fade'].cue-done {
+	opacity: 1;
+}
+
+/* Fade Up */
+[data-cue='fade-up'] {
+	opacity: 0;
+	transform: translateY(var(--cue-translate-y, 40px));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='fade-up'].cue-visible,
+[data-cue='fade-up'].cue-done {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Fade Down */
+[data-cue='fade-down'] {
+	opacity: 0;
+	transform: translateY(calc(var(--cue-translate-y, 40px) * -1));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='fade-down'].cue-visible,
+[data-cue='fade-down'].cue-done {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Fade Left */
+[data-cue='fade-left'] {
+	opacity: 0;
+	transform: translateX(calc(var(--cue-translate-x, 40px) * -1));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='fade-left'].cue-visible,
+[data-cue='fade-left'].cue-done {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* Fade Right */
+[data-cue='fade-right'] {
+	opacity: 0;
+	transform: translateX(var(--cue-translate-x, 40px));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='fade-right'].cue-visible,
+[data-cue='fade-right'].cue-done {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* ============================================================
+   2. SLIDE
+   ============================================================ */
+
+/* Slide Up */
+[data-cue='slide-up'] {
+	transform: translateY(var(--cue-translate-y, 100%));
+	transition: transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='slide-up'].cue-visible,
+[data-cue='slide-up'].cue-done {
+	transform: translateY(0);
+}
+
+/* Slide Down */
+[data-cue='slide-down'] {
+	transform: translateY(calc(var(--cue-translate-y, 100%) * -1));
+	transition: transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='slide-down'].cue-visible,
+[data-cue='slide-down'].cue-done {
+	transform: translateY(0);
+}
+
+/* Slide Left */
+[data-cue='slide-left'] {
+	transform: translateX(calc(var(--cue-translate-x, 100%) * -1));
+	transition: transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='slide-left'].cue-visible,
+[data-cue='slide-left'].cue-done {
+	transform: translateX(0);
+}
+
+/* Slide Right */
+[data-cue='slide-right'] {
+	transform: translateX(var(--cue-translate-x, 100%));
+	transition: transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='slide-right'].cue-visible,
+[data-cue='slide-right'].cue-done {
+	transform: translateX(0);
+}
+
+/* ============================================================
+   3. ZOOM
+   ============================================================ */
+
+/* Zoom In */
+[data-cue='zoom-in'] {
+	opacity: 0;
+	transform: scale(var(--cue-scale, 0.6));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='zoom-in'].cue-visible,
+[data-cue='zoom-in'].cue-done {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* Zoom Out */
+[data-cue='zoom-out'] {
+	opacity: 0;
+	transform: scale(calc(2 - var(--cue-scale, 0.6)));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='zoom-out'].cue-visible,
+[data-cue='zoom-out'].cue-done {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* ============================================================
+   4. FLIP
+   ============================================================ */
+
+/* Flip Up */
+[data-cue='flip-up'] {
+	opacity: 0;
+	transform: perspective(400px) rotateX(var(--cue-rotate, 90deg));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='flip-up'].cue-visible,
+[data-cue='flip-up'].cue-done {
+	opacity: 1;
+	transform: perspective(400px) rotateX(0);
+}
+
+/* Flip Down */
+[data-cue='flip-down'] {
+	opacity: 0;
+	transform: perspective(400px) rotateX(calc(var(--cue-rotate, 90deg) * -1));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='flip-down'].cue-visible,
+[data-cue='flip-down'].cue-done {
+	opacity: 1;
+	transform: perspective(400px) rotateX(0);
+}
+
+/* Flip Left */
+[data-cue='flip-left'] {
+	opacity: 0;
+	transform: perspective(400px) rotateY(var(--cue-rotate, 90deg));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='flip-left'].cue-visible,
+[data-cue='flip-left'].cue-done {
+	opacity: 1;
+	transform: perspective(400px) rotateY(0);
+}
+
+/* Flip Right */
+[data-cue='flip-right'] {
+	opacity: 0;
+	transform: perspective(400px) rotateY(calc(var(--cue-rotate, 90deg) * -1));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='flip-right'].cue-visible,
+[data-cue='flip-right'].cue-done {
+	opacity: 1;
+	transform: perspective(400px) rotateY(0);
+}
+
+/* ============================================================
+   5. ROTATE
+   ============================================================ */
+
+[data-cue='rotate'] {
+	opacity: 0;
+	transform: rotate(var(--cue-rotate, 180deg)) scale(var(--cue-scale, 0.5));
+	transition:
+		opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s),
+		transform var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+}
+
+[data-cue='rotate'].cue-visible,
+[data-cue='rotate'].cue-done {
+	opacity: 1;
+	transform: rotate(0) scale(1);
+}
+
+/* ============================================================
+   Reduced Motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+	[data-cue] {
+		transition: none !important;
+	}
+
+	[data-cue].cue-visible,
+	[data-cue].cue-done {
+		opacity: 1;
+		transform: none;
+	}
+}

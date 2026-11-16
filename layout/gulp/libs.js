@@ -21,6 +21,7 @@ export const libs = {
 		//'node_modules/fslightbox/index.js', // Gallery | npm i fslightbox --save | https://www.npmjs.com/package/fslightbox
 		//'node_modules/chart.js/dist/chart.umd.min.js', // Chart | npm i chart.js --save | https://www.npmjs.com/package/chart.js
 		//'node_modules/vanillajs-datepicker/dist/js/datepicker.min.js', // datepicker | npm install --save vanillajs-datepicker | https://mymth.github.io/vanillajs-datepicker/#/
+		'app/js/scroll-cue.min.js'
 	],
 	scss: [
 		'node_modules/modern-normalize/modern-normalize.css',
@@ -28,6 +29,8 @@ export const libs = {
 		//'node_modules/@splidejs/splide/dist/css/splide.min.css', // Slider (Splide)
 		'node_modules/swiper/swiper.min.css', // Slider (Swiper)
 		'node_modules/slim-select/dist/slimselect.css', // Select
+		'app/css/base.css',
+		'app/css/animations.css',
 		//'node_modules/aos/dist/aos.css', // Animation
 		//'node_modules/nouislider/dist/nouislider.css', // custom input[range]
 		//'node_modules/simplebar/dist/simplebar.min.css', // scrollbar

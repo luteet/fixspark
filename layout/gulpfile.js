@@ -62,13 +62,11 @@ async function html() {
 async function htmlComponents() {
 	const plumber = (await import('gulp-plumber')).default;
 
-	return new Promise(resolve => {
-		src(paths.src.html_components)
+	return src(paths.src.html_components)
 			.pipe(plumber({ errorHandler: onError }))
 			.pipe(include())
 			.on('error', () => resolve())
 			.on('finish', () => resolve());
-	});
 }
 
 

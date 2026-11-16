@@ -1,0 +1,44 @@
+/* ============================================================
+   ScrollCue — Base Styles
+   ============================================================
+   This file provides the minimal CSS reset and default
+   transition setup. Import it if you want the library defaults:
+   @import 'scroll-cue/styles/base.css';
+   ============================================================ */
+
+/* ---------- Base state: hidden by default ---------- */
+[data-cue] {
+	opacity: var(--cue-opacity, 0);
+	transition: opacity var(--cue-duration, 0.6s) var(--cue-easing, ease-out) var(--cue-delay, 0s);
+	will-change: transform, opacity;
+}
+
+/* Explicit hidden state (out of viewport, not yet animated) */
+[data-cue].cue-hidden {
+	opacity: var(--cue-opacity, 0);
+}
+
+/* ---------- Visible state: element is animating ---------- */
+[data-cue].cue-visible {
+	opacity: 1;
+}
+
+/* ---------- Done state: animation completed ---------- */
+[data-cue].cue-done {
+	opacity: 1;
+}
+
+/* ---------- Disable animations when user prefers reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+	[data-cue] {
+		transition: none !important;
+		animation: none !important;
+	}
+
+	[data-cue].cue-hidden,
+	[data-cue].cue-visible,
+	[data-cue].cue-done {
+		opacity: 1;
+		transform: none;
+	}
+}
