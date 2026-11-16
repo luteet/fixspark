@@ -37,7 +37,7 @@ Gulp 5 на ESM (`"type": "module"`), сборщика модулей нет —
 - SCSS → `dart-sass` → PostCSS (`postcss-sort-media-queries`, `autoprefixer`, `cssnano`)
   → `dist/css/style.min.css`
 - HTML → `gulp-file-include` (`@@include`) → `gulp-beautify` (табы) → `dist/`
-- JS → `gulp-uglify` → `dist/js/`
+- JS → `gulp-uglify` (весь `app/js/**/*.js`, структура подпапок сохраняется) → `dist/js/`
 - Изображения → `sharp` (сжатие JPG/PNG + генерация `webp`/`avif`)
 - Шрифты → `wawoff2` (TTF → WOFF2)
 - SVG-иконки → `gulp-svg-sprite` (`dist/img/sprites.svg`)
@@ -81,7 +81,9 @@ app/
 ├── img/
 │   ├── sprites/*.svg       # иконки для спрайта
 │   └── *.mp4|jpg|png       # медиа
-├── js/main.js              # единственный собственный скрипт
+├── js/
+│   ├── main.js             # entry point: импорты модулей + вызовы init-функций
+│   └── modules/*.js        # поведение страницы, по модулю на блок
 └── scss/
     ├── style.scss          # точка входа: только @forward-директивы
     ├── libs.scss           # ГЕНЕРИРУЕТСЯ из gulp/libs.js, вручную не править
@@ -153,9 +155,10 @@ app/
 
 `1200px` — контейнер, `1024px` (сетки, gutter 20px), `900px` (мобильная навигация,
 `sticky-bar`, каскад `booking`), `720px` (pricing), `640px`, `560px` (gutter 16px,
-мобильные отступы секций). `MENU_BREAKPOINT = 900` в `main.js` должен совпадать
-с CSS для навигации. В SCSS брейкпоинты записываются в `rem` (`1024px` = `64rem`,
-`640px` = `40rem`); px остаются в токенах `global.scss` и в `main.js`.
+мобильные отступы секций). `MENU_BREAKPOINT = 900` в `app/js/modules/utils.js`
+должен совпадать с CSS для навигации. В SCSS брейкпоинты записываются в `rem`
+(`1024px` = `64rem`, `640px` = `40rem`); px остаются в токенах `global.scss`
+и в модулях `app/js`.
 
 ## Дизайн-система (инварианты)
 
@@ -193,7 +196,7 @@ app/
   на декоративных SVG, `aria-expanded` у бургера (уже реализовано), `.skip-link`,
   `:focus-visible` не убирается.
 - Ссылки-якоря соответствуют `id` секций: `#services`, `#pricing`, `#repairs`, `#areas`,
-  `#faq`, `#book`, `#top`. Переименование `id` = правка навигации, футера и `main.js`.
+  `#faq`, `#book`, `#top`. Переименование `id` = правка навигации, футера и модулей `app/js`.
 - Контент — реальный, конкретный, «trade business», без маркетингового шума
   (см. «Do's and Don'ts» в `DESIGN.md`). Не заменять специфичный текст заглушками.
 - У каждой услуги/кейса есть цена рядом с названием; если цены нет в брифе —
@@ -225,7 +228,17 @@ app/
 
 ## JS
 
-- Единственный собственный файл — `app/js/main.js` (ES-модуль, без сборщика, минифицируется).
+- Точка входа — `app/js/main.js`: только `import` модулей из `app/js/modules/`
+  и вызовы их `init*()`-функций. Поведение сгруппировано по блокам страницы
+  (`header.js`, `header-dropdowns.js`, `booking-form.js`, `faq-accordion.js`,
+  `faq-page.js`, `anchor-links.js`, `cases-filter.js`, `marquee.js`,
+  `view-transition.js`, `scroll-cue.js`, `utils.js`).
+- Сборщика модулей нет: `main.js` подключён как `<script type="module">`, а Gulp
+  прогоняет каждый файл `app/js/**/*.js` через `gulp-uglify` в `dist/js/` с
+  сохранением структуры (`dist/js/modules/*.js`). Импорты остаются относительными.
+- Новый модуль: `app/js/modules/<name>.js` экспортирует `init<Name>()`, вызов
+  добавляется в `main.js` в том же порядке, в котором блок идёт на странице.
+  Общее (брейкпоинт, `reduceMotion`, `lockScrollPosition`) — только в `modules/utils.js`.
 - Используются `const`/`function`, `document.querySelector*`, `addEventListener`,
   `classList.toggle`; без jQuery и без фреймворков.
 - Сторонние библиотеки — только через `layout/gulp/libs.js`: раскомментировать/добавить

@@ -1,0 +1,1 @@
+import{reduceMotion}from"./utils.js";function initHeroTitleSlider(){var e=document.querySelector(".hero__title-slider");window.Swiper&&e&&new window.Swiper(e,{direction:"vertical",loop:!0,speed:reduceMotion?0:500,autoplay:!reduceMotion&&{delay:2e3,disableOnInteraction:!1,pauseOnMouseEnter:!0},allowTouchMove:!1,a11y:{enabled:!1}})}export{initHeroTitleSlider};

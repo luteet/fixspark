@@ -1,0 +1,1 @@
+function initScrollCue(){"function"==typeof window.ScrollCue&&new window.ScrollCue({anchorContainer:"section, .header, .footer",at:-600,delay:0}).init()}export{initScrollCue};

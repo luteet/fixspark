@@ -1,0 +1,1 @@
+function setImageAspectRatios(){document.querySelectorAll(".image-aspect-ratio, figure img").forEach(function(t){var e=t.getAttribute("width"),i=t.getAttribute("height");e&&i&&t.style.setProperty("--aspect-ratio",e+" / "+i)})}export{setImageAspectRatios};
