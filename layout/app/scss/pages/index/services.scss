@@ -211,11 +211,18 @@
 		@media (max-width: 40rem) {
 			display: flex;
 			justify-content: space-between;
-			gap: var(--space-4);
 
 			padding: var(--space-2) 0;
 
 			border-bottom: 1px solid var(--border);
+
+			b {
+				flex: 1 1;
+
+				margin-bottom: -2px;
+
+				text-align: end;
+			}
 
 			& + &::before {
 				content: none;
