@@ -82,6 +82,14 @@
 
 			font-size: var(--text-sm);
 			color: var(--on-dark-muted);
+
+			br {
+				display: none;
+				
+				@media (min-width: 36rem) {
+					display: inline-block;
+				}
+			}
 		}
 
 		svg {
