@@ -83,19 +83,6 @@
 		color: var(--fg-2);
 	}
 
-	// .about-scope__value
-
-	&__value {
-		flex: none;
-
-		font-family: var(--font-display);
-		font-weight: var(--weight-semibold);
-		font-variant-numeric: tabular-nums;
-		white-space: nowrap;
-
-		color: var(--fg);
-	}
-
 	// .about-scope__segments
 
 	&__segments {
