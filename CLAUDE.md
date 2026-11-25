@@ -270,12 +270,14 @@ app/
 (`@@loop("service-item.html", …)`), а не от корня `app/`.
 Чтобы добавить/переставить секцию главной, правь `index.html`, а не дублируй разметку.
 
-**Local-страница района:** отдельный `app/<area>.html` с теми же `@@include`, что и в
-главной, но со своим hero. На `<main>` ставится `data-current-area="<slug>"`, где slug
-совпадает с `data-area` карточки в `html/areas.html` (`poway`, `rancho-bernardo`,
-`mira-mesa`, `escondido`, `carmel-mountain-ranch`). `initAreas()` в
-`app/js/modules/areas.js` найдёт карточку, добавит `.is-current` и `aria-current="page"`;
-подпись `View →` заменяется на `Current area` (стили — в `pages/index/areas.scss`).
+**Local-страница района:** готовые страницы — `app/poway.html`, `app/rancho-bernardo.html`,
+`app/mira-mesa.html`, `app/escondido.html`. Каждая
+собирается из `@@include("html/area-hero.html", {...})` (page-hero + breadcrumbs + facts),
+`trust` и всех секций главной в том же порядке; контент секций не меняется.
+На `<main>` ставится `data-current-area="<slug>"`, где slug совпадает с `data-area`
+карточки в `html/areas.html`. `initAreas()` в `app/js/modules/areas.js` найдёт карточку,
+добавит `.is-current` и `aria-current="page"`; подпись `View →` заменяется на
+`Current area` (стили — в `pages/index/areas.scss`).
 
 **Новый компонент:** `app/scss/components/<name>.scss` с `.block`/`&__el`/`&--mod`,
 разметка — BEM-классы в HTML.

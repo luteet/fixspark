@@ -95,30 +95,6 @@
 		color: var(--icon);
 	}
 
-	// .area-base__badge — marks the page's own area, hidden elsewhere
-
-	&__badge {
-		display: none;
-
-		padding: calc(var(--space-1) / 2) var(--space-2);
-
-		border: 1px solid var(--border-strong);
-		border-radius: var(--radius-pill);
-
-		font-size: var(--text-2xs);
-		font-weight: var(--weight-semibold);
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-
-		color: var(--fg-2);
-	}
-
-	// .area-base.is-current
-
-	&.is-current &__badge {
-		display: inline-block;
-	}
-
 	// .area-base__title
 
 	&__title {

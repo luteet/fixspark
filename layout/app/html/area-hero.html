@@ -1,0 +1,44 @@
+<section class="page-hero" id="top" data-theme="dark-surface">
+	<div class="page-hero__decor section-background mode-2" aria-hidden="true"></div>
+
+	<div class="container page-hero__inner" data-cue="fade">
+		<div class="page-hero__content">
+			<nav class="breadcrumbs" aria-label="Breadcrumb">
+				<ol class="breadcrumbs__list">
+					<li class="breadcrumbs__item">
+						<a class="breadcrumbs__link" href="./">Home</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<a class="breadcrumbs__link" href="./#areas">Service areas</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<span class="breadcrumbs__current" aria-current="page">@@name</span>
+					</li>
+				</ol>
+			</nav>
+
+			<p class="eyebrow page-hero__eyebrow">@@name · @@zips · Same-day</p>
+			<h1 class="page-hero__title">Appliance repair <br> in @@name.</h1>
+			<p class="page-hero__lead">@@lead</p>
+
+			<div class="page-hero__actions">
+				<a class="button button--call" href="tel:+16195550142">
+					<svg width="18" height="18" aria-hidden="true" focusable="false">
+						<use href="img/sprites.svg#phone" />
+					</svg>
+					Call (619) 555-0142
+				</a>
+				<a class="button button--book" href="#book">Book service</a>
+			</div>
+		</div>
+
+		<figure class="page-hero__media">
+			<picture>
+				<source srcset="img/index/services-v3/services-image-@@image.avif" type="image/avif">
+				<source srcset="img/index/services-v3/services-image-@@image.webp" type="image/webp">
+				<img src="img/index/services-v3/services-image-@@image.jpg" alt="@@alt" width="760" height="620">
+			</picture>
+			<figcaption class="page-hero__caption">@@caption</figcaption>
+		</figure>
+	</div>
+</section>

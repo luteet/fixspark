@@ -48,12 +48,19 @@ async function html() {
 	const plumber = (await import('gulp-plumber')).default;
 
 	return new Promise(resolve => {
-		src(paths.src.html)
+		const stream = src(paths.src.html)
 			.pipe(plumber({ errorHandler: onError }))
 			.pipe(include({ context: { version: Date.now().toString() } }))
 			.pipe(beautify.html({ indent_size: 1, indent_char: "\t" }))
-			.pipe(dest(paths.build.html))
-			.pipe(bs.stream())
+			.pipe(dest(paths.build.html));
+
+		// bs.stream() only finishes once browser-sync is running, so the write
+		// stream itself is the completion signal when building without a server.
+		if (bs.active) {
+			stream.pipe(bs.stream());
+		}
+
+		stream
 			.on('error', () => resolve())
 			.on('finish', () => resolve());
 	});
