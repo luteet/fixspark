@@ -1,0 +1,56 @@
+<section class="section faq" id="faq">
+	<div class="section-background" aria-hidden="true"></div>
+
+	<div class="container">
+		<div class="section-head" data-cue="fade">
+			<div class="section-head__text">
+				<p class="eyebrow">Before you call</p>
+				<h2 class="section-head__title">Questions we answer <br> on the phone anyway.</h2>
+			</div>
+		</div>
+
+		<div class="faq__list" data-cue="fade">
+			<div class="faq__column">
+				@@loop("faq-item.html", [
+					{
+						"id": "1",
+						"question": "Do you charge for the diagnostic visit?",
+						"answer": "Yes. The standard diagnostic is $70 (reduced from $89) and the commercial diagnostic is $119 (reduced from $149). Both are credited toward the repair if you go ahead. We give you the repair price before any work starts, so you can decide with the number in front of you."
+					},
+					{
+						"id": "2",
+						"question": "How fast can you come out?",
+						"answer": "Same-day visits are usual when you call before noon across all four service zones. If a part has to be ordered, you get the ETA before we leave, and we schedule the return visit at that price."
+					},
+					{
+						"id": "3",
+						"question": "Which brands do you repair?",
+						"answer": "Major residential brands including Sub-Zero, LG, Whirlpool, Samsung, GE, Bosch, Maytag and KitchenAid, plus commercial kitchen equipment. If we cannot source the part, we tell you on the first visit rather than leave you waiting."
+					}
+				])
+			</div>
+
+			<div class="faq__column">
+				@@loop("faq-item.html", [
+					{
+						"id": "4",
+						"question": "Is the work warrantied?",
+						"answer": "Parts and labor are covered for 90 days. The warranty is written on the invoice, not just on this page, and it applies to the specific repair we performed."
+					},
+					{
+						"id": "5",
+						"question": "Do you take commercial jobs?",
+						"answer": "Cafes, offices, salons, short-term rentals and property managers. Priority scheduling, one invoice per property, and the same licensed technicians as residential work."
+					}
+				])
+			</div>
+		</div>
+
+		<a class="faq__all" href="faq.html">
+			All 36 questions and answers
+			<svg width="14" height="14" aria-hidden="true" focusable="false">
+				<use href="img/sprites.svg#arrow-right" />
+			</svg>
+		</a>
+	</div>
+</section>

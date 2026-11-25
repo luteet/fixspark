@@ -1,0 +1,134 @@
+<section class="section services" id="services">
+	<div class="section-background" aria-hidden="true"></div>
+
+	<div class="container">
+		<div class="section-head" data-cue="fade">
+			<div class="section-head__text">
+				<p class="eyebrow">Residential & commercial</p>
+				<h2 class="section-head__title">Every appliance type. <br> One diagnostic fee.</h2>
+				<p class="section-lead">Every service lists the diagnostic fee and the range the repair usually lands in. If a part has to be ordered, you get the price and the ETA before we leave.</p>
+			</div>
+		</div>
+
+		<div class="services__layout" data-cue="fade">
+			<ul class="services__list">
+				@@loop("service-item.html", [
+					{
+						"class": " is-active",
+						"number": "01",
+						"name": "Refrigerator repair",
+						"price": {
+							"diagnostic": "70",
+							"diagnosticWas": "89",
+							"repairs": "149",
+						},
+					},
+					{
+						"class": "",
+						"number": "02",
+						"name": "Washer repair",
+						"price": {
+							"diagnostic": "70",
+							"diagnosticWas": "89",
+							"repairs": "129",
+						},
+					},
+					{
+						"class": "",
+						"number": "03",
+						"name": "Dryer repair",
+						"price": {
+							"diagnostic": "70",
+							"diagnosticWas": "89",
+							"repairs": "129",
+						},
+					},
+					{
+						"class": "",
+						"number": "04",
+						"name": "Oven repair",
+						"price": {
+							"diagnostic": "70",
+							"diagnosticWas": "89",
+							"repairs": "139",
+						},
+					},
+					{
+						"class": "",
+						"number": "05",
+						"name": "Stove & cooktop repair",
+						"price": {
+							"diagnostic": "70",
+							"diagnosticWas": "89",
+							"repairs": "139",
+						},
+					},
+					{
+						"class": "",
+						"number": "06",
+						"name": "Dishwasher repair",
+						"price": {
+							"diagnostic": "70",
+							"diagnosticWas": "89",
+							"repairs": "119",
+						},
+					},
+					{
+						"class": "",
+						"number": "07",
+						"name": "Ice maker repair",
+						"price": {
+							"diagnostic": "70",
+							"diagnosticWas": "89",
+							"repairs": "159",
+						},
+					},
+					{
+						"class": "",
+						"number": "08",
+						"name": "Freezer repair",
+						"price": {
+							"diagnostic": "70",
+							"diagnosticWas": "89",
+							"repairs": "149",
+						},
+					},
+					{
+						"class": "",
+						"number": "09",
+						"name": "Commercial kitchen equipment",
+						"price": {
+							"diagnostic": "119",
+							"diagnosticWas": "149",
+							"repairs": "189",
+						},
+					},
+				])
+			</ul>
+
+			<div class="services__media" aria-hidden="true">
+				<div class="services__frame swiper">
+					<div class="swiper-wrapper">
+						@@loop("service-item-image.html", [
+							{ "image": "1" },
+							{ "image": "2" },
+							{ "image": "3" },
+							{ "image": "4" },
+							{ "image": "5" },
+							{ "image": "6" },
+							{ "image": "8" },
+							{ "image": "9" },
+							{ "image": "10" },
+							{ "image": "11" },
+						])
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<p class="price-note">
+			<span class="price-note__mark" aria-hidden="true">~</span>
+			<span>Repair prices are approximate estimates. The exact price is confirmed after the on-site diagnostic, before any work starts.</span>
+		</p>
+	</div>
+</section>

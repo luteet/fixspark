@@ -1,0 +1,45 @@
+<section class="section repairs" id="repairs">
+	<div class="section-background" aria-hidden="true"></div>
+
+	<div class="container">
+		<div class="section-head" data-cue="fade">
+			<div class="section-head__text">
+				<p class="eyebrow">Real work, documented</p>
+				<h2 class="section-head__title">Recent repairs, <br> with the invoice price.</h2>
+				<p class="section-lead">Appliance, fault, neighborhood and what it cost. <br> Names are representative; the numbers are the point.</p>
+			</div>
+		</div>
+
+		<div class="repairs__grid" data-cue="fade">
+			@@loop("case-card.html", [
+				{
+					"number": "01",
+					"image": "1",
+					"label": "refrigerator repair in North Park",
+					"price": "310",
+					"meta": "North Park · Sub-Zero · Oct 2026",
+					"title": "Refrigerator not cooling",
+					"text": "Defrost heater and thermistor replaced in one visit. Same-day, two-hour arrival window."
+				},
+				{
+					"number": "02",
+					"image": "2",
+					"label": "washer repair in Chula Vista",
+					"price": "245",
+					"meta": "Chula Vista · LG · Sep 2026",
+					"title": "Washer leaking at the door",
+					"text": "Door boot and drain pump replaced. The customer approved the price before we started."
+				},
+				{
+					"number": "03",
+					"image": "3",
+					"label": "oven repair in La Mesa",
+					"price": "268",
+					"meta": "La Mesa · Whirlpool · Sep 2026",
+					"title": "Oven won't heat",
+					"text": "Bake element and thermostat replaced; tested at temperature before we left."
+				}
+			])
+		</div>
+	</div>
+</section>

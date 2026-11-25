@@ -9,7 +9,7 @@
 	<link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/PlusJakartaSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="css/style.min.css?v=1795593965594">
+	<link rel="stylesheet" href="css/style.min.css?v=1795594541193">
 </head>
 
 <body>
@@ -783,12 +783,13 @@
 					</div>
 
 					<div class="areas__layout" data-cue="fade">
-						<article class="area-base">
+						<article class="area-base" data-area="carmel-mountain-ranch">
 							<p class="area-base__eyebrow">
 								<svg width="16" height="16" aria-hidden="true" focusable="false">
 									<use href="img/sprites.svg#pin" />
 								</svg>
 								Home base
+								<span class="area-base__badge">Current area</span>
 							</p>
 
 							<h3 class="area-base__title">Carmel Mountain Ranch</h3>
@@ -807,7 +808,7 @@
 						</article>
 
 						<div class="areas__zones">
-							<a href="#" class="area-card area-card--quiet">
+							<a href="#" class="area-card area-card--quiet" data-area="poway">
 								<h3 class="area-card__title">Poway</h3>
 								<ul class="area-card__list">
 									<li>92064</li>
@@ -816,10 +817,11 @@
 								</ul>
 								<div class="area-card__footer">
 									<p class="area-card__note"><b>Same-day</b> before noon</p>
+									<span class="area-card__current">Current area</span>
 									<u class="area-card__view">View<span class="area-card__view-arrow" aria-hidden="true">→</span></u>
 								</div>
 							</a>
-							<a href="#" class="area-card area-card--quiet">
+							<a href="#" class="area-card area-card--quiet" data-area="rancho-bernardo">
 								<h3 class="area-card__title">Rancho Bernardo</h3>
 								<ul class="area-card__list">
 									<li>92127 · 92128</li>
@@ -828,10 +830,11 @@
 								</ul>
 								<div class="area-card__footer">
 									<p class="area-card__note"><b>Same-day</b> before noon</p>
+									<span class="area-card__current">Current area</span>
 									<u class="area-card__view">View<span class="area-card__view-arrow" aria-hidden="true">→</span></u>
 								</div>
 							</a>
-							<a href="#" class="area-card area-card--quiet">
+							<a href="#" class="area-card area-card--quiet" data-area="mira-mesa">
 								<h3 class="area-card__title">Mira Mesa</h3>
 								<ul class="area-card__list">
 									<li>92126</li>
@@ -840,10 +843,11 @@
 								</ul>
 								<div class="area-card__footer">
 									<p class="area-card__note"><b>Same-day</b> before noon</p>
+									<span class="area-card__current">Current area</span>
 									<u class="area-card__view">View<span class="area-card__view-arrow" aria-hidden="true">→</span></u>
 								</div>
 							</a>
-							<a href="#" class="area-card area-card--quiet">
+							<a href="#" class="area-card area-card--quiet" data-area="escondido">
 								<h3 class="area-card__title">Escondido</h3>
 								<ul class="area-card__list">
 									<li>92025–92027</li>
@@ -852,6 +856,7 @@
 								</ul>
 								<div class="area-card__footer">
 									<p class="area-card__note"><b>Same-day</b> before noon</p>
+									<span class="area-card__current">Current area</span>
 									<u class="area-card__view">View<span class="area-card__view-arrow" aria-hidden="true">→</span></u>
 								</div>
 							</a>
@@ -1043,8 +1048,8 @@
 		</div>
 	</div>
 
-	<script src="js/libs.min.js?v=1795593965594"></script>
-	<script src="js/main.js?v=1795593965594" type="module"></script>
+	<script src="js/libs.min.js?v=1795594541193"></script>
+	<script src="js/main.js?v=1795594541193" type="module"></script>
 
 </body>
 

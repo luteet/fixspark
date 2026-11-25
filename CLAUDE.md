@@ -263,6 +263,20 @@ app/
 стили — новый файл `app/scss/pages/index/<name>.scss`; навигацию/футер обновить при
 необходимости. Заголовок секции — через `.section-head` + `.eyebrow` + `.section-lead`.
 
+**Секции главной — партиалы.** Всё, кроме `hero`, лежит в `app/html/` и подключается
+из `index.html` через `@@include("html/<name>.html")`: `trust`, `services`, `pricing`,
+`repairs`, `reviews`, `business`, `areas`, `faq`, `brands`, `booking`, `marquee`.
+Внутри партиала пути `@@include`/`@@loop` задаются относительно него самого
+(`@@loop("service-item.html", …)`), а не от корня `app/`.
+Чтобы добавить/переставить секцию главной, правь `index.html`, а не дублируй разметку.
+
+**Local-страница района:** отдельный `app/<area>.html` с теми же `@@include`, что и в
+главной, но со своим hero. На `<main>` ставится `data-current-area="<slug>"`, где slug
+совпадает с `data-area` карточки в `html/areas.html` (`poway`, `rancho-bernardo`,
+`mira-mesa`, `escondido`, `carmel-mountain-ranch`). `initAreas()` в
+`app/js/modules/areas.js` найдёт карточку, добавит `.is-current` и `aria-current="page"`;
+подпись `View →` заменяется на `Current area` (стили — в `pages/index/areas.scss`).
+
 **Новый компонент:** `app/scss/components/<name>.scss` с `.block`/`&__el`/`&--mod`,
 разметка — BEM-классы в HTML.
 

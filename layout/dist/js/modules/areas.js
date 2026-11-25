@@ -1,0 +1,1 @@
+function initAreas(){var e=document.querySelector(".areas"),r=document.querySelector("[data-current-area]");if(e&&r){let a=r.dataset.currentArea;a&&(r=e.querySelectorAll("[data-area]"),e=Array.from(r).find(e=>e.dataset.area===a))&&(e.classList.add("is-current"),e.matches("a"))&&e.setAttribute("aria-current","page")}}export{initAreas};

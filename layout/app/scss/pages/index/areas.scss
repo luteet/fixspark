@@ -95,6 +95,30 @@
 		color: var(--icon);
 	}
 
+	// .area-base__badge — marks the page's own area, hidden elsewhere
+
+	&__badge {
+		display: none;
+
+		padding: calc(var(--space-1) / 2) var(--space-2);
+
+		border: 1px solid var(--border-strong);
+		border-radius: var(--radius-pill);
+
+		font-size: var(--text-2xs);
+		font-weight: var(--weight-semibold);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+
+		color: var(--fg-2);
+	}
+
+	// .area-base.is-current
+
+	&.is-current &__badge {
+		display: inline-block;
+	}
+
 	// .area-base__title
 
 	&__title {
@@ -227,6 +251,17 @@
 		border-radius: var(--radius-pill);
 	}
 
+	// .area-card__current — replaces the "View" label on the page's own area
+
+	&__current {
+		display: none;
+
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+
+		color: var(--muted);
+	}
+
 	// .area-card__footer — note on the left, view label on the right
 
 	&__footer {
@@ -275,5 +310,27 @@
 		margin-left: 0.35ch;
 
 		transition: transform var(--motion-base) var(--ease-standard);
+	}
+
+	// .area-card.is-current — the area this page is dedicated to
+
+	&.is-current {
+		background-color: var(--surface);
+		background-image: var(--grad-card);
+		border-color: var(--border-strong);
+	}
+
+	&.is-current &__view {
+		display: none;
+	}
+
+	&.is-current &__current {
+		display: inline;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		&.is-current:hover .area-card__title {
+			color: var(--fg);
+		}
 	}
 }
