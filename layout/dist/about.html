@@ -9,7 +9,7 @@
 	<link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/PlusJakartaSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="css/style.min.css?v=1795591675758">
+	<link rel="stylesheet" href="css/style.min.css?v=1795593965594">
 </head>
 
 <body>
@@ -800,59 +800,98 @@
 					<div class="section-head" data-cue="fade">
 						<div class="section-head__text">
 							<p class="eyebrow">Service area</p>
-							<h2 class="section-head__title">Four zones across <br> San Diego County.</h2>
-							<p class="section-lead">Same-day visits are usual when you call before noon. <br> If a part has to be ordered, you get the ETA before we leave.</p>
+							<h2 class="section-head__title">Based in Carmel Mountain Ranch. <br> Covering the I-15 corridor.</h2>
+							<p class="section-lead">Technicians start and end the day in Carmel Mountain Ranch, <br> so visits inside the area come first. <br> Same-day is usual when you call before noon.</p>
 						</div>
 					</div>
 
-					<div class="areas__grid" data-cue="fade">
-						<a href="#" class="area-card" aria-label="Central San Diego">
-							<h3 class="area-card__title">Central San Diego</h3>
-							<ul class="area-card__list">
-								<li>Downtown & East Village</li>
-								<li>North Park</li>
-								<li>Hillcrest</li>
-								<li>City Heights</li>
-								<li>Normal Heights</li>
+					<div class="areas__layout" data-cue="fade">
+						<article class="area-base">
+							<p class="area-base__eyebrow">
+								<svg width="16" height="16" aria-hidden="true" focusable="false">
+									<use href="img/sprites.svg#pin" />
+								</svg>
+								Home base
+							</p>
+
+							<h3 class="area-base__title">Carmel Mountain Ranch</h3>
+
+							<p class="area-base__text">Warehouse, parts stock and the daily route start here, between Rancho Bernardo and Rancho Peñasquitos. Neighbouring areas are reached on the way in and out.</p>
+
+							<ul class="area-base__list">
+								<li>92128</li>
+								<li>Poway border</li>
+								<li>I-15 corridor</li>
 							</ul>
-							<p class="area-card__note"><b>Same-day</b> before noon</p>
-						</a>
-						<a href="#" class="area-card" aria-label="North County">
-							<h3 class="area-card__title">North County</h3>
-							<ul class="area-card__list">
-								<li>La Jolla</li>
-								<li>Mira Mesa</li>
-								<li>Encinitas</li>
-								<li>Carlsbad</li>
-								<li>Escondido</li>
-							</ul>
-							<p class="area-card__note"><b>Same-day</b> before noon</p>
-						</a>
-						<a href="#" class="area-card" aria-label="East County">
-							<h3 class="area-card__title">East County</h3>
-							<ul class="area-card__list">
-								<li>La Mesa</li>
-								<li>El Cajon</li>
-								<li>Santee</li>
-								<li>Lakeside</li>
-								<li>Alpine</li>
-							</ul>
-							<p class="area-card__note"><b>Same-day</b> before noon</p>
-						</a>
-						<a href="#" class="area-card" aria-label="South Bay">
-							<h3 class="area-card__title">South Bay</h3>
-							<ul class="area-card__list">
-								<li>Chula Vista</li>
-								<li>National City</li>
-								<li>Imperial Beach</li>
-								<li>Otay Mesa</li>
-								<li>Bonita</li>
-							</ul>
-							<p class="area-card__note"><b>Same-day</b> before noon</p>
-						</a>
+
+							<div class="area-base__footer">
+								<p class="area-base__note"><b>Same-day</b> before noon</p>
+							</div>
+						</article>
+
+						<div class="areas__zones">
+							<a href="#" class="area-card area-card--quiet">
+								<h3 class="area-card__title">Poway</h3>
+								<ul class="area-card__list">
+									<li>92064</li>
+									<li>Carmel Mountain Ranch</li>
+									<li>Sabre Springs</li>
+								</ul>
+								<div class="area-card__footer">
+									<p class="area-card__note"><b>Same-day</b> before noon</p>
+									<u class="area-card__view">View<span class="area-card__view-arrow" aria-hidden="true">→</span></u>
+								</div>
+							</a>
+							<a href="#" class="area-card area-card--quiet">
+								<h3 class="area-card__title">Rancho Bernardo</h3>
+								<ul class="area-card__list">
+									<li>92127 · 92128</li>
+									<li>Westwood</li>
+									<li>Bernardo Heights</li>
+								</ul>
+								<div class="area-card__footer">
+									<p class="area-card__note"><b>Same-day</b> before noon</p>
+									<u class="area-card__view">View<span class="area-card__view-arrow" aria-hidden="true">→</span></u>
+								</div>
+							</a>
+							<a href="#" class="area-card area-card--quiet">
+								<h3 class="area-card__title">Mira Mesa</h3>
+								<ul class="area-card__list">
+									<li>92126</li>
+									<li>Rancho Peñasquitos</li>
+									<li>Sabre Springs</li>
+								</ul>
+								<div class="area-card__footer">
+									<p class="area-card__note"><b>Same-day</b> before noon</p>
+									<u class="area-card__view">View<span class="area-card__view-arrow" aria-hidden="true">→</span></u>
+								</div>
+							</a>
+							<a href="#" class="area-card area-card--quiet">
+								<h3 class="area-card__title">Escondido</h3>
+								<ul class="area-card__list">
+									<li>92025–92027</li>
+									<li>Rancho Bernardo</li>
+									<li>Poway</li>
+								</ul>
+								<div class="area-card__footer">
+									<p class="area-card__note"><b>Same-day</b> before noon</p>
+									<u class="area-card__view">View<span class="area-card__view-arrow" aria-hidden="true">→</span></u>
+								</div>
+							</a>
+						</div>
+					</div>
+
+					<div class="areas__nearby" data-cue="fade">
+						<p class="areas__nearby-label">Also on our route</p>
+						<ul class="areas__nearby-list">
+							<li>Rancho Peñasquitos</li>
+							<li>4S Ranch</li>
+							<li>Sabre Springs</li>
+						</ul>
 					</div>
 				</div>
 			</section>
+
 
 			<section class="section faq" id="faq">
 				<div class="section-background" aria-hidden="true"></div>
@@ -1123,8 +1162,8 @@
 		</div>
 	</div>
 
-	<script src="js/libs.min.js?v=1795591675758"></script>
-	<script src="js/main.js?v=1795591675758" type="module"></script>
+	<script src="js/libs.min.js?v=1795593965594"></script>
+	<script src="js/main.js?v=1795593965594" type="module"></script>
 
 </body>
 

@@ -1,10 +1,160 @@
 .areas {
-	// .areas__grid
+	// .areas__layout — base panel on the left, zone cards on the right
 
-	&__grid {
+	&__layout {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 		gap: var(--space-5);
+
+		@media (min-width: 64rem) {
+			grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+			gap: var(--space-6);
+		}
+	}
+
+	// .areas__zones
+
+	&__zones {
+		display: grid;
+		gap: var(--space-5);
+
+		@media (min-width: 40rem) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	// .areas__nearby
+
+	&__nearby {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-3) var(--space-4);
+
+		margin-top: var(--space-6);
+		padding-top: var(--space-5);
+
+		border-top: 1px solid var(--border-soft);
+	}
+
+	// .areas__nearby-label
+
+	&__nearby-label {
+		font-size: var(--text-2xs);
+		font-weight: var(--weight-semibold);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+
+		color: var(--muted);
+	}
+
+	// .areas__nearby-list
+
+	&__nearby-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+
+		li {
+			padding: calc(var(--space-1) / 2) var(--space-3);
+
+			border: 1px solid var(--border-soft);
+			border-radius: var(--radius-pill);
+
+			font-size: var(--text-sm);
+			color: var(--fg-2);
+		}
+	}
+}
+
+// .area-base — the focal area, one surface step above the quiet zone cards
+
+.area-base {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-3);
+
+	padding: var(--card-pad);
+
+	background-color: var(--surface);
+	background-image: var(--grad-card);
+	border: 1px solid var(--border-strong);
+	border-radius: var(--radius-lg);
+
+	// .area-base__eyebrow
+
+	&__eyebrow {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+
+		font-size: var(--text-2xs);
+		font-weight: var(--weight-semibold);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+
+		color: var(--icon);
+	}
+
+	// .area-base__title
+
+	&__title {
+		font-size: var(--text-xl);
+		font-weight: var(--weight-semibold);
+		letter-spacing: 0;
+	}
+
+	// .area-base__text
+
+	&__text {
+		font-size: var(--text-md);
+		line-height: 1.65;
+
+		color: var(--fg-2);
+	}
+
+	// .area-base__list
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+
+		font-size: var(--text-sm);
+		color: var(--fg-2);
+	}
+
+	&__list li {
+		padding: calc(var(--space-1) / 2) var(--space-3);
+
+		border: 1px solid var(--border);
+		border-radius: var(--radius-pill);
+	}
+
+	// .area-base__footer
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: var(--space-2) var(--space-3);
+
+		margin-top: auto;
+		padding-top: var(--space-3);
+
+		border-top: 1px solid var(--border-soft);
+	}
+
+	// .area-base__note
+
+	&__note {
+		font-size: var(--text-xs);
+		color: var(--muted);
+
+		b {
+			font-weight: var(--weight-semibold);
+			color: var(--fg);
+		}
 	}
 }
 
@@ -15,19 +165,38 @@
 
 	padding: var(--card-pad);
 
+	// the whole card is a link, so the base text colour has to be reset
+	color: var(--fg);
+
 	background-color: var(--surface);
 	background-image: var(--grad-card);
 	border: 1px solid var(--border);
 	border-radius: var(--radius-lg);
+
+	// .area-card--quiet — secondary zones stay lighter than the base panel
+
+	&--quiet {
+		background-color: transparent;
+		background-image: none;
+		border-color: var(--border-strong);
+	}
 
 	@media (hover: hover) and (pointer: fine) {
 		&:hover &__title {
 			color: var(--icon);
 		}
 
-		&:active &__title {
+		&:hover &__view {
 			color: var(--link-hover);
 		}
+
+		&:hover &__view-arrow {
+			transform: translateX(2px);
+		}
+	}
+
+	&:active &__title {
+		color: var(--link-hover);
 	}
 
 	// .area-card__title
@@ -54,18 +223,28 @@
 	&__list li {
 		padding: calc(var(--space-1) / 2) var(--space-3);
 
-		border: 1px solid var(--border-soft);
+		border: 1px solid var(--border-strong);
 		border-radius: var(--radius-pill);
+	}
+
+	// .area-card__footer — note on the left, view label on the right
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: var(--space-2) var(--space-3);
+
+		margin-top: auto;
+		padding-top: var(--space-3);
+
+		border-top: 1px solid var(--border-soft);
 	}
 
 	// .area-card__note
 
 	&__note {
-		margin-top: auto;
-		padding-top: var(--space-3);
-
-		border-top: 1px solid var(--border-soft);
-
 		font-size: var(--text-xs);
 		color: var(--muted);
 
@@ -73,5 +252,28 @@
 			font-weight: var(--weight-semibold);
 			color: var(--fg);
 		}
+	}
+
+	// .area-card__view
+
+	&__view {
+		font-size: var(--text-sm);
+		font-weight: var(--weight-medium);
+
+		color: var(--link);
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.35ch;
+
+		transition: color var(--motion-base) var(--ease-standard);
+	}
+
+	// .area-card__view-arrow
+
+	&__view-arrow {
+		display: inline-block;
+
+		margin-left: 0.35ch;
+
+		transition: transform var(--motion-base) var(--ease-standard);
 	}
 }
